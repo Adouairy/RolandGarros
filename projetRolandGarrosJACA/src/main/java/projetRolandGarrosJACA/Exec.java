@@ -6,6 +6,7 @@ public class Exec {
 	
 		System.out.println("Coucou Adrien");
 		System.out.println("youhou ");
-	 System.out.println("Git c'est cool");
+		System.out.println("Git c'est cool");
+		System.out.println("Hello World");
 	}
 }
