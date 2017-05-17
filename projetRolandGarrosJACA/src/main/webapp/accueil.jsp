@@ -115,16 +115,6 @@
 						</td>
 						<td>SF</td>
 					</tr>
-					<tr>
-						<td>Star Wars 7</td>
-						<td>2015-12-16</td>
-						<td>
-							<p>Daisy Ridley</p>
-							<p>John Boyega</p>
-							<p>Harrison Ford</p>
-						</td>
-						<td>SF</td>
-					</tr>
 				</table>
 			</div>
 			<div class="col-sm-2"></div>
