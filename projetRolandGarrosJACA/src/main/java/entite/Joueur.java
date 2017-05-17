@@ -1,12 +1,19 @@
 package entite;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @SuppressWarnings("unused")
 @Entity
@@ -38,6 +45,9 @@ public class Joueur implements Cloneable {
 	
 	@Column(name = "ACTIF", length = 32, nullable = true)
 	private Boolean actif=true;
+	
+	@OneToMany(mappedBy="joueur", cascade={CascadeType.ALL})
+	private Set<MatchSchedule> matchSchedule= new HashSet<MatchSchedule>();
 
 	// constructeurs
 	public Joueur() {

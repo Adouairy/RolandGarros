@@ -1,6 +1,8 @@
 package entite;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -42,6 +44,10 @@ public class MatchSchedule implements Cloneable{
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="IDARBITRE", nullable=true)
 	private Arbitre arbitre;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="IDJOUEUR", nullable=true)
+	private List<Joueur> liste = new ArrayList<Joueur>();
 	
 	@Column(name = "RANG", length = 11, nullable = true)
 	private Integer rang;
