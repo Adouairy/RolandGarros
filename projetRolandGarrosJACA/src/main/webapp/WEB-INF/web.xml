@@ -6,7 +6,7 @@
   </welcome-file-list>
   <servlet>
     <servlet-name>Accueil</servlet-name>
-    <servlet-class>servlet.Acceuil</servlet-class>
+    <servlet-class>servlet.Accueil</servlet-class>
     <init-param>
       <param-name>auteur</param-name>
       <param-value>Jeremie</param-value>
