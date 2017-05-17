@@ -35,7 +35,7 @@
 				<li><a href="#">Live</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<form class="navbar-form navbar-right">
+				<form class="navbar-form navbar-right" action="accueil" method="get">
 					<div class="form-group">
 						<input type="text" placeholder="Identifiant" name="nomIdentifiant" class="form-control">
 					</div>
