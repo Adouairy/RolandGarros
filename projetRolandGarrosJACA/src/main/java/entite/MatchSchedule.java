@@ -1,6 +1,8 @@
 package entite;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,9 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.mapping.Array;
-import org.hibernate.mapping.List;
 
 @SuppressWarnings("unused")
 @Entity
@@ -46,12 +45,22 @@ public class MatchSchedule implements Cloneable{
 	@JoinColumn(name="IDARBITRE", nullable=true)
 	private Arbitre arbitre;
 	
+	private static List<Joueur> listejoueur = new ArrayList<Joueur>();
+	
 	/**
 	 * 
 	 */
 	public MatchSchedule() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public static List<Joueur> getListejoueur() {
+		return listejoueur;
+	}
+
+	public static void setListejoueur(List<Joueur> listejoueur) {
+		MatchSchedule.listejoueur = listejoueur;
 	}
 
 	/**
