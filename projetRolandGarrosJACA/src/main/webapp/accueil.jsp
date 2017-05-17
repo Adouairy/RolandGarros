@@ -7,7 +7,7 @@
 <title>Accueil</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../style/style.css" />
+<link rel="stylesheet" type="text/css" href="style/style.css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -24,7 +24,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img id="logo" src="logo.png"></a>
+			<a class="navbar-brand" href="#"> <img id="logo" src="img/logo.png"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
@@ -56,7 +56,6 @@
 				<hr>
 				<table class="table table-hover">
 					<tr>
-						<td><img src="SW1.jpg"></td>
 						<td>Star Wars 1</td>
 						<td>1999-10-13</td>
 						<td>
@@ -67,7 +66,6 @@
 						<td>SF</td>
 					</tr>
 					<tr>
-						<td><img src="SW2.jpg"></td>
 						<td>Star Wars 2</td>
 						<td>2002-05-17</td>
 						<td>
@@ -78,7 +76,6 @@
 						<td>SF</td>
 					</tr>
 					<tr>
-						<td><img src="SW3.jpg"></td>
 						<td>Star Wars 3</td>
 						<td>2005-05-18</td>
 						<td>
@@ -89,7 +86,6 @@
 						<td>SF</td>
 					</tr>
 					<tr>
-						<td><img src="SW4.jpg"></td>
 						<td>Star Wars 4</td>
 						<td>1977-10-19</td>
 						<td>
@@ -100,7 +96,6 @@
 						<td>SF</td>
 					</tr>
 					<tr>
-						<td><img src="SW5.jpg"></td>
 						<td>Star Wars 5</td>
 						<td>1980-08-20</td>
 						<td>
@@ -111,7 +106,6 @@
 						<td>SF</td>
 					</tr>
 					<tr>
-						<td><img src="SW6.jpg"></td>
 						<td>Star Wars 6</td>
 						<td>1983-10-19</td>
 						<td>
@@ -122,7 +116,6 @@
 						<td>SF</td>
 					</tr>
 					<tr>
-						<td><img src="SW7.jpg"></td>
 						<td>Star Wars 7</td>
 						<td>2015-12-16</td>
 						<td>
