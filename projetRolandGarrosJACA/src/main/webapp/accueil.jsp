@@ -24,11 +24,24 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img id="logo" src="img/logo.png"></a>
+			<a class="navbar-brand" href="#"> <img id="logo"
+				src="img/logo.png"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Tournoi</a></li>
+<!-- 				<li class="active"><a href="#">Tournoi</a></li> -->
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">Tournoi <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Simple messieurs</a></li>
+						<li><a href="#">Simple dames</a></li>
+						<li><a href="#">Double messieurs</a></li>
+						<li><a href="#">Double dames</a></li>
+						<li><a href="#">Double mixte</a></li>
+						<li><a href="#">Simples Juniors Garçons et Filles</a></li>
+						<li><a href="#">Doubles Juniors Garçons et Filles</a></li>
+					</ul></li>
 				<li><a href="#">Programme</a></li>
 				<li><a href="#">Joueurs</a></li>
 				<li><a href="#">Court</a></li>
@@ -37,10 +50,12 @@
 			<ul class="nav navbar-nav navbar-right">
 				<form class="navbar-form navbar-right" action="accueil" method="get">
 					<div class="form-group">
-						<input type="text" placeholder="Identifiant" name="nomIdentifiant" class="form-control">
+						<input type="text" placeholder="Identifiant" name="nomIdentifiant"
+							class="form-control">
 					</div>
 					<div class="form-group">
-						<input type="password" placeholder="Mot de passe" name="mdpIdentifiant" class="form-control">
+						<input type="password" placeholder="Mot de passe"
+							name="mdpIdentifiant" class="form-control">
 					</div>
 					<button type="submit" class="btn btn-success">Connection</button>
 				</form>
