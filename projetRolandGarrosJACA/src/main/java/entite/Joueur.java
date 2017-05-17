@@ -58,7 +58,7 @@ public class Joueur implements Cloneable {
 		setNationalite(nationalite);
 		setRang(rang);
 		setActif(actif);
-		
+			
 	}
 	
 	// accesseurs
