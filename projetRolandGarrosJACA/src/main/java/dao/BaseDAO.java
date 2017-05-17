@@ -1,5 +1,7 @@
 package dao;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,6 +11,7 @@ import javax.persistence.Persistence;
 
 import org.hibernate.Query;
 
+import entite.Joueur;
 import entite.Organisateur;
 
 //singleton ----------------------------------------
@@ -44,6 +47,15 @@ public class BaseDAO {
 	}
 
 	/**
+	 * Synchronise le context de persistance avec la base de donnée.
+	 * En fait un commit est effectué et une nouvelle transaction débutée
+	 */
+	public void commit(){
+		tx.commit();
+		tx.begin();
+	}
+	
+	/**
 	 * Ferme la factory d'entity manager et l'entity manager
 	 */
 	public void closeAll() {
@@ -65,5 +77,20 @@ public class BaseDAO {
 		}
 		return resultat;
 	}
+	
+	/**
+	 * Ajoute un joueur dans la base de données
+	 */
+	public void ajouterJoueur(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
+		Joueur joueur = new Joueur(nom, prenom, ddn,sexe, nationalite, rang);
+		em.persist(joueur);
+		tx.commit();
+		tx.begin();
+	}
+	
+//	public Joueur chercherJoueur(String nom, String prenom){
+//		Query query =  (Query) em.createQuery("select j from Joueur j where nom = '" + nom + "'"
+//				+ "AND prenom = '" + prenom + "')").getResultList();
+//	}
 
 }

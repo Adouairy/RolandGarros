@@ -1,5 +1,7 @@
 package entite;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -57,15 +59,15 @@ public class Joueur implements Cloneable {
 	 * @param ddn
 	 * @param rang
 	 * @param actif
+	 * @throws ParseException 
 	 */
-	public Joueur(String nom, String prenom, Date ddn, String sexe, String nationalite, Integer rang) {
+	public Joueur(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
 		setNom(nom);
 		setPrenom(prenom);
 		setDdn(ddn);
 		setSexe(sexe);
 		setNationalite(nationalite);
-		setRang(rang);
-				
+		setRang(rang);		
 	}
 	
 	// accesseurs
@@ -98,8 +100,9 @@ public class Joueur implements Cloneable {
 		return ddn;
 	}
 
-	public void setDdn(Date ddn) {
-		this.ddn = ddn;
+	public void setDdn(String ddn) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		this.ddn = sdf.parse(ddn);	
 	}
 
 	public String getSexe() {
@@ -134,6 +137,14 @@ public class Joueur implements Cloneable {
 		this.actif = actif;
 	}
 
+	@Override
+	public String toString() {
+		return "Joueur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", ddn=" + ddn + ", sexe=" + sexe
+				+ ", nationalite=" + nationalite + ", rang=" + rang + ", actif=" + actif + "]";
+	}
+
+	
+	
 }
 
 
