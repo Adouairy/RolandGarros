@@ -29,7 +29,7 @@ public class Tournoi implements Cloneable  {
 	private Integer type;
 
 	@OneToMany(mappedBy="tournoi", cascade={CascadeType.ALL})
-	private Set<MatchSchedule> matchSchedule3= new HashSet<MatchSchedule>();
+	private Set<MatchSchedule> matchSchedule= new HashSet<MatchSchedule>();
 	
 
 	

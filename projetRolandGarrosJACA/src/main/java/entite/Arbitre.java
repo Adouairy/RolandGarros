@@ -34,7 +34,7 @@ public class Arbitre implements Cloneable {
 	private String poste;
 	
 	@OneToMany(mappedBy="arbitre", cascade={CascadeType.ALL})
-	private Set<MatchSchedule> matchSchedule1= new HashSet<MatchSchedule>();
+	private Set<MatchSchedule> matchSchedule= new HashSet<MatchSchedule>();
 	
 		
 	

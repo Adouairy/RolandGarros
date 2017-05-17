@@ -29,7 +29,7 @@ import javax.persistence.Table;
 		private Boolean disponibilite;
 
 		@OneToMany(mappedBy="court", cascade={CascadeType.ALL})
-		private Set<MatchSchedule> matchSchedule2= new HashSet<MatchSchedule>();
+		private Set<MatchSchedule> matchSchedule= new HashSet<MatchSchedule>();
 		//constructeurs
 		public Court() {
 		}
