@@ -1,10 +1,15 @@
 package entite;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @SuppressWarnings("unused")
@@ -22,6 +27,10 @@ public class Tournoi implements Cloneable  {
 
 	@Column(name = "TYPE", length = 50, nullable = true)
 	private Integer type;
+
+	@OneToMany(mappedBy="tournoi", cascade={CascadeType.ALL})
+	private Set<MatchSchedule> matchSchedule3= new HashSet<MatchSchedule>();
+	
 
 	
 	

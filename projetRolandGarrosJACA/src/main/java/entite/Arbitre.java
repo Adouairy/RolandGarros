@@ -36,13 +36,8 @@ public class Arbitre implements Cloneable {
 	@OneToMany(mappedBy="arbitre", cascade={CascadeType.ALL})
 	private Set<MatchSchedule> matchSchedule1= new HashSet<MatchSchedule>();
 	
-	@OneToMany(mappedBy="court", cascade={CascadeType.ALL})
-	private Set<MatchSchedule> matchSchedule2= new HashSet<MatchSchedule>();
+		
 	
-	@OneToMany(mappedBy="tournoi", cascade={CascadeType.ALL})
-	private Set<MatchSchedule> matchSchedule3= new HashSet<MatchSchedule>();
-	
-
 	// constructeurs
 
 	public Arbitre() {

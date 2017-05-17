@@ -1,10 +1,15 @@
 package entite;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 	@SuppressWarnings("unused")
@@ -23,6 +28,8 @@ import javax.persistence.Table;
 		@Column(name = "DISPONIBILITE", length = 1, nullable = true)
 		private Boolean disponibilite;
 
+		@OneToMany(mappedBy="court", cascade={CascadeType.ALL})
+		private Set<MatchSchedule> matchSchedule2= new HashSet<MatchSchedule>();
 		//constructeurs
 		public Court() {
 		}
