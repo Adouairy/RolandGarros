@@ -24,5 +24,11 @@ public class Accueil extends HttpServlet {
 		// TODO Auto-generated method stub
 		this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+	}
 
 }

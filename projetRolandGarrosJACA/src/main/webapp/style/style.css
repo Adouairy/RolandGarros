@@ -1,9 +1,12 @@
 @CHARSET "ISO-8859-1";
 
 body {
-	background-image: url("webapp/img/fondAccueil.jpg");
+	background-image: url("../img/fondAccueil.jpg");
 }
-
+footer{
+	background-color: grey;
+	color:white;
+	}
 img {
 	width: 100px;
 	height: 100px;

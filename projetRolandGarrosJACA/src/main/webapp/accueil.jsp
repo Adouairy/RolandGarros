@@ -7,7 +7,7 @@
 <title>Accueil</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="webapp/style/style.css" />
+<link rel="stylesheet" type="text/css" href="../style/style.css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -37,12 +37,12 @@
 			<ul class="nav navbar-nav navbar-right">
 				<form class="navbar-form navbar-right">
 					<div class="form-group">
-						<input type="text" placeholder="Email" class="form-control">
+						<input type="text" placeholder="Identifiant" name="nomIdentifiant" class="form-control">
 					</div>
 					<div class="form-group">
-						<input type="password" placeholder="Password" class="form-control">
+						<input type="password" placeholder="Mot de passe" name="mdpIdentifiant" class="form-control">
 					</div>
-					<button type="submit" class="btn btn-success">Sign in</button>
+					<button type="submit" class="btn btn-success">Connection</button>
 				</form>
 			</ul>
 		</div>
@@ -176,6 +176,5 @@
 			</div>
 		</div>
 	</footer>
-<h1>Salut</h1>
 </body>
 </html>
