@@ -46,8 +46,6 @@ public class Joueur implements Cloneable {
 	@Column(name = "ACTIF", length = 32, nullable = true)
 	private Boolean actif=true;
 	
-	@OneToMany(mappedBy="joueur", cascade={CascadeType.ALL})
-	private Set<MatchSchedule> matchSchedule= new HashSet<MatchSchedule>();
 
 	// constructeurs
 	public Joueur() {
