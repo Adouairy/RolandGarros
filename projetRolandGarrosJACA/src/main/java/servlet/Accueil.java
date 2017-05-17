@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entite.Organisateur;
+
 public class Accueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -22,7 +24,7 @@ public class Accueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		Organisateur orga = new Organisateur(request.getParameter("nomIdentifiant"), "", "mdpIdentifiant");
 		this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 	}
 }
