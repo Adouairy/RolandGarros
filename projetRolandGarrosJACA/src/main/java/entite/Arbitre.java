@@ -30,7 +30,7 @@ public class Arbitre extends Personne {
 	}
 
 	public String getPrenom() {
-		return nom;
+		return prenom;
 	}
 
 	public void setPrenom(String prenom) {

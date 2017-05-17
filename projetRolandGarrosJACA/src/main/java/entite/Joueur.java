@@ -39,7 +39,7 @@ public class Joueur extends Personne {
 	}
 
 	public String getPrenom() {
-		return nom;
+		return prenom;
 	}
 
 	public void setPrenom(String prenom) {

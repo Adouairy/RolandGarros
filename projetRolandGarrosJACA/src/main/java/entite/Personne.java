@@ -6,8 +6,6 @@ protected String nom;
 protected String prenom;
 protected String nationalite;
 
-
-
 //Constructeurs
 /**
  * @param nom
@@ -25,7 +23,5 @@ public Personne() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-
-
 
 }
