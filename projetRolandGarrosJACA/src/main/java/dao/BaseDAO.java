@@ -1,15 +1,11 @@
 package dao;
 
 import java.text.ParseException;
-import java.util.Date;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-
-import org.hibernate.Query;
 
 import entite.Joueur;
 import entite.Organisateur;
@@ -84,8 +80,6 @@ public class BaseDAO {
 	public void ajouterJoueur(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
 		Joueur joueur = new Joueur(nom, prenom, ddn,sexe, nationalite, rang);
 		em.persist(joueur);
-		tx.commit();
-		tx.begin();
 	}
 	
 //	public Joueur chercherJoueur(String nom, String prenom){
