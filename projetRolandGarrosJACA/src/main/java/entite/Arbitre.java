@@ -1,10 +1,15 @@
 package entite;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @SuppressWarnings("unused")
@@ -27,6 +32,16 @@ public class Arbitre implements Cloneable {
 
 	@Column(name = "POSTE", length = 25, nullable = true)
 	private String poste;
+	
+	@OneToMany(mappedBy="arbitre", cascade={CascadeType.ALL})
+	private Set<MatchSchedule> matchSchedule1= new HashSet<MatchSchedule>();
+	
+	@OneToMany(mappedBy="court", cascade={CascadeType.ALL})
+	private Set<MatchSchedule> matchSchedule2= new HashSet<MatchSchedule>();
+	
+	@OneToMany(mappedBy="tournoi", cascade={CascadeType.ALL})
+	private Set<MatchSchedule> matchSchedule3= new HashSet<MatchSchedule>();
+	
 
 	// constructeurs
 

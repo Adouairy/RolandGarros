@@ -22,7 +22,7 @@ public class Organisateur implements Cloneable{
 	private String nom;
 
 	@Column(name = "PRENOM", length = 50, nullable = true)
-	private Boolean disponibilite;
+	private String prenom;
 
 	@Column(name = "MDP", length = 50, nullable = true)
 	private String mdp;
@@ -33,15 +33,12 @@ public class Organisateur implements Cloneable{
 
 	}
 	
-
-	public Organisateur(String nom, Boolean disponibilite, String mdp) {
+	public Organisateur(String nom, String prenom, String mdp) {
 		setNom(nom);
-		setDisponibilite(disponibilite);
+		setPrenom(prenom);
 		setMdp(mdp);
 	}
-
-
-
+	
 	//accesseurs
 	public Integer getId() {
 		return id;
@@ -59,12 +56,12 @@ public class Organisateur implements Cloneable{
 		this.nom = nom;
 	}
 
-	public Boolean getDisponibilite() {
-		return disponibilite;
+	public String getPrenom() {
+		return prenom;
 	}
 
-	public void setDisponibilite(Boolean disponibilite) {
-		this.disponibilite = disponibilite;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
 	public String getMdp() {
@@ -79,7 +76,12 @@ public class Organisateur implements Cloneable{
 	//ToString
 	@Override
 	public String toString() {
-		return "Organisateur [id=" + id + ", nom=" + nom + ", disponibilite=" + disponibilite + ", mdp=" + mdp + "]";
+		return "Organisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", mdp=" + mdp + "]";
 	}
+	
+
+	
+
+	
 	
 }
