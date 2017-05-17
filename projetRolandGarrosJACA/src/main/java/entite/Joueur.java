@@ -37,7 +37,7 @@ public class Joueur implements Cloneable {
 	private Integer rang;
 	
 	@Column(name = "ACTIF", length = 32, nullable = true)
-	private Boolean actif;
+	private Boolean actif=true;
 
 	// constructeurs
 	public Joueur() {
@@ -50,15 +50,14 @@ public class Joueur implements Cloneable {
 	 * @param rang
 	 * @param actif
 	 */
-	public Joueur(String nom, String prenom, Date ddn, String sexe, String nationalite, Integer rang, Boolean actif) {
+	public Joueur(String nom, String prenom, Date ddn, String sexe, String nationalite, Integer rang) {
 		setNom(nom);
 		setPrenom(prenom);
 		setDdn(ddn);
 		setSexe(sexe);
 		setNationalite(nationalite);
 		setRang(rang);
-		setActif(actif);
-			
+				
 	}
 	
 	// accesseurs

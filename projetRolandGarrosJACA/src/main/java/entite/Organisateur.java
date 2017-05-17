@@ -34,8 +34,7 @@ public class Organisateur implements Cloneable{
 	}
 	
 
-	public Organisateur(Integer id, String nom, Boolean disponibilite, String mdp) {
-		setId(id);
+	public Organisateur(String nom, Boolean disponibilite, String mdp) {
 		setNom(nom);
 		setDisponibilite(disponibilite);
 		setMdp(mdp);
