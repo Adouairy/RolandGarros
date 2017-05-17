@@ -12,7 +12,8 @@ public class Exe {
 		 
 		System.out.println(b.verifConnection(o) );
 
-		b.ajouterJoueur("Guillois","Antoine","12/05/1988","m", "français", 5);
+		b.ajouterJoueur("Guillois","Antoine2","12/05/1988","m", "français", 5);
+		b.commit();
 		//System.out.println(b.chercherJoueur("Guillois", "Antoine"));
 		b.closeAll();
 	}
