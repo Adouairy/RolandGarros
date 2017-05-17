@@ -57,12 +57,11 @@ public class BaseDAO {
 	 * 
 	 * @return true si c'est ok et false si erreur de connection
 	 */
-	public Boolean verifConnection(Organisateur organisateur) {
+	public Boolean verifConnection(Organisateur o) {
 		Boolean resultat = true;
-		if (em.createQuery("select nom from Organisateur where nom = '" + organisateur.getNom() + "'"
-				+ "AND mdp = MD5('" + organisateur.getMdp() + "')").getResultList().isEmpty()) {
+		if (em.createQuery("select o from Organisateur o where nom = '" + o.getNom() + "'"
+				+ "AND mdp = MD5('" + o.getMdp() + "')").getResultList().isEmpty()) {
 			resultat = false;
-
 		}
 		return resultat;
 	}
