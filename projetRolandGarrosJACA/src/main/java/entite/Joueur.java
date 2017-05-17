@@ -2,14 +2,47 @@ package entite;
 
 import java.util.Date;
 
-public class Joueur extends Personne {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@SuppressWarnings("unused")
+@Entity
+@Table(name = "joueur")
+public class Joueur implements Cloneable {
+	
+	@Id
+	@Column(name = "ID", nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 
-	protected String sexe;
-	protected Date ddn;
-	protected Integer rang;
-	protected Boolean actif = true;
+	@Column(name = "NOM", length = 50, nullable = true)
+	private String nom;
 
-	// Constructeurs
+	@Column(name = "PRENOM", length = 50, nullable = true)
+	private String prenom;
+
+	@Column(name = "DDN", nullable = true)
+	private Date ddn;
+
+	@Column(name = "SEXE", length = 50, nullable = true)
+	private String sexe;
+	
+	@Column(name = "NATIONALITE", length = 50, nullable = true)
+	private String nationalite;
+	
+	@Column(name = "RANG", length = 11, nullable = true)
+	private Integer rang;
+	
+	@Column(name = "ACTIF", length = 32, nullable = true)
+	private Boolean actif;
+
+	// constructeurs
+	public Joueur() {
+		
+	}
 
 	/**
 	 * @param sexe
@@ -17,19 +50,27 @@ public class Joueur extends Personne {
 	 * @param rang
 	 * @param actif
 	 */
-	public Joueur(String nom, String prenom, String nationalite, String sexe, Date ddn, Integer rang, Boolean actif) {
-		super(nom, prenom, nationalite);
-		this.sexe = sexe;
-		this.ddn = ddn;
-		this.rang = rang;
-		this.actif = actif;
+	public Joueur(String nom, String prenom, Date ddn, String sexe, String nationalite, Integer rang, Boolean actif) {
+		setNom(nom);
+		setPrenom(prenom);
+		setDdn(ddn);
+		setSexe(sexe);
+		setNationalite(nationalite);
+		setRang(rang);
+		setActif(actif);
+		
 	}
-
-	public Joueur() {
-		super();
-	}
-
+	
 	// accesseurs
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -46,12 +87,12 @@ public class Joueur extends Personne {
 		this.prenom = prenom;
 	}
 
-	public String getNationalite() {
-		return nationalite;
+	public Date getDdn() {
+		return ddn;
 	}
 
-	public void setNationalite(String nationalite) {
-		this.nationalite = nationalite;
+	public void setDdn(Date ddn) {
+		this.ddn = ddn;
 	}
 
 	public String getSexe() {
@@ -62,12 +103,12 @@ public class Joueur extends Personne {
 		this.sexe = sexe;
 	}
 
-	public Date getDdn() {
-		return ddn;
+	public String getNationalite() {
+		return nationalite;
 	}
 
-	public void setDdn(Date ddn) {
-		this.ddn = ddn;
+	public void setNationalite(String nationalite) {
+		this.nationalite = nationalite;
 	}
 
 	public Integer getRang() {
@@ -87,3 +128,6 @@ public class Joueur extends Personne {
 	}
 
 }
+
+
+	
