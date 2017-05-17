@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Joueur implements Cloneable {
 	
 	@Id
-	@Column(name = "ID", nullable = false)
+	@Column(name = "IDJOUEUR", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 

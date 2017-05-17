@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "arbitre")
 public class Arbitre implements Cloneable {
 	@Id
-	@Column(name = "ID", nullable = false)
+	@Column(name = "IDARBITRE", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 

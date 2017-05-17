@@ -1,19 +1,39 @@
 package entite;
 
-public class Tournoi {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	protected String nom;
-	protected String type;
+@SuppressWarnings("unused")
+@Entity
+@Table(name = "tournoi")
+public class Tournoi implements Cloneable  {
+	
+	@Id
+	@Column(name = "IDTOURNOI", nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+
+	@Column(name = "NOM", length = 50, nullable = true)
+	private String nom;
+
+	@Column(name = "TYPE", length = 50, nullable = true)
+	private Integer type;
+
+	
 	
 	//constructeurs
 	/**
 	 * @param nom
 	 * @param type
 	 */
-	public Tournoi(String nom, String type) {
-		super();
-		this.nom = nom;
-		this.type = type;
+	public Tournoi(String nom, Integer type) {
+	
+		setNom(nom);
+		setType(type);
 	}
 	
 	public Tournoi() {
@@ -29,15 +49,22 @@ public class Tournoi {
 		this.nom = nom;
 	}
 
-	public String getType() {
+	public Integer getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(Integer type) {
 		this.type = type;
+	}
+
+	//ToString
+	@Override
+	public String toString() {
+		return "Tournoi [id=" + id + ", nom=" + nom + ", type=" + type + "]";
 	}
 	
 
+	
 	
 	
 }
