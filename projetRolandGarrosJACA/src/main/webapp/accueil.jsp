@@ -29,16 +29,18 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-<!-- 				<li class="active"><a href="#">Tournoi</a></li> -->
+				<!-- 				<li class="active"><a href="#">Tournoi</a></li> -->
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">Tournoi <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Simple messieurs</a></li>
 						<li><a href="#">Simple dames</a></li>
+						<li role="separator" class="divider"></li>
 						<li><a href="#">Double messieurs</a></li>
 						<li><a href="#">Double dames</a></li>
 						<li><a href="#">Double mixte</a></li>
+						<li role="separator" class="divider"></li>
 						<li><a href="#">Simples Juniors Garçons et Filles</a></li>
 						<li><a href="#">Doubles Juniors Garçons et Filles</a></li>
 					</ul></li>
