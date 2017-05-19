@@ -46,7 +46,7 @@ public class Medecin implements Cloneable {
 	private String telMedecin;
 	
 	@Column(name = "CONNECTION", length = 50, nullable = true)
-	private String premiereconnection;
+	private Integer premiereconnection;
 	
 	@OneToMany(mappedBy="medecin", cascade={CascadeType.ALL})
 	private Set<Aide> aide= new HashSet<Aide>();
@@ -62,7 +62,7 @@ public class Medecin implements Cloneable {
 
 
 	public Medecin(String nom, String prenom, String mdpMedecin, String mailMedecin,
-			String adressePro, String telMedecin, Set<Aide> aide, Set<CompteRendu> cr,String premiereconnection) {
+			String adressePro, String telMedecin, Set<Aide> aide, Set<CompteRendu> cr,Integer premiereconnection) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.MdpMedecin = mdpMedecin;
@@ -168,12 +168,12 @@ public class Medecin implements Cloneable {
 	}
 
 
-	public String getPremiereconnection() {
+	public Integer getPremiereconnection() {
 		return premiereconnection;
 	}
 
 
-	public void setPremiereconnection(String premiereconnection) {
+	public void setPremiereconnection(Integer premiereconnection) {
 		this.premiereconnection = premiereconnection;
 	}
 

@@ -1,20 +1,14 @@
 package dao;
 
 import java.text.ParseException;
+import java.util.Date;
 
-import entite.Joueur;
-import entite.Organisateur;
+
 
 public class Exe {
 	public static void main(String[] args) throws ParseException { 		 
 		BaseDAO b = new BaseDAO(); 		
-		Organisateur o = new Organisateur("Garros", "Roland", "jaca"); 	
-		 
-		System.out.println(b.verifConnection(o) );
-
-		b.ajouterJoueur("Guillois","Antoine2","12/05/1988","m", "français", 5);
-		b.commit();
-		//System.out.println(b.chercherJoueur("Guillois", "Antoine"));
-		b.closeAll();
+		Date d = new Date();
+		System.out.println(d);
 	}
 }
