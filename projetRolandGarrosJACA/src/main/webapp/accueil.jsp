@@ -68,7 +68,7 @@
 							name="mdpIdentifiant" class="form-control">
 				</div>
 				<button type="submit" class="btn btn-success">Connection</button><br/>
-				<a href="WEB-INF/inscription">Inscription</a>
+				<a href="WEB-INF/formulaire.jsp">Inscription</a>
 				</form>
 			</ul>
 		</div>
