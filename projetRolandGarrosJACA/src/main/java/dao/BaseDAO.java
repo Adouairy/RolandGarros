@@ -8,6 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import entite.Aidant;
+import entite.Aide;
 import entite.Organisateur;
 
 //singleton ----------------------------------------
@@ -99,16 +100,17 @@ public class BaseDAO {
 	 * Ajoute un médecin dans la base de donnees
 	 */
 	public void ajouterMedecin(String nom, String prenom, String mdpMedecin, String mailMedecin, String adressePro, String telMedecin) throws ParseException {
-		 medecin = new Medecin(nom, prenom, mdpMedecin, mailMedecin, adressePro, telMedecin);
+		 Medecin medecin = new Medecin(nom, prenom, mdpMedecin, mailMedecin, adressePro, telMedecin);
 		em.persist(medecin);
 	}
 	
 	/**
 	 * Ajoute un aide dans la base de donnees
 	 */
-	public void ajouterAide(String adresse, String date, String mail, String nom, String prenom, String tel, String mdpAide, String nomMedecin) throws ParseException {
+	public void ajouterAide(String adresse, String date, String mail, String nom, String prenom, String tel, String mdpAide, String idMedecin) throws ParseException {
 		//creer medecin
-		aide = new Aide(adresse, date, mail,nom, prenom, tel,mdpAide,trouverMedecin.idMedecin(nomMedecin));
+		Medecin medecin = new Medecin
+		Aide aide = new Aide(adresse, date, mail,nom, prenom, tel,mdpAide,trouverMedecin.idMedecin(idMedecin));
 		em.persist(aide);
 	}
 	
@@ -116,7 +118,7 @@ public class BaseDAO {
 	 * Ajoute un aidant dans la base de donnees
 	 */
 	public void ajouterAidant(String mailAidant, String adresseAidant, String ddnAidant, String telAidant, String mdpAidant, String type, Boolean referent, String nomAidant, String prenomAidant) throws ParseException {
-		 aidant = new Aidant(mailAidant, adresseAidant, ddnAidant, telAidant, mdpAidant, type, referent, nomAidant, prenomAidant);
+		 Aidant aidant = new Aidant(mailAidant, adresseAidant, ddnAidant, telAidant, mdpAidant, type, referent, nomAidant, prenomAidant);
 		em.persist(aidant);
 	}
 	

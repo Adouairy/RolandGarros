@@ -66,8 +66,8 @@ public class Aidant implements Cloneable {
 	}	
 
 	
-	public Aidant(String mailAidant, String adresseAidant, Date ddnAidant, String telAidant,
-			String mdpAidant, String type, Boolean referent, String nomAidant, String prenomAidant) {
+	public Aidant(String mailAidant, String adresseAidant, String ddnAidant, String telAidant,
+			String mdpAidant, String type, Boolean referent, String nomAidant, String prenomAidant) throws ParseException {
 		
 		setMailAidant(mailAidant);
 		setAdresseAidant(adresseAidant);
@@ -137,8 +137,9 @@ public class Aidant implements Cloneable {
 
 
 
-	public void setDdnAidant(Date ddnAidant) {
-		this.ddnAidant = ddnAidant;
+	public void setDdnAidant(String ddnAidant) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		this.ddnAidant = sdf.parse(ddnAidant);
 	}
 
 
