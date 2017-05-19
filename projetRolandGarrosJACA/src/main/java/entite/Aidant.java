@@ -25,127 +25,220 @@ public class Aidant implements Cloneable {
 	@Id
 	@Column(name = "IDAIDANT", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer idAidant;
 
-	@Column(name = "NOM", length = 50, nullable = true)
-	private String nom;
+	@Column(name = "MAILAIDANT", length = 50, nullable = true)
+	private String mailAidant;
 
-	@Column(name = "PRENOM", length = 50, nullable = true)
-	private String prenom;
+	@Column(name = "ADRESSEAIDANT", length = 50, nullable = true)
+	private String adresseAidant;
 
-	@Column(name = "DDN", nullable = true)
-	private Date ddn;
+	@Column(name = "DDNAIDANT", nullable = true)
+	private Date ddnAidant;
 
-	@Column(name = "SEXE", length = 50, nullable = true)
-	private String sexe;
+	@Column(name = "TELAIDANT", length = 50, nullable = true)
+	private String telAidant;
 	
-	@Column(name = "NATIONALITE", length = 50, nullable = true)
-	private String nationalite;
+	@Column(name = "MDPAIDANT", length = 50, nullable = true)
+	private String mdpAidant;
 	
-	@Column(name = "RANG", length = 11, nullable = true)
-	private Integer rang;
+	@Column(name = "TYPE", length = 32, nullable = true)
+	private String type;
 	
-	@Column(name = "ACTIF", length = 32, nullable = true)
-	private Boolean actif=true;
+	@Column(name = "REFERENT", nullable = true)
+	private Boolean referent;
 	
+	@Column(name = "NOMAIDANT", length = 32, nullable = true)
+	private String nomAidant;
+	
+	@Column(name = "PRENOMAIDANT", length = 32, nullable = true)
+	private String prenomAidant;
+	
+	@OneToMany(mappedBy="aidant", cascade={CascadeType.ALL})
+	private Set<CompteRendu> cr= new HashSet<CompteRendu>();
+	
+	@OneToMany(mappedBy="aidant", cascade={CascadeType.ALL})
+	private Set<Cooperation> coop= new HashSet<Cooperation>();
 
 	// constructeurs
 	public Aidant() {
 		
+	}	
+
+	
+	public Aidant(String mailAidant, String adresseAidant, Date ddnAidant, String telAidant,
+			String mdpAidant, String type, Boolean referent, String nomAidant, String prenomAidant) {
+		
+		setMailAidant(mailAidant);
+		setAdresseAidant(adresseAidant);
+		setDdnAidant(ddnAidant);
+		setTelAidant(telAidant);
+		setMdpAidant(mdpAidant);
+		setType(type);
+		setReferent(referent);
+		setNomAidant(nomAidant);
+		setPrenomAidant(prenomAidant);
 	}
 
-	/**
-	 * @param sexe
-	 * @param ddn
-	 * @param rang
-	 * @param actif
-	 * @throws ParseException 
-	 */
-	public Aidant(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
-		setNom(nom);
-		setPrenom(prenom);
-		setDdn(ddn);
-		setSexe(sexe);
-		setNationalite(nationalite);
-		setRang(rang);		
-	}
+
+
+
 	
+
 	// accesseurs
 
-	public Integer getId() {
-		return id;
+
+	public Integer getIdAidant() {
+		return idAidant;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+
+
+
+	public void setIdAidant(Integer idAidant) {
+		this.idAidant = idAidant;
 	}
 
-	public String getNom() {
-		return nom;
+
+
+
+	public String getMailAidant() {
+		return mailAidant;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+
+
+
+	public void setMailAidant(String mailAidant) {
+		this.mailAidant = mailAidant;
 	}
 
-	public String getPrenom() {
-		return prenom;
+
+
+
+	public String getAdresseAidant() {
+		return adresseAidant;
 	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+
+
+
+	public void setAdresseAidant(String adresseAidant) {
+		this.adresseAidant = adresseAidant;
 	}
 
-	public Date getDdn() {
-		return ddn;
+
+
+
+	public Date getDdnAidant() {
+		return ddnAidant;
 	}
 
-	public void setDdn(String ddn) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		this.ddn = sdf.parse(ddn);	
+
+
+
+	public void setDdnAidant(Date ddnAidant) {
+		this.ddnAidant = ddnAidant;
 	}
 
-	public String getSexe() {
-		return sexe;
+
+
+
+	public String getTelAidant() {
+		return telAidant;
 	}
 
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
+
+
+
+	public void setTelAidant(String telAidant) {
+		this.telAidant = telAidant;
 	}
 
-	public String getNationalite() {
-		return nationalite;
+
+
+
+	public String getMdpAidant() {
+		return mdpAidant;
 	}
 
-	public void setNationalite(String nationalite) {
-		this.nationalite = nationalite;
+
+
+
+	public void setMdpAidant(String mdpAidant) {
+		this.mdpAidant = mdpAidant;
 	}
 
-	public Integer getRang() {
-		return rang;
+
+
+
+	public String getType() {
+		return type;
 	}
 
-	public void setRang(Integer rang) {
-		this.rang = rang;
+
+
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public Boolean getActif() {
-		return actif;
+
+
+
+	public Boolean getReferent() {
+		return referent;
 	}
 
-	public void setActif(Boolean actif) {
-		this.actif = actif;
+
+
+
+	public void setReferent(Boolean referent) {
+		this.referent = referent;
 	}
 
+
+
+
+	public String getNomAidant() {
+		return nomAidant;
+	}
+
+
+
+
+	public void setNomAidant(String nomAidant) {
+		this.nomAidant = nomAidant;
+	}
+
+
+
+
+	public String getPrenomAidant() {
+		return prenomAidant;
+	}
+
+
+
+
+	public void setPrenomAidant(String prenomAidant) {
+		this.prenomAidant = prenomAidant;
+	}
+
+
+
+	//ToString
+	
 	@Override
 	public String toString() {
-		return "Joueur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", ddn=" + ddn + ", sexe=" + sexe
-				+ ", nationalite=" + nationalite + ", rang=" + rang + ", actif=" + actif + "]";
+		return "Aidant [idAidant=" + idAidant + ", mailAidant=" + mailAidant + ", adresseAidant=" + adresseAidant
+				+ ", ddnAidant=" + ddnAidant + ", telAidant=" + telAidant + ", mdpAidant=" + mdpAidant + ", type="
+				+ type + ", referent=" + referent + ", nomAidant=" + nomAidant + ", prenomAidant=" + prenomAidant + "]";
 	}
 
-	
+
+
 	
 }
 
 
-	

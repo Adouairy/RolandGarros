@@ -8,6 +8,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,131 +20,196 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @SuppressWarnings("unused")
 @Entity
-@Table(name = "joueur")
+@Table(name = "aide")
 public class Aide implements Cloneable {
 	
+
 	@Id
-	@Column(name = "IDJOUEUR", nullable = false)
+	@Column(name = "ID", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-
-	@Column(name = "NOM", length = 50, nullable = true)
-	private String nom;
-
-	@Column(name = "PRENOM", length = 50, nullable = true)
-	private String prenom;
+	
+	@Column(name = "ADRESSE", length = 50, nullable = true)
+	private String adresse;
 
 	@Column(name = "DDN", nullable = true)
 	private Date ddn;
 
-	@Column(name = "SEXE", length = 50, nullable = true)
-	private String sexe;
-	
-	@Column(name = "NATIONALITE", length = 50, nullable = true)
-	private String nationalite;
-	
-	@Column(name = "RANG", length = 11, nullable = true)
-	private Integer rang;
-	
-	@Column(name = "ACTIF", length = 32, nullable = true)
-	private Boolean actif=true;
-	
+	@Column(name = "MAIL", nullable = true)
+	private String mail;
 
+	@Column(name = "NOM", length = 32, nullable = true)
+	private String nom;
+	
+	@Column(name = "PRENOM", length = 32, nullable = true)
+	private String prenom;
+	
+	@Column(name = "TEL", length = 50, nullable = true)
+	private String tel;
+	
+	@Column(name = "MDPAIDE", length = 32, nullable = true)
+	private String mdpAide;
+
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="IDMEDECIN", nullable=true)
+	private Medecin medecin;
+	
+	@OneToMany(mappedBy="aide", cascade={CascadeType.ALL})
+	private Set<CompteRendu> cr= new HashSet<CompteRendu>();
+	
+	@OneToMany(mappedBy="aide", cascade={CascadeType.ALL})
+	private Set<Cooperation> coop= new HashSet<Cooperation>();
+	
+	
 	// constructeurs
 	public Aide() {
 		
-	}
+	}	
 
-	/**
-	 * @param sexe
-	 * @param ddn
-	 * @param rang
-	 * @param actif
-	 * @throws ParseException 
-	 */
-	public Aide(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
+	
+	
+	public Aide(String adresse, String ddn, String mail, String nom, String prenom, String tel,
+			String mdpAide, Medecin medecin) throws ParseException {
+		setAdresse(adresse);
+		setDdn(ddn);
+		setMail(mail);
 		setNom(nom);
 		setPrenom(prenom);
-		setDdn(ddn);
-		setSexe(sexe);
-		setNationalite(nationalite);
-		setRang(rang);		
-	}
+		setTel(tel);
+		setMdpAide(mdpAide);
+		setMedecin(medecin);
 	
-	// accesseurs
+	}
 
+
+
+	// accesseurs
 	public Integer getId() {
 		return id;
 	}
+
+
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getNom() {
-		return nom;
+
+
+	public String getAdresse() {
+		return adresse;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
 
-	public String getPrenom() {
-		return prenom;
-	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
 
 	public Date getDdn() {
 		return ddn;
 	}
 
+
+
 	public void setDdn(String ddn) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		this.ddn = sdf.parse(ddn);	
+		this.ddn = sdf.parse(ddn);
 	}
 
-	public String getSexe() {
-		return sexe;
+
+
+	public String getMail() {
+		return mail;
 	}
 
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
+
+
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
-	public String getNationalite() {
-		return nationalite;
+
+
+	public String getNom() {
+		return nom;
 	}
 
-	public void setNationalite(String nationalite) {
-		this.nationalite = nationalite;
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
-	public Integer getRang() {
-		return rang;
+
+
+	public String getPrenom() {
+		return prenom;
 	}
 
-	public void setRang(Integer rang) {
-		this.rang = rang;
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
-	public Boolean getActif() {
-		return actif;
+
+
+	public String getTel() {
+		return tel;
 	}
 
-	public void setActif(Boolean actif) {
-		this.actif = actif;
+
+
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 
-	@Override
-	public String toString() {
-		return "Joueur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", ddn=" + ddn + ", sexe=" + sexe
-				+ ", nationalite=" + nationalite + ", rang=" + rang + ", actif=" + actif + "]";
+
+
+	public String getMdpAide() {
+		return mdpAide;
 	}
+
+
+
+	public void setMdpAide(String mdpAide) {
+		this.mdpAide = mdpAide;
+	}
+
+
+
+	public Medecin getMedecin() {
+		return medecin;
+	}
+
+
+
+	public void setMedecin(Medecin medecin) {
+		this.medecin = medecin;
+	}
+
+
 
 	
+	//ToString
+	@Override
+	public String toString() {
+		return "Aide [id=" + id + ", adresse=" + adresse + ", ddn=" + ddn + ", mail=" + mail + ", nom=" + nom
+				+ ", prenom=" + prenom + ", tel=" + tel + ", mdpAide=" + mdpAide + ", medecin=" + medecin + "]";
+	}
+
+
+
+
+
+
+
+	
+
+
 	
 }
 

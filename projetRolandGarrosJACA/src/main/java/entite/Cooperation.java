@@ -17,135 +17,66 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 @SuppressWarnings("unused")
 @Entity
-@Table(name = "joueur")
+@Table(name = "cooperation")
 public class Cooperation implements Cloneable {
-	
+
 	@Id
-	@Column(name = "IDJOUEUR", nullable = false)
+	@Column(name = "IDCOOPERATION", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer idCooperation;
 
-	@Column(name = "NOM", length = 50, nullable = true)
-	private String nom;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "IDAIDANT", nullable = true)
+	private Aidant aidant;
 
-	@Column(name = "PRENOM", length = 50, nullable = true)
-	private String prenom;
-
-	@Column(name = "DDN", nullable = true)
-	private Date ddn;
-
-	@Column(name = "SEXE", length = 50, nullable = true)
-	private String sexe;
-	
-	@Column(name = "NATIONALITE", length = 50, nullable = true)
-	private String nationalite;
-	
-	@Column(name = "RANG", length = 11, nullable = true)
-	private Integer rang;
-	
-	@Column(name = "ACTIF", length = 32, nullable = true)
-	private Boolean actif=true;
-	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID", nullable = true)
+	private Aide aide;
 
 	// constructeurs
 	public Cooperation() {
-		
+
 	}
 
-	/**
-	 * @param sexe
-	 * @param ddn
-	 * @param rang
-	 * @param actif
-	 * @throws ParseException 
-	 */
-	public Cooperation(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
-		setNom(nom);
-		setPrenom(prenom);
-		setDdn(ddn);
-		setSexe(sexe);
-		setNationalite(nationalite);
-		setRang(rang);		
+	public Cooperation(Aidant aidant, Aide aide) {
+		this.aidant = aidant;
+		this.aide = aide;
 	}
-	
+
 	// accesseurs
 
-	public Integer getId() {
-		return id;
+	public Integer getIdCooperation() {
+		return idCooperation;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdCooperation(Integer idCooperation) {
+		this.idCooperation = idCooperation;
 	}
 
-	public String getNom() {
-		return nom;
+	public Aidant getAidant() {
+		return aidant;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setAidant(Aidant aidant) {
+		this.aidant = aidant;
 	}
 
-	public String getPrenom() {
-		return prenom;
+	public Aide getAide() {
+		return aide;
 	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setAide(Aide aide) {
+		this.aide = aide;
 	}
 
-	public Date getDdn() {
-		return ddn;
-	}
-
-	public void setDdn(String ddn) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		this.ddn = sdf.parse(ddn);	
-	}
-
-	public String getSexe() {
-		return sexe;
-	}
-
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
-	}
-
-	public String getNationalite() {
-		return nationalite;
-	}
-
-	public void setNationalite(String nationalite) {
-		this.nationalite = nationalite;
-	}
-
-	public Integer getRang() {
-		return rang;
-	}
-
-	public void setRang(Integer rang) {
-		this.rang = rang;
-	}
-
-	public Boolean getActif() {
-		return actif;
-	}
-
-	public void setActif(Boolean actif) {
-		this.actif = actif;
-	}
-
+	// ToString
 	@Override
 	public String toString() {
-		return "Joueur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", ddn=" + ddn + ", sexe=" + sexe
-				+ ", nationalite=" + nationalite + ", rang=" + rang + ", actif=" + actif + "]";
+		return "Cooperation [idCooperation=" + idCooperation + ", aidant=" + aidant + ", aide=" + aide + "]";
 	}
 
-	
-	
 }
-
-
 	

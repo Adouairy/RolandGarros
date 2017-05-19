@@ -23,30 +23,31 @@ import javax.persistence.Table;
 public class CompteRendu implements Cloneable {
 	
 	@Id
-	@Column(name = "IDJOUEUR", nullable = false)
+	@Column(name = "IDCR", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column(name = "NOM", length = 50, nullable = true)
-	private String nom;
+	@Column(name = "TEXTE", length = 500, nullable = true)
+	private String texte;
 
-	@Column(name = "PRENOM", length = 50, nullable = true)
-	private String prenom;
+	@Column(name = "DATECR", nullable = true)
+	private Date dateCr;
+	
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="IDAIDANT", nullable=true)
+	private Aidant aidant;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="ID", nullable=true)
+	private Aide aide;
 
-	@Column(name = "DDN", nullable = true)
-	private Date ddn;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="IDMEDECIN", nullable=true)
+	private Medecin medecin;
+	
 
-	@Column(name = "SEXE", length = 50, nullable = true)
-	private String sexe;
-	
-	@Column(name = "NATIONALITE", length = 50, nullable = true)
-	private String nationalite;
-	
-	@Column(name = "RANG", length = 11, nullable = true)
-	private Integer rang;
-	
-	@Column(name = "ACTIF", length = 32, nullable = true)
-	private Boolean actif=true;
+
 	
 
 	// constructeurs
@@ -54,96 +55,106 @@ public class CompteRendu implements Cloneable {
 		
 	}
 
-	/**
-	 * @param sexe
-	 * @param ddn
-	 * @param rang
-	 * @param actif
-	 * @throws ParseException 
-	 */
-	public CompteRendu(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
-		setNom(nom);
-		setPrenom(prenom);
-		setDdn(ddn);
-		setSexe(sexe);
-		setNationalite(nationalite);
-		setRang(rang);		
-	}
-	
-	// accesseurs
 
+	
+	public CompteRendu(String texte, String dateCr, Aidant aidant, Aide aide, Medecin medecin) throws ParseException {
+		setTexte(texte);
+		setDateCr(dateCr);
+		setAidant(aidant);
+		setAide(aide);		
+		setMedecin(medecin);
+	}
+
+
+
+	// accesseurs
 	public Integer getId() {
 		return id;
 	}
+
+
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getNom() {
-		return nom;
+
+
+	public String getTexte() {
+		return texte;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+
+
+	public void setTexte(String texte) {
+		this.texte = texte;
 	}
 
-	public String getPrenom() {
-		return prenom;
+
+
+	public Date getDateCr() {
+		return dateCr;
 	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
 
-	public Date getDdn() {
-		return ddn;
-	}
 
-	public void setDdn(String ddn) throws ParseException {
+	public void setDateCr(String dateCr) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		this.ddn = sdf.parse(ddn);	
+		this.dateCr = sdf.parse(dateCr);
 	}
 
-	public String getSexe() {
-		return sexe;
+
+
+
+	public Medecin getMedecin() {
+		return medecin;
 	}
 
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
+
+
+	public void setMedecin(Medecin medecin) {
+		this.medecin = medecin;
 	}
 
-	public String getNationalite() {
-		return nationalite;
+
+
+	public Aide getAide() {
+		return aide;
 	}
 
-	public void setNationalite(String nationalite) {
-		this.nationalite = nationalite;
+
+
+	public void setAide(Aide aide) {
+		this.aide = aide;
 	}
 
-	public Integer getRang() {
-		return rang;
+
+
+	public Aidant getAidant() {
+		return aidant;
 	}
 
-	public void setRang(Integer rang) {
-		this.rang = rang;
+
+
+	public void setAidant(Aidant aidant) {
+		this.aidant = aidant;
 	}
 
-	public Boolean getActif() {
-		return actif;
-	}
 
-	public void setActif(Boolean actif) {
-		this.actif = actif;
-	}
 
+	//ToString
 	@Override
 	public String toString() {
-		return "Joueur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", ddn=" + ddn + ", sexe=" + sexe
-				+ ", nationalite=" + nationalite + ", rang=" + rang + ", actif=" + actif + "]";
+		return "CompteRendu [id=" + id + ", texte=" + texte + ", dateCr=" + dateCr + ", medecin=" + medecin + ", aide="
+				+ aide + ", aidant=" + aidant + "]";
 	}
 
+
 	
+
+
+
+
 	
 }
 
