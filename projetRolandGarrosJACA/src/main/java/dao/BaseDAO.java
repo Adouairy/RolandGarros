@@ -107,7 +107,8 @@ public class BaseDAO {
 	 * Ajoute un aide dans la base de donnees
 	 */
 	public void ajouterAide(String adresse, String date, String mail, String nom, String prenom, String tel, String mdpAide, String nomMedecin) throws ParseException {
-		 aide = new Aide(adresse, date, mail,nom, prenom, tel,mdpAide,trouverMedecin.idMedecin(nomMedecin));
+		//creer medecin
+		aide = new Aide(adresse, date, mail,nom, prenom, tel,mdpAide,trouverMedecin.idMedecin(nomMedecin));
 		em.persist(aide);
 	}
 	
