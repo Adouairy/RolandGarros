@@ -73,7 +73,7 @@ public class BaseDAO {
 					+ "AND mdpAidant = MD5('" + mdp + "')").getResultList().isEmpty()) {
 				resultat = false;
 			} else {
-				return resultat;
+				resultat = true;
 			}	
 		} 
 		else if (nomTable.equals("aide")) {
@@ -81,7 +81,7 @@ public class BaseDAO {
 					+ "AND mdp = MD5('" + mdp + "')").getResultList().isEmpty()) {
 				resultat = false;
 			} else {
-				return resultat;
+				resultat = true;
 			}	
 		}
 		else {
@@ -89,9 +89,10 @@ public class BaseDAO {
 					+ "AND mdpMedecin = MD5('" + mdp + "')").getResultList().isEmpty()) {
 				resultat = false;
 			} else {
-				return resultat;
+				resultat = true;
 			}	
 		}
+		return resultat;
 	}
 	
 	/**
