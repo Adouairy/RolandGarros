@@ -45,6 +45,9 @@ public class Medecin implements Cloneable {
 	@Column(name = "TELMEDECIN", length = 50, nullable = true)
 	private String telMedecin;
 	
+	@Column(name = "CONNECTION", length = 50, nullable = true)
+	private String premiereconnection;
+	
 	@OneToMany(mappedBy="medecin", cascade={CascadeType.ALL})
 	private Set<Aide> aide= new HashSet<Aide>();
 	
@@ -59,7 +62,7 @@ public class Medecin implements Cloneable {
 
 
 	public Medecin(String nom, String prenom, String mdpMedecin, String mailMedecin,
-			String adressePro, String telMedecin, Set<Aide> aide, Set<CompteRendu> cr) {
+			String adressePro, String telMedecin, Set<Aide> aide, Set<CompteRendu> cr,String premiereconnection) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.MdpMedecin = mdpMedecin;
@@ -68,6 +71,7 @@ public class Medecin implements Cloneable {
 		this.telMedecin = telMedecin;
 		this.aide = aide;
 		this.cr = cr;
+		this.premiereconnection = premiereconnection;
 	}
 
 
@@ -161,6 +165,16 @@ public class Medecin implements Cloneable {
 
 	public void setCr(Set<CompteRendu> cr) {
 		this.cr = cr;
+	}
+
+
+	public String getPremiereconnection() {
+		return premiereconnection;
+	}
+
+
+	public void setPremiereconnection(String premiereconnection) {
+		this.premiereconnection = premiereconnection;
 	}
 
 
