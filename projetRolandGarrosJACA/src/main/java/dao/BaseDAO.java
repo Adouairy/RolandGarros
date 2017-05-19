@@ -1,6 +1,10 @@
 package dao;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -8,7 +12,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import entite.Aidant;
-import entite.Aide;
 import entite.Medecin;
 
 
@@ -98,39 +101,63 @@ public class BaseDAO {
 	}
 	
 	/**
-	 * Ajoute un médecin dans la base de donnees
-	 */
-	public void ajouterMedecin(String nom, String prenom, String mdpMedecin, String mailMedecin, String adressePro, String telMedecin) throws ParseException {
-		 Medecin medecin = new Medecin(nom, prenom, mdpMedecin, mailMedecin, adressePro, telMedecin);
-		em.persist(medecin);
-	}
-	
-	/**
 	 * Ajoute un aide dans la base de donnees
 	 */
-	public void ajouterAide(String adresse, String date, String mail, String nom, String prenom, String tel, String mdpAide, String idMedecin) throws ParseException {
-		//creer medecin
-		Medecin medecin = new Medecin
-		Aide aide = new Aide(adresse, date, mail,nom, prenom, tel,mdpAide,trouverMedecin.idMedecin(idMedecin));
-		em.persist(aide);
-	}
+//	public void ajouterAide(String adresse, String date, String mail, String nom, String prenom, String tel, String mdpAide, String idMedecin) throws ParseException {
+//		//creer medecin
+//		Medecin medecin = new Medecin
+//		Aide aide = new Aide(adresse, date, mail,nom, prenom, tel,mdpAide,trouverMedecin.idMedecin(idMedecin));
+//		em.persist(aide);
+//	}
 	
 	/**
 	 * Ajoute un aidant dans la base de donnees
 	 */
 	public void ajouterAidant(String mailAidant, String adresseAidant, String ddnAidant, String telAidant, String mdpAidant, String type, Boolean referent, String nomAidant, String prenomAidant) throws ParseException {
-		 Aidant aidant = new Aidant(mailAidant, adresseAidant, ddnAidant, telAidant, mdpAidant, type, referent, nomAidant, prenomAidant);
+		Aidant aidant = new Aidant(mailAidant, adresseAidant, ddnAidant, telAidant, encode(mdpAidant), type, referent, nomAidant, prenomAidant);
 		em.persist(aidant);
 	}
 	
-	public Medecin chercherMedecin(String nom){
-		Iterator medecin = session.iterate("from Medecin ");
-		while (medecin.hasNext()) {
-		Medecin medecin = (Medecin) medecin.next();
-		if (medecin.nom.equals(nom)) {
-			return Medecin;
-		}
-		} 
-	}
+	
+//	public Medecin getMedecin()
+//	public List<Medecin> renvoiMedecins(){
+//		Medecin m=new Medecin();
+//		em.persist(m);
+//		 em.createQuery("select  from medecin m order by m.nom asc").getResultList();
+//	}
+	
+	/**
+	 * Fonction trouvée sur le net qui transforme un mot de type String en 
+	 */
+	 private static String encode(String password)
+	    {
+	        byte[] uniqueKey = password.getBytes();
+	        byte[] hash      = null;
 
+	        try
+	        {
+	            hash = MessageDigest.getInstance("MD5").digest(uniqueKey);
+	        }
+	        catch (NoSuchAlgorithmException e)
+	        {
+	            throw new Error("No MD5 support in this VM.");
+	        }
+
+	        StringBuilder hashString = new StringBuilder();
+	        for (int i = 0; i < hash.length; i++)
+	        {
+	            String hex = Integer.toHexString(hash[i]);
+	            if (hex.length() == 1)
+	            {
+	                hashString.append('0');
+	                hashString.append(hex.charAt(hex.length() - 1));
+	            }
+	            else
+	                hashString.append(hex.substring(hex.length() - 2));
+	        }
+	        return hashString.toString();
+	    }
+
+	
+	
 }
