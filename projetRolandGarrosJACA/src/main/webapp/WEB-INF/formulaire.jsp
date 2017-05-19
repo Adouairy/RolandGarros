@@ -28,48 +28,7 @@
 				src="img/logo.png"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<!-- 				<li class="active"><a href="#">Tournoi</a></li> -->
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Tournoi <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Simple messieurs</a></li>
-						<li><a href="#">Simple dames</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Double messieurs</a></li>
-						<li><a href="#">Double dames</a></li>
-						<li><a href="#">Double mixte</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Simples Juniors Garçons et Filles</a></li>
-						<li><a href="#">Doubles Juniors Garçons et Filles</a></li>
-					</ul></li>
-				<li><a href="#">Programme</a></li>
-				<li><a href="#">Joueurs</a></li>
-				<li><a href="#">Court</a></li>
-				<li><a href="#">Live</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<form class="navbar-form navbar-right" action="accueil" method="get">
-					<div class="form-group">
-						<select name="select" id="select">
-							<option value="aide">Personne Aidée</option>
-							<option value="aidant" selected>Personne Aidant</option>
-							<option value="medecin">Personne corp médical</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<input type="email" placeholder="Email" name="email"
-							class="form-control">
-					</div>
-					<div class="form-group">
-						<input type="password" placeholder="Mot de passe"
-							name="mdpIdentifiant" class="form-control">
-					</div>
-					<button type="submit" class="btn btn-success">Connection</button>
-					<br /> <a href="WEB-INF/inscription">Inscription</a>
-				</form>
-			</ul>
+			
 		</div>
 	</div>
 	</nav>
@@ -154,7 +113,7 @@
 	<div class="container">
 		<!-- Example row of columns -->
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<h2>Heading</h2>
 				<p>Donec id elit non mi porta gravida at eget metus. Fusce
 					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
@@ -165,23 +124,12 @@
 						&raquo;</a>
 				</p>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<h2>Heading</h2>
 				<p>Donec id elit non mi porta gravida at eget metus. Fusce
 					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
 					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
 					magna mollis euismod. Donec sed odio dui.</p>
-				<p>
-					<a class="btn btn-default" href="#" role="button">View details
-						&raquo;</a>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-					egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus.</p>
 				<p>
 					<a class="btn btn-default" href="#" role="button">View details
 						&raquo;</a>
