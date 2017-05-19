@@ -70,7 +70,7 @@ public class BaseDAO {
 		Boolean resultat = true;
 		if (nomTable.equals("aidant")) {
 			if (em.createQuery("select nomAidant from Aidant where mailAidant = '" + mail + "'"
-					+ "AND mdpAidant = MD5('" + mdp + "')").getResultList().isEmpty()) {
+					+ " AND mdpAidant = MD5('" + mdp + "')").getResultList().isEmpty()) {
 				resultat = false;
 			} else {
 				resultat = true;

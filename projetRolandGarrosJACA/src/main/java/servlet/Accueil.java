@@ -29,6 +29,7 @@ public class Accueil extends HttpServlet {
 		String email= request.getParameter("email");
 		String mdp= request.getParameter("mdpIdentifiant");
 		//booleen
+		System.out.println(email);
 		Boolean estDansLaBase=dao.verifConnection(email,mdp,table);
 		if (estDansLaBase){
 			this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);

@@ -53,14 +53,14 @@
 			<ul class="nav navbar-nav navbar-right">
 				<form class="navbar-form navbar-right" action="accueil" method="get">
 				<div class="form-group">
-					<select id="select">
+					<select name="select" id="select">
   						<option value="aide">Personne Aidée</option> 
   						<option value="aidant" selected>Personne Aidant</option>
   						<option value="medecin">Personne corp médical</option>
 					</select>
 				</div>
 				<div class="form-group">
-						<input type="text" placeholder="Email" name="email"
+						<input type="email" placeholder="Email" name="email"
 							class="form-control">
 				</div>
 				<div class="form-group">
