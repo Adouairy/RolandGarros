@@ -19,57 +19,32 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @SuppressWarnings("unused")
 @Entity
-@Table(name = "joueur")
+@Table(name = "fragilite")
 public class Fragilite implements Cloneable {
 	
 	@Id
-	@Column(name = "IDJOUEUR", nullable = false)
+	@Column(name = "IDFRAGILITE", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
 	@Column(name = "NOM", length = 50, nullable = true)
 	private String nom;
 
-	@Column(name = "PRENOM", length = 50, nullable = true)
-	private String prenom;
-
-	@Column(name = "DDN", nullable = true)
-	private Date ddn;
-
-	@Column(name = "SEXE", length = 50, nullable = true)
-	private String sexe;
-	
-	@Column(name = "NATIONALITE", length = 50, nullable = true)
-	private String nationalite;
-	
-	@Column(name = "RANG", length = 11, nullable = true)
-	private Integer rang;
-	
-	@Column(name = "ACTIF", length = 32, nullable = true)
-	private Boolean actif=true;
+	@OneToMany(mappedBy="fragilite", cascade={CascadeType.ALL})
+	private Set<DetailsFragilite> coop= new HashSet<DetailsFragilite>();
 	
 
 	// constructeurs
 	public Fragilite() {
 		
 	}
-
-	/**
-	 * @param sexe
-	 * @param ddn
-	 * @param rang
-	 * @param actif
-	 * @throws ParseException 
-	 */
-	public Fragilite(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
-		setNom(nom);
-		setPrenom(prenom);
-		setDdn(ddn);
-		setSexe(sexe);
-		setNationalite(nationalite);
-		setRang(rang);		
-	}
+ 
 	
+	public Fragilite(String nom) {
+		this.nom = nom;
+	}
+
+
 	// accesseurs
 
 	public Integer getId() {
@@ -88,64 +63,16 @@ public class Fragilite implements Cloneable {
 		this.nom = nom;
 	}
 
-	public String getPrenom() {
-		return prenom;
-	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
-	public Date getDdn() {
-		return ddn;
-	}
-
-	public void setDdn(String ddn) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		this.ddn = sdf.parse(ddn);	
-	}
-
-	public String getSexe() {
-		return sexe;
-	}
-
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
-	}
-
-	public String getNationalite() {
-		return nationalite;
-	}
-
-	public void setNationalite(String nationalite) {
-		this.nationalite = nationalite;
-	}
-
-	public Integer getRang() {
-		return rang;
-	}
-
-	public void setRang(Integer rang) {
-		this.rang = rang;
-	}
-
-	public Boolean getActif() {
-		return actif;
-	}
-
-	public void setActif(Boolean actif) {
-		this.actif = actif;
-	}
-
+	//ToString
 	@Override
 	public String toString() {
-		return "Joueur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", ddn=" + ddn + ", sexe=" + sexe
-				+ ", nationalite=" + nationalite + ", rang=" + rang + ", actif=" + actif + "]";
+		return "Fragilite [id=" + id + ", nom=" + nom + "]";
 	}
 
-	
+
 	
 }
 
 
-	
+		

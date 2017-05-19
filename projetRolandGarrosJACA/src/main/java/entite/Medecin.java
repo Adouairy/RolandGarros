@@ -19,130 +19,159 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @SuppressWarnings("unused")
 @Entity
-@Table(name = "joueur")
+@Table(name = "medecin")
 public class Medecin implements Cloneable {
 	
 	@Id
-	@Column(name = "IDJOUEUR", nullable = false)
+	@Column(name = "IDMEDECIN", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer idMedecin;
 
-	@Column(name = "NOM", length = 50, nullable = true)
+	@Column(name = "NOM", length = 32, nullable = true)
 	private String nom;
 
-	@Column(name = "PRENOM", length = 50, nullable = true)
+	@Column(name = "PRENOM", length = 32, nullable = true)
 	private String prenom;
 
-	@Column(name = "DDN", nullable = true)
-	private Date ddn;
+	@Column(name = "MDPMEDECIN", length = 32, nullable = true)
+	private String MdpMedecin;
 
-	@Column(name = "SEXE", length = 50, nullable = true)
-	private String sexe;
+	@Column(name = "MAILMEDECIN", length = 32, nullable = true)
+	private String mailMedecin;
 	
-	@Column(name = "NATIONALITE", length = 50, nullable = true)
-	private String nationalite;
+	@Column(name = "ADRESSEPRO", length = 50, nullable = true)
+	private String adressePro;
 	
-	@Column(name = "RANG", length = 11, nullable = true)
-	private Integer rang;
+	@Column(name = "TELMEDECIN", length = 50, nullable = true)
+	private String telMedecin;
 	
-	@Column(name = "ACTIF", length = 32, nullable = true)
-	private Boolean actif=true;
+	@OneToMany(mappedBy="medecin", cascade={CascadeType.ALL})
+	private Set<Aide> aide= new HashSet<Aide>();
 	
-
+	@OneToMany(mappedBy="medecin", cascade={CascadeType.ALL})
+	private Set<CompteRendu> cr= new HashSet<CompteRendu>();
+	
+	
 	// constructeurs
 	public Medecin() {
 		
 	}
 
-	/**
-	 * @param sexe
-	 * @param ddn
-	 * @param rang
-	 * @param actif
-	 * @throws ParseException 
-	 */
-	public Medecin(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
-		setNom(nom);
-		setPrenom(prenom);
-		setDdn(ddn);
-		setSexe(sexe);
-		setNationalite(nationalite);
-		setRang(rang);		
+
+	public Medecin(String nom, String prenom, String mdpMedecin, String mailMedecin,
+			String adressePro, String telMedecin, Set<Aide> aide, Set<CompteRendu> cr) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.MdpMedecin = mdpMedecin;
+		this.mailMedecin = mailMedecin;
+		this.adressePro = adressePro;
+		this.telMedecin = telMedecin;
+		this.aide = aide;
+		this.cr = cr;
 	}
-	
+
+
 	// accesseurs
 
-	public Integer getId() {
-		return id;
+
+	public Integer getIdMedecin() {
+		return idMedecin;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+
+	public void setIdMedecin(Integer idMedecin) {
+		this.idMedecin = idMedecin;
 	}
+
 
 	public String getNom() {
 		return nom;
 	}
 
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+
 
 	public String getPrenom() {
 		return prenom;
 	}
 
+
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
 
-	public Date getDdn() {
-		return ddn;
+
+	public String getMdpMedecin() {
+		return MdpMedecin;
 	}
 
-	public void setDdn(String ddn) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		this.ddn = sdf.parse(ddn);	
+
+	public void setMdpMedecin(String mdpMedecin) {
+		MdpMedecin = mdpMedecin;
 	}
 
-	public String getSexe() {
-		return sexe;
+
+	public String getMailMedecin() {
+		return mailMedecin;
 	}
 
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
+
+	public void setMailMedecin(String mailMedecin) {
+		this.mailMedecin = mailMedecin;
 	}
 
-	public String getNationalite() {
-		return nationalite;
+
+	public String getAdressePro() {
+		return adressePro;
 	}
 
-	public void setNationalite(String nationalite) {
-		this.nationalite = nationalite;
+
+	public void setAdressePro(String adressePro) {
+		this.adressePro = adressePro;
 	}
 
-	public Integer getRang() {
-		return rang;
+
+	public String getTelMedecin() {
+		return telMedecin;
 	}
 
-	public void setRang(Integer rang) {
-		this.rang = rang;
+
+	public void setTelMedecin(String telMedecin) {
+		this.telMedecin = telMedecin;
 	}
 
-	public Boolean getActif() {
-		return actif;
+
+	public Set<Aide> getAide() {
+		return aide;
 	}
 
-	public void setActif(Boolean actif) {
-		this.actif = actif;
+
+	public void setAide(Set<Aide> aide) {
+		this.aide = aide;
 	}
+
+
+	public Set<CompteRendu> getCr() {
+		return cr;
+	}
+
+
+	public void setCr(Set<CompteRendu> cr) {
+		this.cr = cr;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Joueur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", ddn=" + ddn + ", sexe=" + sexe
-				+ ", nationalite=" + nationalite + ", rang=" + rang + ", actif=" + actif + "]";
+		return "Medecin [idMedecin=" + idMedecin + ", nom=" + nom + ", prenom=" + prenom + ", MdpMedecin=" + MdpMedecin
+				+ ", mailMedecin=" + mailMedecin + ", adressePro=" + adressePro + ", telMedecin=" + telMedecin
+				+ ", aide=" + aide + ", cr=" + cr + "]";
 	}
 
+	
 	
 	
 }
