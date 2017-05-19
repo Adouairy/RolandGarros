@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @SuppressWarnings("unused")
 @Entity
 @Table(name = "joueur")
-public class Joueur implements Cloneable {
+public class Cooperation implements Cloneable {
 	
 	@Id
 	@Column(name = "IDJOUEUR", nullable = false)
@@ -50,7 +50,7 @@ public class Joueur implements Cloneable {
 	
 
 	// constructeurs
-	public Joueur() {
+	public Cooperation() {
 		
 	}
 
@@ -61,7 +61,7 @@ public class Joueur implements Cloneable {
 	 * @param actif
 	 * @throws ParseException 
 	 */
-	public Joueur(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
+	public Cooperation(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
 		setNom(nom);
 		setPrenom(prenom);
 		setDdn(ddn);

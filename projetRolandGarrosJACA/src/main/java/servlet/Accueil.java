@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.BaseDAO;
-import entite.Organisateur;
 
 public class Accueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,10 +25,12 @@ public class Accueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Organisateur orga = new Organisateur(request.getParameter("nomIdentifiant"), "",request.getParameter("mdpIdentifiant"));
-		Boolean res=dao.verifConnection(orga);
-		System.out.println(res);
-		if (res) {
+		String table= request.getParameter("select");
+		String email= request.getParameter("email");
+		String mdp= request.getParameter("mdpIdentifiant");
+		//booleen
+		Boolean estDansLaBase=dao.verifConnection(email,mdp,table);
+		if (estDansLaBase){
 			this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
 			
 		}
@@ -39,3 +40,4 @@ public class Accueil extends HttpServlet {
 		
 	}
 }
+

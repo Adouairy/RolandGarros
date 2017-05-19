@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import entite.Joueur;
+import entite.Aidant;
 import entite.Organisateur;
 
 //singleton ----------------------------------------
@@ -30,6 +30,7 @@ public class BaseDAO {
 		}
 		return instance;
 	}
+	//pour rien
 
 	// -------------------------------------------------
 	/**
@@ -43,8 +44,8 @@ public class BaseDAO {
 	}
 
 	/**
-	 * Synchronise le context de persistance avec la base de donnée.
-	 * En fait un commit est effectué et une nouvelle transaction débutée
+	 * Synchronise le context de persistance avec la base de donnee.
+	 * En fait un commit est effectue et une nouvelle transaction dï¿½butï¿½e
 	 */
 	public void commit(){
 		tx.commit();
@@ -60,31 +61,71 @@ public class BaseDAO {
 	}
 
 	/**
-	 * La fonction renvoie true si la personne a bien entré un nom et un mot de
+	 * La fonction renvoie true si la personne a bien entre un nom et un mot de
 	 * passe valides
 	 * 
 	 * @return true si c'est ok et false si erreur de connection
 	 */
-	public Boolean verifConnection(Organisateur o) {
+	public Boolean verifConnection(String mail, String mdp, String nomTable) {
 		Boolean resultat = true;
-		if (em.createQuery("select o from Organisateur o where nom = '" + o.getNom() + "'"
-				+ "AND mdp = MD5('" + o.getMdp() + "')").getResultList().isEmpty()) {
-			resultat = false;
+		if (nomTable.equals("aidant")) {
+			if (em.createQuery("select nomAidant from Aidant where mailAidant = '" + mail + "'"
+					+ "AND mdpAidant = MD5('" + mdp + "')").getResultList().isEmpty()) {
+				resultat = false;
+			} else {
+				return resultat;
+			}	
+		} 
+		else if (nomTable.equals("aide")) {
+			if (em.createQuery("select nom from Aide where mail = '" + mail + "'"
+					+ "AND mdp = MD5('" + mdp + "')").getResultList().isEmpty()) {
+				resultat = false;
+			} else {
+				return resultat;
+			}	
 		}
-		return resultat;
+		else {
+			if (em.createQuery("select mailMedecin from Medecin where mailMedecin = '" + mail + "'"
+					+ "AND mdpMedecin = MD5('" + mdp + "')").getResultList().isEmpty()) {
+				resultat = false;
+			} else {
+				return resultat;
+			}	
+		}
 	}
 	
 	/**
-	 * Ajoute un joueur dans la base de données
+	 * Ajoute un mÃ©decin dans la base de donnees
 	 */
-	public void ajouterJoueur(String nom, String prenom, String ddn, String sexe, String nationalite, Integer rang) throws ParseException {
-		Joueur joueur = new Joueur(nom, prenom, ddn,sexe, nationalite, rang);
-		em.persist(joueur);
+	public void ajouterMedecin(String nom, String prenom, String mdpMedecin, String mailMedecin, String adressePro, String telMedecin) throws ParseException {
+		 medecin = new Medecin(nom, prenom, mdpMedecin, mailMedecin, adressePro, telMedecin);
+		em.persist(medecin);
 	}
 	
-//	public Joueur chercherJoueur(String nom, String prenom){
-//		Query query =  (Query) em.createQuery("select j from Joueur j where nom = '" + nom + "'"
-//				+ "AND prenom = '" + prenom + "')").getResultList();
-//	}
+	/**
+	 * Ajoute un aide dans la base de donnees
+	 */
+	public void ajouterAide(String adresse, String date, String mail, String nom, String prenom, String tel, String mdpAide, String nomMedecin) throws ParseException {
+		 aide = new Aide(adresse, date, mail,nom, prenom, tel,mdpAide,trouverMedecin.idMedecin(nomMedecin));
+		em.persist(aide);
+	}
+	
+	/**
+	 * Ajoute un aidant dans la base de donnees
+	 */
+	public void ajouterAidant(String mailAidant, String adresseAidant, String ddnAidant, String telAidant, String mdpAidant, String type, Boolean referent, String nomAidant, String prenomAidant) throws ParseException {
+		 aidant = new Aidant(mailAidant, adresseAidant, ddnAidant, telAidant, mdpAidant, type, referent, nomAidant, prenomAidant);
+		em.persist(aidant);
+	}
+	
+	public Medecin chercherMedecin(String nom){
+		Iterator medecin = session.iterate("from Medecin ");
+		while (medecin.hasNext()) {
+		Medecin medecin = (Medecin) medecin.next();
+		if (medecin.nom.equals(nom)) {
+			return Medecin;
+		}
+		} 
+	}
 
 }

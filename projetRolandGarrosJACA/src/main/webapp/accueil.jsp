@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -51,15 +52,23 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<form class="navbar-form navbar-right" action="accueil" method="get">
-					<div class="form-group">
-						<input type="text" placeholder="Identifiant" name="nomIdentifiant"
+				<div class="form-group">
+					<select id="select">
+  						<option value="aide">Personne Aidée</option> 
+  						<option value="aidant" selected>Personne Aidant</option>
+  						<option value="medecin">Personne corp médical</option>
+					</select>
+				</div>
+				<div class="form-group">
+						<input type="text" placeholder="Email" name="email"
 							class="form-control">
-					</div>
-					<div class="form-group">
+				</div>
+				<div class="form-group">
 						<input type="password" placeholder="Mot de passe"
 							name="mdpIdentifiant" class="form-control">
-					</div>
-					<button type="submit" class="btn btn-success">Connection</button>
+				</div>
+				<button type="submit" class="btn btn-success">Connection</button><br/>
+				<a href="WEB-INF/inscription">Inscription</a>
 				</form>
 			</ul>
 		</div>
