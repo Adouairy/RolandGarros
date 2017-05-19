@@ -45,6 +45,9 @@ public class Medecin implements Cloneable {
 	@Column(name = "TELMEDECIN", length = 50, nullable = true)
 	private String telMedecin;
 	
+	@Column(name = "CONNECTION", length = 50, nullable = true)
+	private String premiereconnection;
+	
 	@OneToMany(mappedBy="medecin", cascade={CascadeType.ALL})
 	private Set<Aide> aide= new HashSet<Aide>();
 	
