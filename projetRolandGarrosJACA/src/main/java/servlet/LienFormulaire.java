@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Formulaire
+ * Servlet implementation class LienFormulaire
  */
-@WebServlet("/Formulaire")
-public class Formulaire extends HttpServlet {
+@WebServlet("/LienFormulaire")
+public class LienFormulaire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Formulaire() {
+    public LienFormulaire() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,7 +26,7 @@ public class Formulaire extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/formulaire.jsp").forward(request, response);
 	}
 
 	/**

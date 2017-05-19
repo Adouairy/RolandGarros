@@ -79,7 +79,7 @@
 			<div class="col-sm-8 text-left">
 				<fieldset id="inscription">
 					<h1>Inscription de l'aidé</h1>
-					<form method="post" action="formulaire">
+					<form method="get" action="formulaire">
 						<div class="row content">
 							<fieldset class="col-sm-4">
 								<legend>Aidé</legend>
