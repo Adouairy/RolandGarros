@@ -65,7 +65,7 @@ public class Aidant implements Cloneable {
 		
 	}	
 
-	
+	//modif, git
 	public Aidant(String mailAidant, String adresseAidant, String ddnAidant, String telAidant,
 			String mdpAidant, String type, Boolean referent, String nomAidant, String prenomAidant) throws ParseException {
 		

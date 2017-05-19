@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 
 import entite.Aidant;
 import entite.Aide;
+import entite.Medecin;
 import entite.Organisateur;
 
 //singleton ----------------------------------------
