@@ -19,7 +19,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @SuppressWarnings("unused")
 @Entity
-@Table(name = "joueur")
+@Table(name = "compterendu")
+//hello
 public class CompteRendu implements Cloneable {
 	
 	@Id
