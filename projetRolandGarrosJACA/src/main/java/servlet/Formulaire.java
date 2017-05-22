@@ -39,7 +39,8 @@ public class Formulaire extends HttpServlet {
 			throws ServletException, IOException {
 		SimpleDateFormat sdf = new SimpleDateFormat("mm/dd/yyyy");
 		/**
-		 * Création du référent (en passant par sa vérification d'e-mail (existe ou non), ajout du mdp par défaut)
+		 * Création du référent (en passant par sa vérification d'e-mail (existe
+		 * ou non), ajout du mdp par défaut)
 		 */
 		try {
 			Aidant ref = new Aidant(request.getParameter("mailRef"), request.getParameter("adresseRef"),
@@ -51,9 +52,10 @@ public class Formulaire extends HttpServlet {
 		} catch (ParseException e) {
 			System.out.println("Erreur referent");
 		}
-		
+
 		/**
-		 * Création de l'aidant (en passant par sa vérification d'e-mail (existe ou non))
+		 * Création de l'aidant (en passant par sa vérification d'e-mail (existe
+		 * ou non))
 		 */
 		try {
 			Aidant aide = new Aidant(request.getParameter("mailAidant"), request.getParameter("nomAidant"));
@@ -62,13 +64,16 @@ public class Formulaire extends HttpServlet {
 		} catch (ParseException e) {
 			System.out.println("Erreur aidant");
 		}
-		
+
 		/**
 		 * Création de l'aide
 		 */
 		try {
 			Medecin med = new Medecin();
-			Aide util = new Aide(request.getParameter("adresseAide"), request.getParameter("ddnAide"), request.getParameter("mailAide"), request.getParameter("nomAide"), request.getParameter("prenomAide"), request.getParameter("telAide"), request.getParameter("mdpAide"), med );					
+			Aide util = new Aide(request.getParameter("adresseAide"), request.getParameter("ddnAide"),
+					request.getParameter("mailAide"), request.getParameter("nomAide"),
+					request.getParameter("prenomAide"), request.getParameter("telAide"),
+					request.getParameter("mdpAide"), med);
 		} catch (ParseException e) {
 			System.out.println("Erreur aide");
 		}

@@ -52,26 +52,30 @@
 							<fieldset class="col-sm-4">
 								<legend>Aidé</legend>
 								<p>Nom :</p>
-								<input type="text" name="nomAide" placeholder="Votre nom" required/>
+								<input type="text" name="nomAide" placeholder="Votre nom"
+									required />
 								<p>Prénom :</p>
-								<input type="text" name="prenomAide" placeholder="Votre prenom" required/>
+								<input type="text" name="prenomAide" placeholder="Votre prenom"
+									required />
 								<p>E-mail :</p>
-								<input type="email" name="mailAide" placeholder="Votre E-mail" required/>
+								<input type="email" name="mailAide" placeholder="Votre E-mail"
+									required />
 								<p>Adresse postale :</p>
 								<input type="text" name="adresseAide"
-									placeholder="Votre adresse postale" required/>
+									placeholder="Votre adresse postale" required />
 								<p>Numéro de téléphone :</p>
 								<input type="text" name="telAide"
-									placeholder="Votre numéro de téléphone" required/>
+									placeholder="Votre numéro de téléphone" required />
 								<p>Date de naissance :</p>
 								<input type="text" name="ddnAide"
-									placeholder="Votre date de naissance" class="datepicker" required/>
+									placeholder="Votre date de naissance" class="datepicker"
+									required />
 								<p>Mot de passe :</p>
 								<input type="password" name="mdpAide"
-									placeholder="Votre mot de passe" required/><br />
+									placeholder="Votre mot de passe" required /><br />
 								<p>Confirmation du mot de passe :</p>
 								<input type="password" name="confirmAide"
-									placeholder="Confirmation du mot de passe" required/>
+									placeholder="Confirmation du mot de passe" required />
 								<p>Choix du médecin traitant :</p>
 								<select name="database1" required>
 									<c:forEach items="${listMedecin}" var="listMedecinValue"
@@ -84,26 +88,28 @@
 							<fieldset class="col-sm-4">
 								<legend>Référent</legend>
 								<p>Nom :</p>
-								<input type="text" name="nomRef" placeholder="Nom Référent" required />
+								<input type="text" name="nomRef" placeholder="Nom Référent"
+									required />
 								<p>Prénom :</p>
 								<input type="text" name="prenomRef"
-									placeholder="Prenom Référent" required/>
+									placeholder="Prenom Référent" required />
 								<p>E-mail :</p>
-								<input type="email" name="mailRef" placeholder="E-mail Référent" required/>
+								<input type="email" name="mailRef" placeholder="E-mail Référent"
+									required />
 								<p>Adresse postale :</p>
 								<input type="text" name="adresseRef"
-									placeholder="Adresse postale Référent" required/>
+									placeholder="Adresse postale Référent" required />
 								<p>Date de naissance :</p>
 								<input type="text" name="ddnRef"
 									placeholder="Date de naissance Référent annee/mois/date"
-									class="datepicker" required/>
+									class="datepicker" required />
 							</fieldset>
 							<fieldset class="col-sm-4">
 								<legend>Aidant :</legend>
 								<p>Nom :</p>
-								<input type="text" name="nomAidant" placeholder="Votre nom"/>
+								<input type="text" name="nomAidant" placeholder="Votre nom" />
 								<p>E-mail :</p>
-								<input type="email" name="mailAidant" placeholder="Votre E-mail"/>
+								<input type="email" name="mailAidant" placeholder="Votre E-mail" />
 							</fieldset>
 						</div>
 						<p id="inputSubmit">
