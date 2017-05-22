@@ -114,8 +114,7 @@ public class BaseDAO {
 		aide.setMdpAide(encode(aide.getMdpAide()));
 		em.persist(aide);
 		commit();
-		closeAll();
-	}
+		}
 	
 	/**
 	 * Ajoute un aidant dans la base de donnees
@@ -124,8 +123,7 @@ public class BaseDAO {
 		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
 		em.persist(aidant);
 		commit();
-		closeAll();
-	
+			
 	}
 
 	// -------------------------------RENVOI DES LISTES DE PERSONNES -------------------------------------
@@ -137,8 +135,6 @@ public class BaseDAO {
 	public Medecin getMedecin(String mdpMedecin, String adressePro, String mailMedecin, String nom, String prenom, String telMedecin, Integer premiereConnection) {
 	Medecin m = new Medecin(mdpMedecin, adressePro, mailMedecin, nom, prenom, telMedecin, premiereConnection);
 	em.persist(m);
-		commit();
-		closeAll();
 	return m;
 	}
 	
@@ -196,6 +192,7 @@ public class BaseDAO {
 	 */
 	public void supprimerAide(Aide a){
 		em.remove(a);
+		commit();
 	}
 	
 	/**
@@ -204,6 +201,7 @@ public class BaseDAO {
 	 */
 	public void supprimerAidant(Aidant a){
 		em.remove(a);
+		commit();
 	}
 	
 	
