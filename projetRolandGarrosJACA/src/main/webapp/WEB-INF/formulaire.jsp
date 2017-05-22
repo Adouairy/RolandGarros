@@ -62,7 +62,7 @@
 								<p>Choix du médecin traitant</p>
 								<select name="database1">
 									<c:forEach items="${listMedecin}" var="listMedecinValue" varStatus="status">
-										<option value="${listMedecinValue.idMedecin}">${listMedecinValue.nom}</option>
+										<option value="${listMedecinValue.idMedecin}">Dr. ${listMedecinValue.nom} ${listMedecinValue.prenom}</option>
 									</c:forEach>
 								</select><br />
 							</fieldset>
