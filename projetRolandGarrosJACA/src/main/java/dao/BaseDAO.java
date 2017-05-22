@@ -205,7 +205,7 @@ public class BaseDAO {
 	}
 	
 	
-	// ----------------------------FONCTIONS DE RECHERCHE DE PERSONNE PAR ID-------------------------------------
+	// -----------------------------FONCTIONS DE RECHERCHE DE PERSONNE PAR ID-------------------------------------
 	
 	/**Retourne un medecin selectionné par son id
     @param id l'id du medecin recherché
