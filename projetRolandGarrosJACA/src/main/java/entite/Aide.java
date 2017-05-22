@@ -67,7 +67,33 @@ public class Aide implements Cloneable {
 	public Aide() {
 
 	}
+	
+	public Aide(String adresse, Date ddn, String mail, String nom, String prenom, String tel, String mdpAide,
+			Medecin medecin) {
+		super();
+		this.adresse = adresse;
+		this.ddn = ddn;
+		this.mail = mail;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.tel = tel;
+		this.mdpAide = mdpAide;
+		this.medecin = medecin;
+	}
 
+
+/**
+ * Constructeur pour le formulaire
+ * @param adresse
+ * @param ddn
+ * @param mail
+ * @param nom
+ * @param prenom
+ * @param tel
+ * @param mdpAide
+ * @param medecin
+ * @throws ParseException
+ */
 	public Aide(String adresse, String ddn, String mail, String nom, String prenom, String tel, String mdpAide,
 			Medecin medecin) throws ParseException {
 		setAdresse(adresse);
