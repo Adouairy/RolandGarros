@@ -81,6 +81,7 @@ public class Formulaire extends HttpServlet {
 		 */
 		try {
 			Medecin med = new Medecin();
+			// med = BaseDAO.getInstance().trouverMedecin()
 			Aide util = new Aide(request.getParameter("adresseAide"), request.getParameter("ddnAide"),
 					request.getParameter("mailAide"), request.getParameter("nomAide"),
 					request.getParameter("prenomAide"), request.getParameter("telAide"),

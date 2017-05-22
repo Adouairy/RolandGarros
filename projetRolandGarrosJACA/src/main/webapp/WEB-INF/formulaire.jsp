@@ -76,7 +76,7 @@
 									<c:forEach items="${listMedecin}" var="listMedecinValue"
 										varStatus="status">
 										<option value="${listMedecinValue.idMedecin}">Dr.
-											${listMedecinValue.nom} ${listMedecinValue.prenom}</option>
+											${listMedecinValue.nom} ${listMedecinValue.prenom} (${listMedecinValue.idMedecin})</option>
 									</c:forEach>
 								</select><br />
 							</fieldset>
