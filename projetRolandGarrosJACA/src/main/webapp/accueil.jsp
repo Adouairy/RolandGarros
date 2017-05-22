@@ -49,25 +49,27 @@
 				<li><a href="#">Court</a></li>
 				<li><a href="#">Live</a></li>
 			</ul>
+			<form id="buttonInscription" action="lienFormulaire" method="get">
+				<button type="submit" class="btn btn-info">Inscription</button>
+			</form>
 			<ul class="nav navbar-nav navbar-right">
 				<form class="navbar-form navbar-right" action="accueil" method="get">
-				<div class="form-group">
-					<select name="select" id="select">
-  						<option value="aide">Personne Aidée</option> 
-  						<option value="aidant" selected>Personne Aidant</option>
-  						<option value="medecin">Personne corp médical</option>
-					</select>
-				</div>
-				<div class="form-group">
+					<div class="form-group">
+						<select name="select" id="select">
+							<option value="aide">Personne Aidée</option>
+							<option value="aidant" selected>Personne Aidant</option>
+							<option value="medecin">Personne corp médical</option>
+						</select>
+					</div>
+					<div class="form-group">
 						<input type="email" placeholder="Email" name="email"
 							class="form-control">
-				</div>
-				<div class="form-group">
+					</div>
+					<div class="form-group">
 						<input type="password" placeholder="Mot de passe"
 							name="mdpIdentifiant" class="form-control">
-				</div>
-				<button type="submit" class="btn btn-success">Connection</button><br/>
-				<a href="<%=request.getContextPath()+"/LienFormulaire"%>">Inscription</a>
+					</div>
+					<button type="submit" class="btn btn-success">Connection</button>
 				</form>
 			</ul>
 		</div>
