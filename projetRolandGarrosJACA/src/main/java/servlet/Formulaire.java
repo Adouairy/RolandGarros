@@ -81,10 +81,12 @@ public class Formulaire extends HttpServlet {
 		 */
 		try {
 			Medecin med = new Medecin();
+			Integer identifiantMed= Integer.parseInt(request.getParameter("database1"));
+			med=BaseDAO.getInstance().trouverMedecin(identifiantMed);
 			Aide util = new Aide(request.getParameter("adresseAide"), request.getParameter("ddnAide"),
 					request.getParameter("mailAide"), request.getParameter("nomAide"),
 					request.getParameter("prenomAide"), request.getParameter("telAide"),
-					request.getParameter("mdpAide"), BaseDAO.getInstance().renvoiMedecins().get(5));
+					request.getParameter("mdpAide"), med);
 			BaseDAO.getInstance().ajouterAide(util);
 		} catch (ParseException e) {
 			System.out.println("Erreur aide");
