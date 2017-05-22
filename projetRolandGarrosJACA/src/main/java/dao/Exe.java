@@ -22,8 +22,8 @@ public class Exe {
 		//b.ajouterAide("15 rue de la paix", "14/06/2004", "grave@mamie.fr", "grave", "mamie", "02156598", "jaca", b.renvoiMedecins().get(0));
 		
 		b.renvoiAides();
-		System.out.println(b.renvoiMedecins().get(2));
-		//System.out.println(b.renvoiAides());
+
+		System.out.println(b.renvoiAides());
 		
 		b.commit();
 //		System.out.println(b.renvoiMedecins()); 
