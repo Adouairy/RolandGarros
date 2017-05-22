@@ -113,7 +113,7 @@ public class BaseDAO {
 	public void ajouterAide(Aide aide) throws ParseException {
 		aide.setMdpAide(encode(aide.getMdpAide()));
 		em.persist(aide);
-		tx.commit();
+		commit();
 		}
 	
 	/**
@@ -122,7 +122,7 @@ public class BaseDAO {
 	public void ajouterAidant(Aidant aidant) throws ParseException {
 		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
 		em.persist(aidant);
-		tx.commit();
+		commit();
 			
 	}
 
