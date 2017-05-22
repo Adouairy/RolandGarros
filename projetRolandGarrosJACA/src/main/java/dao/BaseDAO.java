@@ -205,6 +205,16 @@ public class BaseDAO {
 	}
 	
 	
+	// ----------------------------FONCTIONS DE RECHERCHE DE PERSONNE PAR ID-------------------------------------
+	
+	/**Retourne un medecin selectionné par son id
+    @param id l'id du medecin recherché
+    @return le medecin
+    */
+	public Medecin trouverMedecin(int id){
+        return em.find(Medecin.class, id);
+    }
+	
 	// ----------------------------FONCTION DE CRYPTAGE EN MD5 -------------------------------------
 
 	/**

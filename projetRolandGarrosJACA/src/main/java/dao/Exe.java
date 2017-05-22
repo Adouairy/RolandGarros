@@ -21,11 +21,11 @@ public class Exe {
 //		System.out.println(b.renvoiMedecins());
 		//b.ajouterAide("15 rue de la paix", "14/06/2004", "grave@mamie.fr", "grave", "mamie", "02156598", "jaca", b.renvoiMedecins().get(0));
 		
-		b.supprimerAidant(b.renvoiAidants().get(1));
+		//b.supprimerAidant(b.renvoiAidants().get(1));
 
 		//System.out.println(b.renvoiAides());
-
-		b.commit();
+		System.out.println(b.trouverMedecin(1));
+		//b.commit();
 //		System.out.println(b.renvoiMedecins()); 
 		b.closeAll();
 	}
