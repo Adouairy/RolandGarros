@@ -81,7 +81,9 @@ public class ServiceVerifMdp {
 	public boolean delaiInscription(Date dateInscription){
 		boolean delai=false;
 		//faux si le delai est dépassés
-		Calendar cd = new GregorianCalendar(dateInscription.getYear(),dateInscription.getMonth(),dateInscription.getDay()); 
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(dateInscription);
+		Calendar cd = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_WEEK)); 
 		cd.add(GregorianCalendar.MONTH, +3); 
 		Date date = cd.getTime();
 		Date now=new Date();
