@@ -2,6 +2,8 @@
 
 body {
 	background-image: url("../img/fd1.jpg");
+	background-size:contain;
+	background-repeat: no-repeat;
 }
 footer{
 	background-color: blue;
