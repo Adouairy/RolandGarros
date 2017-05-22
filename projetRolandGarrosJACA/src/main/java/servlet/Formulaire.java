@@ -49,10 +49,20 @@ public class Formulaire extends HttpServlet {
 		} catch (ParseException e) {
 		}
 		
+		/**
+		 * Création de l'aidant (en passant par sa vérification d'e-mail (existe ou non))
+		 */
 		try {
 			Aidant aide = new Aidant(request.getParameter("mailAidant"), request.getParameter("nomAidant"));
-			
+			ServiceVerifMdp.getInstance().verifMailAidant(request);
 			BaseDAO.getInstance().ajouterAidant(aide);
+		} catch (ParseException e) {
+		}
+		
+		/**
+		 * Création de l'aide
+		 */
+		try {
 		} catch (ParseException e) {
 		}
 
