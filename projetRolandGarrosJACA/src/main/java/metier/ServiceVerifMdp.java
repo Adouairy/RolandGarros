@@ -85,9 +85,14 @@ public class ServiceVerifMdp {
 		cd.add(GregorianCalendar.MONTH, +3); 
 		Date date = cd.getTime();
 		Date now=new Date();
-		if(now.compareTo(date)>0){
+		if(date.compareTo(now)>0){
 			delai= true;
 		}
 		return delai;
+	}
+	
+	public String creationMdp(){
+		String chars="zriyefgezukrygfh";
+		return chars;
 	}
 }
