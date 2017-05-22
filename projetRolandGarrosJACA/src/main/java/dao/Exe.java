@@ -25,6 +25,8 @@ public class Exe {
 
 		//System.out.println(b.renvoiAides());
 		System.out.println(b.trouverMedecin(1));
+		System.out.println(b.trouverAidant(1));
+		System.out.println(b.trouverAide(24));
 		//b.commit();
 //		System.out.println(b.renvoiMedecins()); 
 		b.closeAll();

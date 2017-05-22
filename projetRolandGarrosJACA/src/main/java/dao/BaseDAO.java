@@ -215,6 +215,22 @@ public class BaseDAO {
         return em.find(Medecin.class, id);
     }
 	
+	/**Retourne un aidant selectionné par son id
+    @param id l'id de l'aidant recherché
+    @return l'aidant
+    */
+	public Aidant trouverAidant(int id){
+        return em.find(Aidant.class, id);
+    }
+	
+	/**Retourne un aidé selectionné par son id
+    @param id l'id de l'aidé recherché
+    @return l'aidé
+    */
+	public Aide trouverAide(int id){
+        return em.find(Aide.class, id);
+    }
+	
 	// ----------------------------FONCTION DE CRYPTAGE EN MD5 -------------------------------------
 
 	/**
