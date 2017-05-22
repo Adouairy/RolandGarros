@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.BaseDAO;
 import entite.Aidant;
 import metier.ServiceVerifMdp;
 
@@ -39,10 +40,10 @@ public class Formulaire extends HttpServlet {
 			Aidant ref = new Aidant(request.getParameter("mailRef"), request.getParameter("adresseRef"),
 					sdf.parse(request.getParameter("ddnRef")), true, request.getParameter("nomRef"),
 					request.getParameter("prenomRef"), 1);
-			System.out.println(ref);
+			String mdp = ServiceVerifMdp.getInstance().creationMdp();
+			ref.setMdpAidant(mdp);
+			BaseDAO.getInstance().ajouterAidant(ref);
 		} catch (ParseException e) {
-			e.printStackTrace();
-			System.out.println("pas dans le try mais dans le catch");
 		}
 
 		if (ServiceVerifMdp.getInstance().verifMdp(request)) {
