@@ -112,6 +112,8 @@ public class BaseDAO {
 	public void ajouterAide(Aide aide) throws ParseException {
 		aide.setMdpAide(encode(aide.getMdpAide()));
 		em.persist(aide);
+		commit();
+		closeAll();
 	}
 	
 	/**
@@ -120,6 +122,7 @@ public class BaseDAO {
 	public void ajouterAidant(Aidant aidant) throws ParseException {
 		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
 		em.persist(aidant);
+	
 	}
 
 	// -------------------------------RENVOI DES LISTES DE PERSONNES -------------------------------------
