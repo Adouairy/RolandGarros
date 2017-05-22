@@ -36,6 +36,9 @@ public class Formulaire extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SimpleDateFormat sdf = new SimpleDateFormat("mm/dd/yyyy");
+		/**
+		 * Création du référent (en passant par sa vérification d'e-mail (existe ou non), ajout du mdp par défaut)
+		 */
 		try {
 			Aidant ref = new Aidant(request.getParameter("mailRef"), request.getParameter("adresseRef"),
 					sdf.parse(request.getParameter("ddnRef")), true, request.getParameter("nomRef"),
@@ -43,6 +46,13 @@ public class Formulaire extends HttpServlet {
 			String mdp = ServiceVerifMdp.getInstance().creationMdp();
 			ref.setMdpAidant(mdp);
 			BaseDAO.getInstance().ajouterAidant(ref);
+		} catch (ParseException e) {
+		}
+		
+		try {
+			Aidant aide = new Aidant(request.getParameter("mailAidant"), request.getParameter("nomAidant"));
+			
+			BaseDAO.getInstance().ajouterAidant(aide);
 		} catch (ParseException e) {
 		}
 
