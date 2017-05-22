@@ -93,7 +93,7 @@ public class ServiceVerifMdp {
 		}
 		return delai;
 	}
-	
+	//mots de passe
 	public String creationMdp(){
 		String mdp="";
 		Random rand = new Random();
