@@ -11,7 +11,7 @@ public class Exe {
 
 		b.ajouterAidant("essai@orange.fr","5 rue de la paix, Nantes", "15/05/1985", "0645454545" , "jaca", "plombier", false, "Tuyau", "Beau");
 		b.commit();
-		System.out.println(b.renvoiMedecins());
+//		System.out.println(b.renvoiMedecins());
 		b.closeAll();
 	}
 }
