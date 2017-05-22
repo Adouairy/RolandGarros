@@ -84,7 +84,7 @@ public class ServiceVerifMdp {
 		Calendar c = Calendar.getInstance(); 
 		c.setTime(dateInscription);
 		Calendar cd = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_WEEK)); 
-		cd.add(GregorianCalendar.MONTH, +3); 
+		cd.add(GregorianCalendar.DAY_OF_WEEK, +90); 
 		Date date = cd.getTime();
 		Date now=new Date();
 		if(date.compareTo(now)>0){
