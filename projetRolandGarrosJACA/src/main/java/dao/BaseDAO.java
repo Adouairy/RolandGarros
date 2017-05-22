@@ -105,13 +105,12 @@ public class BaseDAO {
 	
 	/**
 	 * Ajoute un aide dans la base de donnees
+	 * @throws ParseException 
 	 */
-//	public void ajouterAide(String adresse, String date, String mail, String nom, String prenom, String tel, String mdpAide, String idMedecin) throws ParseException {
-//		//creer medecin
-//		Medecin medecin = new Medecin
-//		Aide aide = new Aide(adresse, date, mail,nom, prenom, tel,mdpAide,trouverMedecin.idMedecin(idMedecin));
-//		em.persist(aide);
-//	}
+	public void ajouterAide(String adresse, String ddn, String mail, String nom, String prenom, String tel, String mdpAide, Medecin medecin) throws ParseException {
+		Aide aide = new Aide(adresse, ddn, mail, nom, prenom, tel, mdpAide, medecin);
+		em.persist(aide);
+	}
 	
 	/**
 	 * Ajoute un aidant dans la base de donnees
@@ -122,6 +121,10 @@ public class BaseDAO {
 	}
 
 	
+	/**
+	 * Créer une instance de Médecin et l'ajoute au contexte de persistance.
+	 * @return le médecin créé
+	 */
 	public Medecin getMedecin(String mdpMedecin, String adressePro, String mailMedecin, String nom, String prenom, String telMedecin, Integer premiereConnection) {
 		Medecin m = new Medecin(mdpMedecin, adressePro, mailMedecin, nom, prenom, telMedecin, premiereConnection);
 		em.persist(m);
@@ -129,19 +132,17 @@ public class BaseDAO {
 	}
 	
 	
+	/**
+	 * Retourne le contenu de la table Médecin
+	 */
 	public List<Medecin> renvoiMedecins(){
 		return em.createQuery("select m from Medecin m order by m.nom asc").getResultList();
 	}
 	
-//	public Medecin getMedecin()
-//	public List<Medecin> {
-//		Medecin m=new Medecin();
-//		em.persist(m);
-//		 em.createQuery("select  from medecin m order by m.nom asc").getResultList();
-//	}
+
 	
 	/**
-	 * Fonction trouvée sur le net qui transforme un mot de type String en 
+	 * Fonction trouvée sur internet qui transforme un mot de type String en 
 	 */
 	 private static String encode(String password)
 	    {
