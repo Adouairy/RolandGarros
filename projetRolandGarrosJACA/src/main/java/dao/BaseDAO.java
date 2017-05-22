@@ -18,7 +18,7 @@ import entite.CompteRendu;
 import entite.Medecin;
 
 
-//singleton ----------------------------------------
+//----------------------------------------SINGLETON ----------------------------------------
 public class BaseDAO {
 
 	EntityManagerFactory emf;
@@ -40,7 +40,7 @@ public class BaseDAO {
 	}
 	
 
-	// -------------------------------------------------
+// -------------------------------------CONFIGURATION -------------------------------------
 	/**
 	 * Constructeur du DAO Il initialise le contexte de persistance
 	 */
@@ -68,6 +68,7 @@ public class BaseDAO {
 		emf.close();
 	}
 
+	// -------------------------------FONCTION VERIFCONNECTION -------------------------------------
 	/**
 	 * La fonction renvoie true si la personne a bien entre un nom et un mot de
 	 * passe valides
@@ -103,6 +104,7 @@ public class BaseDAO {
 		return resultat;
 	}
 	
+	// -------------------------------------AJOUTS DE PERSONNES -------------------------------------
 	/**
 	 * Ajoute un aide dans la base de donnees
 	 * @throws ParseException 
@@ -120,7 +122,8 @@ public class BaseDAO {
 		em.persist(aidant);
 	}
 
-	
+	// -------------------------------RENVOI DES LISTES DE PERSONNES -------------------------------------
+
 	/**
 	 * Créer une instance de Médecin et l'ajoute au contexte de persistance.
 	 * @return le médecin créé
@@ -177,8 +180,27 @@ public class BaseDAO {
 		return em.createQuery("select a from Aide a order by a.nom asc").getResultList();
 	}
 	
+	// -------------------------------------SUPPRESSION DE PERSONNES -------------------------------------
 
+	/**
+	 * efface une aide
+	 * @param a  l'aide
+	 */
+	public void supprimerAide(Aide a){
+		em.remove(a);
+	}
 	
+	/**
+	 * efface une aide
+	 * @param a  l'aide
+	 */
+	public void supprimerAidant(Aidant a){
+		em.remove(a);
+	}
+	
+	
+	// ----------------------------FONCTION DE CRYPTAGE EN MD5 -------------------------------------
+
 	/**
 	 * Fonction trouvée sur internet qui transforme un mot de type String en 
 	 */
