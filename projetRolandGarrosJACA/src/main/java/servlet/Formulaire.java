@@ -28,11 +28,12 @@ public class Formulaire extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Boolean a = false;
-		
-		if (ServiceVerifMdp.verifMdp(request)) {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		if (ServiceVerifMdp.getInstance().verifMdp(request)) {
 			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);	
+		}
+		else { 
+			this.getServletContext().getRequestDispatcher("/WEB-INF/formulaire.jsp").forward(request, response);	
 		}
 		
 	}
