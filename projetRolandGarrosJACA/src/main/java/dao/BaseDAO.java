@@ -38,7 +38,7 @@ public class BaseDAO {
 		}
 		return instance;
 	}
-	//pour rien
+	
 
 	// -------------------------------------------------
 	/**
@@ -107,16 +107,16 @@ public class BaseDAO {
 	 * Ajoute un aide dans la base de donnees
 	 * @throws ParseException 
 	 */
-	public void ajouterAide(String adresse, String ddn, String mail, String nom, String prenom, String tel, String mdpAide, Medecin medecin) throws ParseException {
-		Aide aide = new Aide(adresse, ddn, mail, nom, prenom, tel, mdpAide, medecin);
+	public void ajouterAide(Aide aide) throws ParseException {
+		aide.setMdpAide(encode(aide.getMdpAide()));
 		em.persist(aide);
 	}
 	
 	/**
 	 * Ajoute un aidant dans la base de donnees
 	 */
-	public void ajouterAidant(String mailAidant, String adresseAidant, String ddnAidant, String telAidant, String mdpAidant, String type, Boolean referent, String nomAidant, String prenomAidant) throws ParseException {
-		Aidant aidant = new Aidant(mailAidant, adresseAidant, ddnAidant, telAidant, encode(mdpAidant), type, referent, nomAidant, prenomAidant);
+	public void ajouterAidant(Aidant aidant) throws ParseException {
+		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
 		em.persist(aidant);
 	}
 
@@ -137,6 +137,44 @@ public class BaseDAO {
 	 */
 	public List<Medecin> renvoiMedecins(){
 		return em.createQuery("select m from Medecin m order by m.nom asc").getResultList();
+	}
+	
+	/**
+	 * Créer une instance de Aidant et l'ajoute au contexte de persistance.
+	 * @return le aidant créé
+	 * @throws ParseException 
+	 */
+	public Aidant getAidant(String adresseAidant, String ddnAidant,String mailAidant, String mdpAidant, String nomAidant, String prenomAidant,  Boolean referent, String telAidant, String type) throws ParseException {
+		Aidant a = new Aidant( adresseAidant,  ddnAidant, mailAidant,  mdpAidant,  nomAidant,  prenomAidant,   referent,  telAidant,  type);
+		em.persist(a);
+		return a;
+	}
+	
+	
+	/**
+	 * Retourne le contenu de la table Aidant
+	 */
+	public List<Aidant> renvoiAidants(){
+		return em.createQuery("select a from Aidant a order by a.nomAidant asc").getResultList();
+	}
+	
+	/**
+	 * Créer une instance de Aide et l'ajoute au contexte de persistance.
+	 * @return la personne aidée est créée
+	 * @throws ParseException 
+	 */
+	public Aide getAide(String adresse, String ddn,String mail, String mdpAide, String nom, String prenom, String tel, Medecin medecin) throws ParseException {
+		Aide a = new Aide( adresse,  ddn, mail,  mdpAide,  nom,  prenom,  tel,  medecin);
+		em.persist(a);
+		return a;
+	}
+	
+	
+	/**
+	 * Retourne le contenu de la table Aide
+	 */
+	public List<Aide> renvoiAides(){
+		return em.createQuery("select a from Aide a order by a.nom asc").getResultList();
 	}
 	
 
