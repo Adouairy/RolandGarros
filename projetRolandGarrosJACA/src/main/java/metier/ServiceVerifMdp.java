@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -83,7 +84,7 @@ public class ServiceVerifMdp {
 		//faux si le delai est dépassés
 		Calendar c = Calendar.getInstance(); 
 		c.setTime(dateInscription);
-		Calendar cd = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_WEEK)); 
+		Calendar cd = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)); 
 		cd.add(GregorianCalendar.DAY_OF_WEEK, +90); 
 		Date date = cd.getTime();
 		Date now=new Date();
@@ -94,7 +95,12 @@ public class ServiceVerifMdp {
 	}
 	
 	public String creationMdp(){
-		String chars="zriyefgezukrygfh";
-		return chars;
+		String mdp="";
+		Random rand = new Random();
+		for(int i = 0 ; i < 10 ; i++){
+		  char c = (char)(rand.nextInt(26) + 97);
+		  mdp += c;
+		}
+		return mdp;
 	}
 }
