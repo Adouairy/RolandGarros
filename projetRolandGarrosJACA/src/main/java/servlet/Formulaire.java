@@ -58,9 +58,20 @@ public class Formulaire extends HttpServlet {
 		 * ou non))
 		 */
 		try {
-			Aidant aide = new Aidant(request.getParameter("mailAidant"), request.getParameter("nomAidant"));
-			ServiceVerifMdp.getInstance().verifMailAidant(request);
-			BaseDAO.getInstance().ajouterAidant(aide);
+			String mailAidant = request.getParameter("mailAidant");
+			String nomAidant = request.getParameter("nomAidant");
+			if (nomAidant.isEmpty() && mailAidant.isEmpty()) {
+				System.out.println("nom et mail vide");
+			} else if (nomAidant.isEmpty() && !mailAidant.isEmpty()) {
+				System.out.println("manque le nom");
+			} else if (!nomAidant.isEmpty() && mailAidant.isEmpty()) {
+				System.out.println("manque le mail");
+			} else {
+				Aidant aide = new Aidant(request.getParameter("mailAidant"), request.getParameter("nomAidant"));
+				ServiceVerifMdp.getInstance().verifMailAidant(request);
+				BaseDAO.getInstance().ajouterAidant(aide);
+			}
+
 		} catch (ParseException e) {
 			System.out.println("Erreur aidant");
 		}
