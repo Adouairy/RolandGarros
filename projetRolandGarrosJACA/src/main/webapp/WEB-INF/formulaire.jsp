@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,6 +15,16 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("#datepicker").datepicker();
+	});
+</script>
+
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -61,8 +71,10 @@
 									placeholder="Confirmation du mot de passe" />
 								<p>Choix du médecin traitant</p>
 								<select name="database1">
-									<c:forEach items="${listMedecin}" var="listMedecinValue" varStatus="status">
-										<option value="${listMedecinValue.idMedecin}">Dr. ${listMedecinValue.nom} ${listMedecinValue.prenom}</option>
+									<c:forEach items="${listMedecin}" var="listMedecinValue"
+										varStatus="status">
+										<option value="${listMedecinValue.idMedecin}">Dr.
+											${listMedecinValue.nom} ${listMedecinValue.prenom}</option>
 									</c:forEach>
 								</select><br />
 							</fieldset>
@@ -80,7 +92,7 @@
 									placeholder="Adresse postale Référent" />
 								<p>Date de naissance</p>
 								<input type="text" name="ddnRef"
-									placeholder="Date de naissance Référent" />
+									placeholder="Date de naissance Référent annee/mois/date" id="datepicker" />
 							</fieldset>
 							<fieldset class="col-sm-4">
 								<legend>Aidant</legend>

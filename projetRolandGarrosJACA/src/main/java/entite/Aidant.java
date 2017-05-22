@@ -88,6 +88,28 @@ public class Aidant implements Cloneable {
 		setPrenomAidant(prenomAidant);
 	}
 	
+	/**
+	 * Constructeur pour le formulaire d'inscription de l'aidé
+	 * @param mailAidant
+	 * @param adresseAidant
+	 * @param ddnAidant
+	 * @param referent
+	 * @param nomAidant
+	 * @param prenomAidant
+	 * @param premiereconnection
+	 */
+	public Aidant(String mailAidant, String adresseAidant, Date ddnAidant, Boolean referent, String nomAidant,
+			String prenomAidant, Integer premiereconnection) {
+		super();
+		this.mailAidant = mailAidant;
+		this.adresseAidant = adresseAidant;
+		this.ddnAidant = ddnAidant;
+		this.referent = referent;
+		this.nomAidant = nomAidant;
+		this.prenomAidant = prenomAidant;
+		this.premiereconnection = premiereconnection;
+	}
+
 	//accesseurs
 	public Integer getPremiereconnection() {
 		return premiereconnection;
