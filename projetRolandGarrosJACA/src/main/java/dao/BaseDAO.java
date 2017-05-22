@@ -123,6 +123,8 @@ public class BaseDAO {
 	public void ajouterAidant(Aidant aidant) throws ParseException {
 		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
 		em.persist(aidant);
+		commit();
+		closeAll();
 	
 	}
 
@@ -133,9 +135,11 @@ public class BaseDAO {
 	 * @return le médecin créé
 	 */
 	public Medecin getMedecin(String mdpMedecin, String adressePro, String mailMedecin, String nom, String prenom, String telMedecin, Integer premiereConnection) {
-		Medecin m = new Medecin(mdpMedecin, adressePro, mailMedecin, nom, prenom, telMedecin, premiereConnection);
-		em.persist(m);
-		return m;
+	Medecin m = new Medecin(mdpMedecin, adressePro, mailMedecin, nom, prenom, telMedecin, premiereConnection);
+	em.persist(m);
+		commit();
+		closeAll();
+	return m;
 	}
 	
 	
