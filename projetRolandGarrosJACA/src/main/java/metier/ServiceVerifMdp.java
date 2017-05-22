@@ -10,6 +10,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import dao.BaseDAO;
+import entite.Aidant;
 import entite.Aide;
 
 public class ServiceVerifMdp {
@@ -59,11 +60,11 @@ public class ServiceVerifMdp {
 		boolean verif = false;
 		String mail = "";
 		mail = request.getParameter("mailAide");
-		List<Aide> listAide = new ArrayList<Aide>();
-		listAide=BaseDAO.getInstance().renvoiAidants();
+		List<Aidant> listAidant = new ArrayList<Aidant>();
+		listAidant=BaseDAO.getInstance().renvoiAidants();
 		
-		for (int i = 0; i < listAide.size(); i++) {
-			if (listAide.get(i).getMail().equals(mail)) {
+		for (int i = 0; i < listAidant.size(); i++) {
+			if (listAidant.get(i).getMailAidant().equals(mail)) {
 				verif = true;
 			}
 		}
