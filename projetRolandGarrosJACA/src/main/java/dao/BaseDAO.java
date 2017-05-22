@@ -113,7 +113,7 @@ public class BaseDAO {
 	public void ajouterAide(Aide aide) throws ParseException {
 		aide.setMdpAide(encode(aide.getMdpAide()));
 		em.persist(aide);
-		commit();
+		tx.commit();
 		}
 	
 	/**
@@ -122,7 +122,7 @@ public class BaseDAO {
 	public void ajouterAidant(Aidant aidant) throws ParseException {
 		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
 		em.persist(aidant);
-		commit();
+		tx.commit();
 			
 	}
 
@@ -192,7 +192,7 @@ public class BaseDAO {
 	 */
 	public void supprimerAide(Aide a){
 		em.remove(a);
-		commit();
+		tx.commit();
 	}
 	
 	/**
@@ -201,7 +201,7 @@ public class BaseDAO {
 	 */
 	public void supprimerAidant(Aidant a){
 		em.remove(a);
-		commit();
+		tx.commit();
 	}
 	
 	
