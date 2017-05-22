@@ -87,7 +87,7 @@ public class BaseDAO {
 		} 
 		else if (nomTable.equals("aide")) {
 			if (em.createQuery("select nom from Aide where mail = '" + mail + "'"
-					+ "AND mdp = MD5('" + mdp + "')").getResultList().isEmpty()) {
+					+ "AND mdpAide = MD5('" + mdp + "')").getResultList().isEmpty()) {
 				resultat = false;
 			} else {
 				resultat = true;
