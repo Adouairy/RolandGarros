@@ -4,8 +4,23 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
+import dao.BaseDAO;
+
 public class ServiceVerifMdp {
 
+	private static ServiceVerifMdp instance;
+
+	/**
+	 * Le DAO fonctionne en singleton
+	 * 
+	 * @return l'instance unique du DAO
+	 */
+	public static ServiceVerifMdp getInstance() {
+		if (instance == null) {
+			instance = new ServiceVerifMdp();
+		}
+		return instance;
+	}
 	public boolean verifMdp(HttpServletRequest request) {
 		boolean verif = false;
 		String motDePasse = "";
