@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.BaseDAO;
 import entite.Aidant;
+import entite.Aide;
+import entite.Medecin;
 import metier.ServiceVerifMdp;
 
 /**
@@ -47,6 +49,7 @@ public class Formulaire extends HttpServlet {
 			ref.setMdpAidant(mdp);
 			BaseDAO.getInstance().ajouterAidant(ref);
 		} catch (ParseException e) {
+			System.out.println("Erreur referent");
 		}
 		
 		/**
@@ -57,13 +60,17 @@ public class Formulaire extends HttpServlet {
 			ServiceVerifMdp.getInstance().verifMailAidant(request);
 			BaseDAO.getInstance().ajouterAidant(aide);
 		} catch (ParseException e) {
+			System.out.println("Erreur aidant");
 		}
 		
 		/**
 		 * Création de l'aide
 		 */
 		try {
+			Medecin med = new Medecin();
+			Aide util = new Aide(request.getParameter("adresseAide"), request.getParameter("ddnAide"), request.getParameter("mailAide"), request.getParameter("nomAide"), request.getParameter("prenomAide"), request.getParameter("telAide"), request.getParameter("mdpAide"), med );					
 		} catch (ParseException e) {
+			System.out.println("Erreur aide");
 		}
 
 		if (ServiceVerifMdp.getInstance().verifMdp(request)) {
