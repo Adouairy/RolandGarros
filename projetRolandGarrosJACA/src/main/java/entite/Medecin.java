@@ -74,6 +74,18 @@ public class Medecin implements Cloneable {
 		this.premiereconnection = premiereconnection;
 	}
 
+	public Medecin(String mdpMedecin,  String mailMedecin, String adressePro, String nom, String prenom, String telMedecin, Integer premiereconnection) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.MdpMedecin = mdpMedecin;
+		this.mailMedecin = mailMedecin;
+		this.adressePro = adressePro;
+		this.telMedecin = telMedecin;
+		this.premiereconnection = premiereconnection;
+	}
+
+	
+
 
 	// accesseurs
 

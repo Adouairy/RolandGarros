@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,6 +13,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import entite.Aidant;
+import entite.Aide;
+import entite.CompteRendu;
 import entite.Medecin;
 
 
@@ -117,10 +120,21 @@ public class BaseDAO {
 		Aidant aidant = new Aidant(mailAidant, adresseAidant, ddnAidant, telAidant, encode(mdpAidant), type, referent, nomAidant, prenomAidant);
 		em.persist(aidant);
 	}
+
 	
+	public Medecin getMedecin(String mdpMedecin, String adressePro, String mailMedecin, String nom, String prenom, String telMedecin, Integer premiereConnection) {
+		Medecin m = new Medecin(mdpMedecin, adressePro, mailMedecin, nom, prenom, telMedecin, premiereConnection);
+		em.persist(m);
+		return m;
+	}
+	
+	
+	public List<Medecin> renvoiMedecins(){
+		return em.createQuery("select m from Medecin m order by m.nom asc").getResultList();
+	}
 	
 //	public Medecin getMedecin()
-//	public List<Medecin> renvoiMedecins(){
+//	public List<Medecin> {
 //		Medecin m=new Medecin();
 //		em.persist(m);
 //		 em.createQuery("select  from medecin m order by m.nom asc").getResultList();
