@@ -34,7 +34,7 @@
   
   <servlet>
     <servlet-name>LienFormulaire</servlet-name>
-    <servlet-class>servlet.lienFormulaire</servlet-class>
+    <servlet-class>servlet.LienFormulaire</servlet-class>
     <init-param>
       <param-name>auteur</param-name>
       <param-value>Adrien</param-value>
