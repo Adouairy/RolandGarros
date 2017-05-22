@@ -24,7 +24,7 @@ public class Exe {
 		b.renvoiAides();
 
 		System.out.println(b.renvoiAides());
-		
+	//erz	
 		b.commit();
 //		System.out.println(b.renvoiMedecins()); 
 		b.closeAll();
