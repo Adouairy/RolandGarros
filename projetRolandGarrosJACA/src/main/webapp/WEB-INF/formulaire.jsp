@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -60,9 +61,8 @@
 									placeholder="Confirmation du mot de passe" />
 								<p>Choix du médecin traitant</p>
 								<select name="database1">
-									<c:forEach items="${listMedecin}" var="listMedecinValue">
-										<option value="${listMedecinValue}">${listMedecinValue.nom}
-											${listMedecinValue.prenom}</option>
+									<c:forEach items="${listMedecin}" var="listMedecinValue" varStatus="status">
+										<option value="${listMedecinValue.idMedecin}">${listMedecinValue.nom}</option>
 									</c:forEach>
 								</select><br />
 							</fieldset>

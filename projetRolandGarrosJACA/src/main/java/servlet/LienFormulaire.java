@@ -36,7 +36,7 @@ public class LienFormulaire extends HttpServlet {
 			throws ServletException, IOException {
 		List<Medecin> listMedecin = new ArrayList<Medecin>();
 		listMedecin = BaseDAO.getInstance().renvoiMedecins();
-		request.setAttribute("listMedecin", "listMedecin");
+		request.setAttribute("listMedecin", listMedecin);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/formulaire.jsp").forward(request, response);
 	}
 
