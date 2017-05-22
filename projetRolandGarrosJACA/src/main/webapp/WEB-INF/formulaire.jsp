@@ -27,9 +27,7 @@
 			<a class="navbar-brand" href="#"> <img id="logo"
 				src="img/logo.png"></a>
 		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			
-		</div>
+		<div class="collapse navbar-collapse" id="myNavbar"></div>
 	</div>
 	</nav>
 	<div class="container-fluid text-center">
@@ -61,11 +59,11 @@
 								<input type="password" name="confirmAide"
 									placeholder="Confirmation du mot de passe" />
 								<p>Choix du médecin traitant</p>
-								<select>
-									<option>a</option>
-									<option>b</option>
-									<option>c</option>
-									<option>d</option>
+								<select name="database1">
+									<c:forEach items="${listMedecin}" var="listMedecinValue">
+										<option value="${listMedecinValue}">${listMedecinValue.nom}
+											${listMedecinValue.prenom}</option>
+									</c:forEach>
 								</select><br />
 							</fieldset>
 							<fieldset class="col-sm-4">
@@ -86,13 +84,6 @@
 							</fieldset>
 							<fieldset class="col-sm-4">
 								<legend>Aidant</legend>
-								<select>
-									<option>a</option>
-									<option>b</option>
-									<option>c</option>
-									<option>d</option>
-								</select><br />
-								<br />
 								<p>Nom</p>
 								<input type="text" name="nomAidant" placeholder="Votre nom" />
 								<p>E-mail</p>
