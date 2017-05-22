@@ -109,6 +109,7 @@ public class BaseDAO {
 	 * Ajoute un aide dans la base de donnees
 	 * @throws ParseException 
 	 */
+	//pr Git
 	public void ajouterAide(Aide aide) throws ParseException {
 		aide.setMdpAide(encode(aide.getMdpAide()));
 		em.persist(aide);
