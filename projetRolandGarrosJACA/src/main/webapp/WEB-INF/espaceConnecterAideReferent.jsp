@@ -26,7 +26,7 @@
 		<div class="row content">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
-				<h1>Coucou ${ref.prenom} et bienvenue dans ton espace connecté</h1>
+				<h1>Coucou ${leConnecte.prenom} et bienvenue dans ton espace connecté</h1>
 			</div>
 		</div>
 		<div class="col-sm-2"></div>
