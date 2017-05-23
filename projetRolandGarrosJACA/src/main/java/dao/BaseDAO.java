@@ -41,11 +41,11 @@ public class BaseDAO {
 		return instance;
 	}
 
-	// -------------------------------------CONFIGURATION-------------------------------------
 	/**
-	 * Constructeur du DAO Il initialise le contexte de persistance
+	 * Synchronise le context de persistance avec la base de donnee. En fait un
+	 * commit est effectue et une nouvelle transaction d�but�e
 	 */
-	public BaseDAO() {
+	public void connection() {
 		emf = Persistence.createEntityManagerFactory("jpa");
 		em = emf.createEntityManager();
 		tx = em.getTransaction();
@@ -53,18 +53,9 @@ public class BaseDAO {
 	}
 
 	/**
-	 * Synchronise le context de persistance avec la base de donnee. En fait un
-	 * commit est effectue et une nouvelle transaction d�but�e
-	 */
-	public void commit() {
-		tx.commit();
-		tx.begin();
-	}
-
-	/**
 	 * Ferme la factory d'entity manager et l'entity manager
 	 */
-	public void closeAll() {
+	public void closeAll() {	
 		em.close();
 		emf.close();
 	}
@@ -77,6 +68,7 @@ public class BaseDAO {
 	 * @return true si c'est ok et false si erreur de connection
 	 */
 	public Boolean verifConnection(String mail, String mdp, String nomTable) {
+		connection();
 		Boolean resultat = true;
 		if (nomTable.equals("aidant")) {
 			if (em.createQuery("select nomAidant from Aidant where mailAidant = '" + mail + "'"
@@ -100,6 +92,7 @@ public class BaseDAO {
 				resultat = true;
 			}
 		}
+		closeAll();
 		return resultat;
 	}
 
@@ -109,6 +102,7 @@ public class BaseDAO {
 	 * sinon
 	 */
 	public Boolean verifReferent(String mail, String mdp, String nomTable) {
+		connection();
 		Boolean resultat = false;
 		if (nomTable.equals("aidant")) {
 			if (!em.createQuery("select nomAidant from Aidant where mailaidant = '" + mail + "'"
@@ -116,6 +110,7 @@ public class BaseDAO {
 				resultat = true;
 			}
 		}
+		closeAll();
 		return resultat;
 	}
 
@@ -127,18 +122,23 @@ public class BaseDAO {
 	 */
 	// pr Git
 	public void ajouterAide(Aide aide) throws ParseException {
+		connection();
 		aide.setMdpAide(encode(aide.getMdpAide()));
 		em.persist(aide);
-		commit();
+		tx.commit();
+		closeAll();
+		
 	}
 
 	/**
 	 * Ajoute un aidant dans la base de donnees
 	 */
 	public void ajouterAidant(Aidant aidant) throws ParseException {
+		connection();
 		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
 		em.persist(aidant);
-		commit();
+		tx.commit();
+		closeAll();
 	}
 
 	/**
@@ -146,9 +146,11 @@ public class BaseDAO {
 	 * un aidant
 	 */
 	public void ajouterCooperation(Aidant aidant, Aide aide) throws ParseException {
+		connection();
 		Cooperation cooperation = new Cooperation(aidant, aide);
 		em.persist(cooperation);
-		commit();
+		tx.commit();
+		closeAll();
 	}
 
 	// -------------------------------RENVOI DES LISTES DE PERSONNES(objets)-------------------------------------
@@ -160,8 +162,10 @@ public class BaseDAO {
 	 */
 	public Medecin getMedecin(String mdpMedecin, String adressePro, String mailMedecin, String nom, String prenom,
 			String telMedecin, Integer premiereConnection) {
+		connection();
 		Medecin m = new Medecin(mdpMedecin, adressePro, mailMedecin, nom, prenom, telMedecin, premiereConnection);
 		em.persist(m);
+		closeAll();
 		return m;
 	}
 
@@ -169,7 +173,10 @@ public class BaseDAO {
 	 * Retourne le contenu de la table Médecin
 	 */
 	public List<Medecin> renvoiMedecins() {
-		return em.createQuery("select m from Medecin m order by m.nom asc").getResultList();
+		connection();
+		List<Medecin> liste = em.createQuery("select m from Medecin m order by m.nom asc").getResultList();
+		closeAll();
+		return liste;
 	}
 
 	/**
@@ -181,9 +188,11 @@ public class BaseDAO {
 	public Aidant getAidant(String adresseAidant, String ddnAidant, String mailAidant, String mdpAidant,
 			String nomAidant, String prenomAidant, Boolean referent, String telAidant, String type)
 			throws ParseException {
+		connection();
 		Aidant a = new Aidant(adresseAidant, ddnAidant, mailAidant, mdpAidant, nomAidant, prenomAidant, referent,
 				telAidant, type);
 		em.persist(a);
+		closeAll();
 		return a;
 	}
 
@@ -191,7 +200,10 @@ public class BaseDAO {
 	 * Retourne le contenu de la table Aidant
 	 */
 	public List<Aidant> renvoiAidants() {
-		return em.createQuery("select a from Aidant a order by a.nomAidant asc").getResultList();
+		connection();
+		List<Aidant> liste = em.createQuery("select a from Aidant a order by a.nomAidant asc").getResultList();
+		closeAll();
+		return liste;
 	}
 
 	/**
@@ -202,8 +214,10 @@ public class BaseDAO {
 	 */
 	public Aide getAide(String adresse, String ddn, String mail, String mdpAide, String nom, String prenom, String tel,
 			Medecin medecin) throws ParseException {
+		connection();
 		Aide a = new Aide(adresse, ddn, mail, mdpAide, nom, prenom, tel, medecin);
 		em.persist(a);
+		closeAll();
 		return a;
 	}
 
@@ -211,7 +225,10 @@ public class BaseDAO {
 	 * Retourne le contenu de la table Aide
 	 */
 	public List<Aide> renvoiAides() {
-		return em.createQuery("select a from Aide a order by a.nom asc").getResultList();
+		connection();
+		List<Aide> liste = em.createQuery("select a from Aide a order by a.nom asc").getResultList();
+		closeAll();
+		return liste;
 	}
 
 	/**
@@ -221,8 +238,10 @@ public class BaseDAO {
 	 * @throws ParseException
 	 */
 	public Cooperation getCooperation(Aidant aidant, Aide aide) {
+		connection();
 		Cooperation cooperation = new Cooperation(aidant, aide);
 		em.persist(cooperation);
+		closeAll();
 		return cooperation;
 	}
 
@@ -230,7 +249,10 @@ public class BaseDAO {
 	 * Retourne le contenu de la table Cooperation
 	 */
 	public List<Cooperation> renvoiCooperations() {
-		return em.createQuery("select cooperation from Cooperation cooperation").getResultList();
+		connection();
+		List<Cooperation> liste = em.createQuery("select cooperation from Cooperation cooperation").getResultList();
+		closeAll();
+		return liste;
 	}
 
 	// -------------------------------------SUPPRESSION DE PERSONNES-------------------------------------
@@ -240,8 +262,10 @@ public class BaseDAO {
 	 * @param a:l'aidée
 	 */
 	public void supprimerAide(Aide a) {
+		connection();
 		em.remove(a);
 		tx.commit();
+		closeAll();
 	}
 
 	/**
@@ -249,11 +273,14 @@ public class BaseDAO {
 	 * @param a:l'aidant
 	 */
 	public void supprimerAidant(Aidant a) {
+		connection();
 		em.remove(a);
 		tx.commit();
+		closeAll();
 	}
 
 	public void supprimerCooperation(Aidant a) {
+		connection();
 		for (Cooperation cooperation : renvoiCooperations()) {
 			if (a.getIdAidant() == cooperation.getAidant().getIdAidant()) {
 				em.remove(cooperation);
@@ -261,6 +288,7 @@ public class BaseDAO {
 		}
 
 		tx.commit();
+		closeAll();
 	}
 
 	// -----------------------------FONCTIONS DE RECHERCHE DE PERSONNE PAR ID-------------------------------------
@@ -273,6 +301,7 @@ public class BaseDAO {
 	 * @return le medecin
 	 */
 	public Medecin trouverMedecin(int id) {
+		connection();
 		return em.find(Medecin.class, id);
 	}
 
@@ -284,6 +313,7 @@ public class BaseDAO {
 	 * @return l'aidant
 	 */
 	public Aidant trouverAidant(int id) {
+		connection();
 		return em.find(Aidant.class, id);
 	}
 
@@ -295,6 +325,7 @@ public class BaseDAO {
 	 * @return l'aidé
 	 */
 	public Aide trouverAide(int id) {
+		connection();
 		return em.find(Aide.class, id);
 	}
 
