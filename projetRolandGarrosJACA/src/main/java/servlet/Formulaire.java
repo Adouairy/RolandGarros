@@ -143,10 +143,12 @@ public class Formulaire extends HttpServlet {
 		if (formulaireJuste) {
 			try {
 				BaseDAO.getInstance().ajouterAidant(ref);
+				BaseDAO.getInstance().ajouterAide(aide);
+				BaseDAO.getInstance().ajouterCooperation(ref, aide);
 				if(!aidant.getMailAidant().isEmpty()){
 					BaseDAO.getInstance().ajouterAidant(aidant);
-				}
-				BaseDAO.getInstance().ajouterAide(aide);
+					BaseDAO.getInstance().ajouterCooperation(aidant, aide);
+				}								
 
 			} catch (Exception e) {
 				System.out.println("exception");
