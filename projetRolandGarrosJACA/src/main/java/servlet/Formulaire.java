@@ -66,6 +66,7 @@ public class Formulaire extends HttpServlet {
 			if (!mailCorrect) {
 				String mdp = ServiceVerifMdp.getInstance().creationMdp();
 				ref.setMdpAidant(mdp);
+				ServiceVerifMdp.getInstance().notifEnvoyerMail(ref.getMdpAidant(),ref.getMailAidant());
 			} else {
 				messageVerifMailRef = "Cette adresse mail est déjà utilisée";
 				formulaireJuste = false;
@@ -81,6 +82,7 @@ public class Formulaire extends HttpServlet {
 		String nomAidant = request.getParameter("nomAidant");
 		aidant = new Aidant(mailAidant, nomAidant);
 		if (nomAidant.isEmpty() && mailAidant.isEmpty()) {
+	
 		} else if (nomAidant.isEmpty() && !mailAidant.isEmpty()) {
 			messageAjoutAidant = "Veuillez ajouter un nom à votre aidant.";
 			formulaireJuste = false;
@@ -88,7 +90,12 @@ public class Formulaire extends HttpServlet {
 			messageAjoutAidant = "Veuillez ajouter un e-mail à votre aidant.";
 			formulaireJuste = false;
 		} else { /*------------------- FAIRE LA VERIFICATION DE EMAIL AIDANT !!!! -----------------------------------------*/
-			ServiceVerifMdp.getInstance().verifMailAidant(request);
+			//ServiceVerifMdp.getInstance().verifMailAidant(request);
+			System.out.println("yesssssssssssssssssssssssssssssssssssssssssssssssss");
+			String mdp = ServiceVerifMdp.getInstance().creationMdp();
+			aidant.setMdpAidant(mdp);
+			System.out.println(aidant.getMdpAidant());
+			ServiceVerifMdp.getInstance().notifEnvoyerMail(aidant.getMdpAidant(),aidant.getMailAidant());
 		}
 
 		/**
@@ -136,8 +143,11 @@ public class Formulaire extends HttpServlet {
 		if (formulaireJuste) {
 			try {
 				BaseDAO.getInstance().ajouterAidant(ref);
+				if(!aidant.getMailAidant().isEmpty()){
+					BaseDAO.getInstance().ajouterAidant(aidant);
+				}
 				BaseDAO.getInstance().ajouterAide(aide);
-				BaseDAO.getInstance().ajouterAidant(aidant);
+
 			} catch (Exception e) {
 				System.out.println("exception");
 			}
