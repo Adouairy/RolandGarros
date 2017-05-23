@@ -32,7 +32,16 @@ public class Accueil extends HttpServlet {
 		System.out.println(email);
 		Boolean estDansLaBase=dao.verifConnection(email,mdp,table);
 		if (estDansLaBase){
-			this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
+			if (table.equals("Aidant")) {
+				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
+			} else if (table.equals("Aide")) {
+				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
+			} else if (table.equals("Aidant")) {
+			//	Boolean estRef = dao; 
+				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
+			}
+			
+			
 			
 		}
 		else{
