@@ -193,7 +193,7 @@ public class Aide implements Cloneable {
 	@Override
 	public String toString() {
 		return "Aide [id=" + id + ", adresse=" + adresse + ", ddn=" + ddn + ", mail=" + mail + ", nom=" + nom
-				+ ", prenom=" + prenom + ", tel=" + tel + ", mdpAide=" + mdpAide + ", id_medecin=" + medecin.getIdMedecin() +  "]";
+				+ ", prenom=" + prenom + ", tel=" + tel + ", mdpAide=" + mdpAide + "   ]";
 	}
-
+// , id_medecin=" + medecin.getIdMedecin()
 }

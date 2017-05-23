@@ -134,4 +134,25 @@ public class ServiceVerifMdp {
         }
         return mdp;
     }
+    
+    
+    public Aide importerAide(String mail) {
+    	List<Aide> liste = BaseDAO.getInstance().renvoiAides();
+    	for (Aide aide : liste) {
+			if(mail.equals(aide.getMail())) {
+				return aide;
+			}
+		}
+    	return null;
+    }
+    
+    public Aidant importerAidant(String mail) {
+    	List<Aidant> liste = BaseDAO.getInstance().renvoiAidants();
+    	for (Aidant aidant : liste) {
+			if(mail.equals(aidant.getMailAidant())) {
+				return aidant;
+			}
+		}
+    	return null;
+    }
 }
