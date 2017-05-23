@@ -134,14 +134,15 @@ public class Formulaire extends HttpServlet {
 		}
 
 		if (formulaireJuste) {
-			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
-		} else {
 			try {
 				BaseDAO.getInstance().ajouterAidant(ref);
-				BaseDAO.getInstance().ajouterAidant(aidant);
 				BaseDAO.getInstance().ajouterAide(aide);
+				BaseDAO.getInstance().ajouterAidant(aidant);
 			} catch (Exception e) {
+				System.out.println("exception");
 			}
+			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
+		} else {
 			List<Medecin> listMedecin = new ArrayList<Medecin>();
 			listMedecin = BaseDAO.getInstance().renvoiMedecins();
 			request.setAttribute("aide", aide);
