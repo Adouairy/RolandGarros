@@ -94,7 +94,7 @@ public class ServiceVerifMdp {
     public void notifEnvoyerMail(String mdp,String mail){ 
         BufferedWriter fichier;
         try {
-            fichier = new BufferedWriter(new FileWriter("C:/Users/Herve/Desktop/boite/boite_mail_"+mail+".txt"));
+            fichier = new BufferedWriter(new FileWriter("C:/Users/boite/boite_mail_"+mail+".txt"));
             fichier.write("Email: "+ mail); 
             fichier.newLine();
             fichier.write("Mot de passe: " + mdp);
