@@ -48,6 +48,9 @@ public class Formulaire extends HttpServlet {
 		String messageMailAide = null;
 		String messageValidAide = null;
 
+		Aidant aidant = new Aidant();
+		Aide aide = new Aide();
+		Aidant ref = new Aidant();
 		/**
 		 * Création du référent (en passant par sa vérification d'e-mail (existe
 		 * ou non), ajout du mdp par défaut)
@@ -59,11 +62,10 @@ public class Formulaire extends HttpServlet {
 			String nomRef = request.getParameter("nomRef");
 			String prenomRef = request.getParameter("prenomRef");
 			Boolean mailCorrect = ServiceVerifMdp.getInstance().verifMailRef(request);
+			ref = new Aidant(mailRef, adresseRef, ddnRef, true, nomRef, prenomRef, 1);
 			if (!mailCorrect) {
-				Aidant ref = new Aidant(mailRef, adresseRef, ddnRef, true, nomRef, prenomRef, 1);
 				String mdp = ServiceVerifMdp.getInstance().creationMdp();
 				ref.setMdpAidant(mdp);
-				BaseDAO.getInstance().ajouterAidant(ref);
 			} else {
 				messageVerifMailRef = "Cette adresse mail est déjà utilisée";
 				formulaireJuste = false;
@@ -73,26 +75,20 @@ public class Formulaire extends HttpServlet {
 		}
 
 		/**
-		 * Création de l'aidant (en passant par sa vérification d'e-mail (existe
-		 * ou non))
+		 * Création de l'aidant si on veut en faire un
 		 */
-		try {
-			String mailAidant = request.getParameter("mailAidant");
-			String nomAidant = request.getParameter("nomAidant");
-			if (nomAidant.isEmpty() && mailAidant.isEmpty()) {
-			} else if (nomAidant.isEmpty() && !mailAidant.isEmpty()) {
-				messageAjoutAidant = "Veuillez ajouter un nom à votre aidant.";
-				formulaireJuste = false;
-			} else if (!nomAidant.isEmpty() && mailAidant.isEmpty()) {
-				messageAjoutAidant = "Veuillez ajouter un e-mail à votre aidant.";
-				formulaireJuste = false;
-			} else {
-				Aidant aidant = new Aidant(request.getParameter("mailAidant"), request.getParameter("nomAidant"));
-				ServiceVerifMdp.getInstance().verifMailAidant(request);
-				BaseDAO.getInstance().ajouterAidant(aidant);
-			}
-		} catch (ParseException e) {
-			System.out.println("Erreur aidant");
+		String mailAidant = request.getParameter("mailAidant");
+		String nomAidant = request.getParameter("nomAidant");
+		aidant = new Aidant(mailAidant, nomAidant);
+		if (nomAidant.isEmpty() && mailAidant.isEmpty()) {
+		} else if (nomAidant.isEmpty() && !mailAidant.isEmpty()) {
+			messageAjoutAidant = "Veuillez ajouter un nom à votre aidant.";
+			formulaireJuste = false;
+		} else if (!nomAidant.isEmpty() && mailAidant.isEmpty()) {
+			messageAjoutAidant = "Veuillez ajouter un e-mail à votre aidant.";
+			formulaireJuste = false;
+		} else { /*------------------- FAIRE LA VERIFICATION DE EMAIL AIDANT !!!! -----------------------------------------*/
+			ServiceVerifMdp.getInstance().verifMailAidant(request);
 		}
 
 		/**
@@ -112,6 +108,7 @@ public class Formulaire extends HttpServlet {
 			String mdpAide = request.getParameter("mdpAide");
 			Boolean verifMdp = ServiceVerifMdp.getInstance().verifMdp(request);
 			Boolean verifMail = ServiceVerifMdp.getInstance().verifMailAide(request);
+			aide = new Aide(adresseAide, ddnAide, mailAide, nomAide, prenomAide, telAide, mdpAide, med);
 			if (verifMdp) {
 				a++;
 			} else {
@@ -120,14 +117,13 @@ public class Formulaire extends HttpServlet {
 			}
 			if (!verifMail) {
 				a++;
+
 			} else {
 				messageMailAide = "Cette adresse mail est déjà utilisée.";
 				formulaireJuste = false;
 			}
 			if (a == 2) {
-				Aide util = new Aide(adresseAide, ddnAide, mailAide, nomAide, prenomAide, telAide, mdpAide, med);
-				BaseDAO.getInstance().ajouterAide(util);
-				BaseDAO.getInstance().closeAll();
+
 			} else {
 				messageValidAide = "L'aidé n'a pas pu être inscrit.";
 				formulaireJuste = false;
@@ -140,8 +136,17 @@ public class Formulaire extends HttpServlet {
 		if (formulaireJuste) {
 			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 		} else {
+			try {
+				BaseDAO.getInstance().ajouterAidant(ref);
+				BaseDAO.getInstance().ajouterAidant(aidant);
+				BaseDAO.getInstance().ajouterAide(aide);
+			} catch (Exception e) {
+			}
 			List<Medecin> listMedecin = new ArrayList<Medecin>();
 			listMedecin = BaseDAO.getInstance().renvoiMedecins();
+			request.setAttribute("aide", aide);
+			request.setAttribute("ref", ref);
+			request.setAttribute("aidant", aidant);
 			request.setAttribute("messageVerifMailRef", messageVerifMailRef);
 			request.setAttribute("messageAjoutAidant", messageAjoutAidant);
 			request.setAttribute("messageVerifMdp", messageVerifMdp);
@@ -150,7 +155,7 @@ public class Formulaire extends HttpServlet {
 			request.setAttribute("listMedecin", listMedecin);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/formulaire.jsp").forward(request, response);
 		}
-
+		// BaseDAO.getInstance().closeAll();
 	}
 
 	/**

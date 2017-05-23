@@ -1,3 +1,10 @@
 $(function() {
-	$(".datepicker").datepicker();
+	$("#datepicker").datepicker({
+		maxDate : new Date()
+	});
+});
+$(function() {
+	$("#datepicker2").datepicker({
+		maxDate : new Date()
+	});
 });
