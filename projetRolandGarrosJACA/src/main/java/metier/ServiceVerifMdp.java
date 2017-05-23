@@ -73,6 +73,22 @@ public class ServiceVerifMdp {
 		return verif;
 	}
 	
+	public boolean verifMailRef(HttpServletRequest request) {
+		boolean verif = false;
+		String mail = "";
+		mail = request.getParameter("mailRef");
+		List<Aidant> listAidant = new ArrayList<Aidant>();
+		listAidant=BaseDAO.getInstance().renvoiAidants();
+		
+		for (int i = 0; i < listAidant.size(); i++) {
+			if (listAidant.get(i).getMailAidant().equals(mail)) {
+				verif = true;
+			}
+		}
+	
+		return verif;
+	}
+	
 	public boolean notifEnvoyerMail(){
 		boolean envoi= false;
 		System.out.println("Simulation de la notification d'email!");

@@ -33,19 +33,23 @@ public class Accueil extends HttpServlet {
 		/**
          * fonction qui teste le temps de presence d'un aidant sans confirmation dans 
          * la base de donnée
-         *//*
+         */
         List<Aidant> listeAidant =new ArrayList<Aidant>();
         listeAidant = BaseDAO.getInstance().renvoiAidants();
         Date inscription = new Date();
         boolean delaiDepasse = true;
         for (int i = 0; i < listeAidant.size(); i++) {
             inscription = listeAidant.get(i).getDateInscription();
+            if(inscription!=null){
             delaiDepasse=ServiceVerifMdp.getInstance().delaiInscription(inscription);
+            System.out.println(listeAidant.get(i));
+            }
             if(!delaiDepasse){
+            	System.out.println(listeAidant.get(i));
                 BaseDAO.getInstance().supprimerAidant(listeAidant.get(i));
             }
         }
-        */
+        
         /**
          * Vérification de la connection
          */
