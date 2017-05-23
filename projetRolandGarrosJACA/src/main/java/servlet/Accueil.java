@@ -33,7 +33,7 @@ public class Accueil extends HttpServlet {
 		/**
          * fonction qui teste le temps de presence d'un aidant sans confirmation dans 
          * la base de donnée
-         */
+         *//*
         List<Aidant> listeAidant =new ArrayList<Aidant>();
         listeAidant = BaseDAO.getInstance().renvoiAidants();
         Date inscription = new Date();
@@ -45,7 +45,7 @@ public class Accueil extends HttpServlet {
                 BaseDAO.getInstance().supprimerAidant(listeAidant.get(i));
             }
         }
-        
+        */
         /**
          * Vérification de la connection
          */
@@ -68,6 +68,7 @@ public class Accueil extends HttpServlet {
 		}
 		else{
 			message = "Connection échouée, veuillez réessayer";
+			request.setAttribute("message", message);
 			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 		}
 		

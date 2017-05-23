@@ -71,14 +71,7 @@
 					</div>
 					<button type="submit" class="btn btn-success">Connection</button>
 				</form>
-				<div id="echecCo">
-				<c:if test="${empty message}">
-				Coucou test
-				</c:if>
-				<c:if test="${not empty message}">
-				Echec de la connexion
-				</c:if>
-				</div>
+				${message}
 			</ul>
 		</div>
 	</div>
