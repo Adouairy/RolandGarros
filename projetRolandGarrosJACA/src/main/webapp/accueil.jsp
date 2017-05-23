@@ -14,6 +14,11 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="script/script.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -69,9 +74,9 @@
 						<input type="password" placeholder="Mot de passe"
 							name="mdpIdentifiant" class="form-control">
 					</div>
-					<button type="submit" class="btn btn-success">Connection</button>
+					<button id="buttonConnection" type="submit" class="btn btn-success">Connection</button>
 				</form>
-				<p id="echecCo">${message}</p>
+				
 			</ul>
 		</div>
 	</div>
@@ -175,6 +180,8 @@
 				</p>
 			</div>
 		</div>
+		<div name="effects" id="effectTypes" value="blind"></div>
+		<div id="echecCo" class="ui-widget-content ui-corner-all">Echec lors de la connexion</div>
 	</footer>
 </body>
 </html>

@@ -76,3 +76,21 @@ legend, fieldset>input, fieldset>p {
 #echecCo{
 	color: white;
 }
+
+#buttonConnection { 
+	padding: .5em 1em;
+	text-decoration: none; 
+}
+
+#echecCo { 
+	width: 200px; 
+	height: 40px; 
+	background-color: red;
+	color:white;
+	padding: 0.4em;  
+	position: fixed;
+	top:2%;
+	right: 2%;
+	margin: 0 auto;
+	padding: 0 auto;
+}
