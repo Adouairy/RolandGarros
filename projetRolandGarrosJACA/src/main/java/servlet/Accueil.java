@@ -56,6 +56,14 @@ public class Accueil extends HttpServlet {
         String table= request.getParameter("select");
 		String email= request.getParameter("email");
 		String mdp= request.getParameter("mdpIdentifiant");
+		
+		/**
+		 * Récupérer l'aidant ayant cet email
+		 */
+		
+		 List<Aidant> listeAidantVerif =new ArrayList<Aidant>();
+	     listeAidantVerif = BaseDAO.getInstance().renvoiAidants();
+	        
 		String message= null;
 		String MessageErreur= null;
 		//booleen
