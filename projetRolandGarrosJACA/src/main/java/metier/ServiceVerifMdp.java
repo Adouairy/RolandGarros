@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import dao.BaseDAO;
 import entite.Aidant;
 import entite.Aide;
+import entite.Medecin;
 
 public class ServiceVerifMdp {
 
@@ -151,6 +152,16 @@ public class ServiceVerifMdp {
     	for (Aidant aidant : liste) {
 			if(mail.equals(aidant.getMailAidant())) {
 				return aidant;
+			}
+		}
+    	return null;
+    }
+    
+    public Medecin importerMedecin(String mail) {
+    	List<Medecin> liste = BaseDAO.getInstance().renvoiMedecins();
+    	for (Medecin medecin : liste) {
+			if(mail.equals(medecin.getMailMedecin())) {
+				return medecin;
 			}
 		}
     	return null;
