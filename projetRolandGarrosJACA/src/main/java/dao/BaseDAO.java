@@ -104,6 +104,25 @@ public class BaseDAO {
 		return resultat;
 	}
 	
+	// -------------------------------FONCTION VERIFREFERENT -------------------------------------
+		/**
+		 * La fonction renvoie true si la personne est un aidant référent et non sinon
+		 */
+		public Boolean verifReferent(String mail, String mdp, String nomTable) {
+			Boolean resultat = false;
+			if (nomTable.equals("aidant")) {
+				if (!em.createQuery("select nomAidant from Aidant where mailaidant = '" + mail + "'"
+						+ " AND mdpAidant = MD5('" + mdp + "') AND referent = " + true).getResultList().isEmpty()) {
+					resultat = true;
+				} 
+				}
+			return resultat;
+			} 
+			
+	
+			
+
+	
 	// -------------------------------------AJOUTS DE PERSONNES -------------------------------------
 	/**
 	 * Ajoute un aide dans la base de donnees
@@ -122,8 +141,7 @@ public class BaseDAO {
 	public void ajouterAidant(Aidant aidant) throws ParseException {
 		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
 		em.persist(aidant);
-		commit();
-			
+		commit();		
 	}
 
 	// -------------------------------RENVOI DES LISTES DE PERSONNES -------------------------------------
