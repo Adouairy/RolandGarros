@@ -46,3 +46,7 @@ legend, fieldset>input, fieldset>p {
 [required] {
 	border: 2px solid orange;
 }
+.messageErreur{
+	color: red;
+	font-weight: 700;
+}

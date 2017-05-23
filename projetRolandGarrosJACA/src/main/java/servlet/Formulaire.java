@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,17 +39,33 @@ public class Formulaire extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SimpleDateFormat sdf = new SimpleDateFormat("mm/dd/yyyy");
+		Boolean formulaireJuste = true;
+		String messageVerifMailRef = null;
+		String messageAjoutAidant = null;
+		String messageVerifMdp = null;
+		String messageMailAide = null;
+		String messageValidAide = null;
+
 		/**
 		 * Création du référent (en passant par sa vérification d'e-mail (existe
 		 * ou non), ajout du mdp par défaut)
 		 */
 		try {
-			Aidant ref = new Aidant(request.getParameter("mailRef"), request.getParameter("adresseRef"),
-					sdf.parse(request.getParameter("ddnRef")), true, request.getParameter("nomRef"),
-					request.getParameter("prenomRef"), 1);
-			String mdp = ServiceVerifMdp.getInstance().creationMdp();
-			ref.setMdpAidant(mdp);
-			BaseDAO.getInstance().ajouterAidant(ref);
+			String mailRef = request.getParameter("mailRef");
+			String adresseRef = request.getParameter("adresseRef");
+			Date ddnRef = sdf.parse(request.getParameter("ddnRef"));
+			String nomRef = request.getParameter("nomRef");
+			String prenomRef = request.getParameter("prenomRef");
+			Boolean mailCorrect = ServiceVerifMdp.getInstance().verifMailRef(request);
+			if (mailCorrect) {
+				Aidant ref = new Aidant(mailRef, adresseRef, ddnRef, true, nomRef, prenomRef, 1);
+				String mdp = ServiceVerifMdp.getInstance().creationMdp();
+				ref.setMdpAidant(mdp);
+				BaseDAO.getInstance().ajouterAidant(ref);
+			} else {
+				messageVerifMailRef = "Cette adresse mail est déjà utilisée";
+				formulaireJuste = false;
+			}
 		} catch (ParseException e) {
 			System.out.println("Erreur referent");
 		}
@@ -61,17 +78,17 @@ public class Formulaire extends HttpServlet {
 			String mailAidant = request.getParameter("mailAidant");
 			String nomAidant = request.getParameter("nomAidant");
 			if (nomAidant.isEmpty() && mailAidant.isEmpty()) {
-				System.out.println("nom et mail vide");
 			} else if (nomAidant.isEmpty() && !mailAidant.isEmpty()) {
-				System.out.println("manque le nom");
+				messageAjoutAidant = "Veuillez ajouter un nom à votre aidant.";
+				formulaireJuste = false;
 			} else if (!nomAidant.isEmpty() && mailAidant.isEmpty()) {
-				System.out.println("manque le mail");
+				messageAjoutAidant = "Veuillez ajouter un e-mail à votre aidant.";
+				formulaireJuste = false;
 			} else {
-				Aidant aide = new Aidant(request.getParameter("mailAidant"), request.getParameter("nomAidant"));
+				Aidant aidant = new Aidant(request.getParameter("mailAidant"), request.getParameter("nomAidant"));
 				ServiceVerifMdp.getInstance().verifMailAidant(request);
-				BaseDAO.getInstance().ajouterAidant(aide);
+				BaseDAO.getInstance().ajouterAidant(aidant);
 			}
-
 		} catch (ParseException e) {
 			System.out.println("Erreur aidant");
 		}
@@ -81,21 +98,51 @@ public class Formulaire extends HttpServlet {
 		 */
 		try {
 			Medecin med = new Medecin();
-			Integer identifiantMed= Integer.parseInt(request.getParameter("database1"));
-			med=BaseDAO.getInstance().trouverMedecin(identifiantMed);
-			Aide util = new Aide(request.getParameter("adresseAide"), request.getParameter("ddnAide"),
-					request.getParameter("mailAide"), request.getParameter("nomAide"),
-					request.getParameter("prenomAide"), request.getParameter("telAide"),
-					request.getParameter("mdpAide"), med);
-			BaseDAO.getInstance().ajouterAide(util);
-			BaseDAO.getInstance().closeAll();
+			Integer identifiantMed = Integer.parseInt(request.getParameter("database1"));
+			med = BaseDAO.getInstance().trouverMedecin(identifiantMed);
+			Integer a = 0;
+			String adresseAide = request.getParameter("adresseAide");
+			String ddnAide = request.getParameter("ddnAide");
+			String mailAide = request.getParameter("mailAide");
+			String nomAide = request.getParameter("nomAide");
+			String prenomAide = request.getParameter("prenomAide");
+			String telAide = request.getParameter("telAide");
+			String mdpAide = request.getParameter("mdpAide");
+			Boolean verifMdp = ServiceVerifMdp.getInstance().verifMdp(request);
+			Boolean verifMail = ServiceVerifMdp.getInstance().verifMailAide(request);
+			if (verifMdp) {
+				a++;
+			} else {
+				messageVerifMdp = "Les mots de passes doivent être identiques.";
+				formulaireJuste = false;
+			}
+			if (verifMail) {
+				a++;
+			} else {
+				messageMailAide = "Cette adresse mail est déjà utilisée.";
+				formulaireJuste = false;
+			}
+			if (a == 2) {
+				Aide util = new Aide(adresseAide, ddnAide, mailAide, nomAide, prenomAide, telAide, mdpAide, med);
+				BaseDAO.getInstance().ajouterAide(util);
+				BaseDAO.getInstance().closeAll();
+			} else {
+				messageValidAide = "L'aidé n'a pas pu être inscrit.";
+				formulaireJuste = false;
+			}
+
 		} catch (ParseException e) {
 			System.out.println("Erreur aide");
 		}
 
-		if (ServiceVerifMdp.getInstance().verifMdp(request)) {
+		if (formulaireJuste) {
 			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 		} else {
+			request.setAttribute("messageVerifMailRef", messageVerifMailRef);
+			request.setAttribute("messageAjoutAidant", messageAjoutAidant);
+			request.setAttribute("messageVerifMdp", messageVerifMdp);
+			request.setAttribute("messageMailAide", messageMailAide);
+			request.setAttribute("messageValidAide", messageValidAide);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/formulaire.jsp").forward(request, response);
 		}
 

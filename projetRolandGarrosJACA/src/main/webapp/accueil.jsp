@@ -71,7 +71,7 @@
 					</div>
 					<button type="submit" class="btn btn-success">Connection</button>
 				</form>
-				${message}
+				<p id="echecCo">${message}</p>
 			</ul>
 		</div>
 	</div>

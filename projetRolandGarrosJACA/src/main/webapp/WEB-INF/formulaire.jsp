@@ -55,6 +55,7 @@
 								<p>E-mail :</p>
 								<input type="email" name="mailAide" placeholder="Votre E-mail"
 									required />
+								<p class="messageErreur">${messageMailAide}</p>
 								<p>Adresse postale :</p>
 								<input type="text" name="adresseAide"
 									placeholder="Votre adresse postale" required />
@@ -71,14 +72,16 @@
 								<p>Confirmation du mot de passe :</p>
 								<input type="password" name="confirmAide"
 									placeholder="Confirmation du mot de passe" required />
+								<p class="messageErreur">${messageVerifMdp}</p>
 								<p>Choix du médecin traitant :</p>
 								<select name="database1" required>
 									<c:forEach items="${listMedecin}" var="listMedecinValue"
 										varStatus="status">
 										<option value="${listMedecinValue.idMedecin}">Dr.
-											${listMedecinValue.nom} ${listMedecinValue.prenom} (${listMedecinValue.idMedecin})</option>
+											${listMedecinValue.nom} ${listMedecinValue.prenom}</option>
 									</c:forEach>
 								</select><br />
+								<p class="messageErreur">${messageValidAide}</p>
 							</fieldset>
 							<fieldset class="col-sm-4">
 								<legend>Référent</legend>
@@ -91,6 +94,7 @@
 								<p>E-mail :</p>
 								<input type="email" name="mailRef" placeholder="E-mail Référent"
 									required />
+								<p class="messageErreur">${messageVerifMailRef}</p>
 								<p>Adresse postale :</p>
 								<input type="text" name="adresseRef"
 									placeholder="Adresse postale Référent" required />
@@ -105,17 +109,17 @@
 								<input type="text" name="nomAidant" placeholder="Votre nom" />
 								<p>E-mail :</p>
 								<input type="email" name="mailAidant" placeholder="Votre E-mail" />
+								<p class="messageErreur">${messageAjoutAidant}</p>
 							</fieldset>
 						</div>
 						<p id="inputSubmit">
 							<input type="submit" value="Valider l'inscription" />
 						</p>
+					</form>
+				</fieldset>
 			</div>
-			</form>
-			</fieldset>
 		</div>
 		<div class="col-sm-2"></div>
-	</div>
 	</div>
 	<footer class="container-fluid text-center">
 	<div class="container">
@@ -144,6 +148,7 @@
 				</p>
 			</div>
 		</div>
+	</div>
 	</footer>
 </body>
 </html>
