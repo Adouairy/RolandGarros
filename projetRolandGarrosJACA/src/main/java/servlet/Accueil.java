@@ -80,6 +80,7 @@ public class Accueil extends HttpServlet {
 				listeAidantVerif = BaseDAO.getInstance().renvoiAidants();
 				Aidant aidant = ServiceVerifMdp.getInstance().importerAidant(email);
 				session.setAttribute("leConnecte", aidant);
+				session.setAttribute("identiteDuConnecte", table);
 				if (aidant.getPremiereconnection() == 1) {
 					this.getServletContext().getRequestDispatcher("/WEB-INF/premierConnection.jsp").forward(request,
 							response);
@@ -95,6 +96,7 @@ public class Accueil extends HttpServlet {
 				listeAideVerif = BaseDAO.getInstance().renvoiAides();
 				Aide aide = ServiceVerifMdp.getInstance().importerAide(email);
 				session.setAttribute("leConnecte", aide);
+				session.setAttribute("identiteDuConnecte", table);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
 						.forward(request, response);
 			} else {
