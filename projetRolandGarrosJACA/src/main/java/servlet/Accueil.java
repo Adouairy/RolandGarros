@@ -63,11 +63,11 @@ public class Accueil extends HttpServlet {
 		Boolean estDansLaBase=dao.verifConnection(email,mdp,table);
 //		Boolean estRef = dao.;
 		if (estDansLaBase){
-			if (table.equals("Aidant")) {
+			if (table.equals("aidant")) {
 				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
-			} else if (table.equals("Aide")) {
+			} else if (table.equals("aide")) {
 				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp").forward(request, response);
-			} else if (table.equals("Aidant") /*&& estRef*/) {
+			} else if (table.equals("aidant") /*&& estRef*/) {
 				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp").forward(request, response);
 			}
 		}
