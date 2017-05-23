@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import dao.BaseDAO;
 import entite.Aidant;
 import entite.Aide;
+import entite.Medecin;
 import metier.ServiceVerifMdp;
 
 public class Accueil extends HttpServlet {
@@ -76,8 +77,6 @@ public class Accueil extends HttpServlet {
 		// Boolean estRef = dao.;
 		if (estDansLaBase) {
 			if (table.equals("aidant")) {
-				List<Aidant> listeAidantVerif = new ArrayList<Aidant>();
-				listeAidantVerif = BaseDAO.getInstance().renvoiAidants();
 				Aidant aidant = ServiceVerifMdp.getInstance().importerAidant(email);
 				session.setAttribute("leConnecte", aidant);
 				session.setAttribute("identiteDuConnecte", table);
@@ -88,18 +87,21 @@ public class Accueil extends HttpServlet {
 					this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
 							.forward(request, response);
 				} else {
-					this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request,
-							response);
+					this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request,response);
 				}
 			} else if (table.equals("aide")) {
-				List<Aide> listeAideVerif = new ArrayList<Aide>();
-				listeAideVerif = BaseDAO.getInstance().renvoiAides();
 				Aide aide = ServiceVerifMdp.getInstance().importerAide(email);
 				session.setAttribute("leConnecte", aide);
 				session.setAttribute("identiteDuConnecte", table);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
 						.forward(request, response);
-			} else {
+			}else if(table.equals("medecin")) {
+				Medecin medecin = ServiceVerifMdp.getInstance().importerMedecin(email);
+				session.setAttribute("leConnecte", medecin);
+				session.setAttribute("identiteDuConnecte", table);
+				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request,response);
+
+			}else {
 				MessageErreur = "Erreur";
 				message = "Connection échouée, veuillez réessayer";
 				request.setAttribute("MessageErreur", MessageErreur);
