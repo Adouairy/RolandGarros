@@ -86,6 +86,8 @@ public class Aidant implements Cloneable {
 		setNomAidant(nomAidant);
 		setPrenomAidant(prenomAidant);
 	}
+	
+
 
 	/**
 	 * Constructeur pour le formulaire REFERENT d'inscription de l'aidé
