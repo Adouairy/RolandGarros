@@ -88,6 +88,7 @@ public class Formulaire extends HttpServlet {
 					request.getParameter("prenomAide"), request.getParameter("telAide"),
 					request.getParameter("mdpAide"), med);
 			BaseDAO.getInstance().ajouterAide(util);
+			BaseDAO.getInstance().closeAll();
 		} catch (ParseException e) {
 			System.out.println("Erreur aide");
 		}
