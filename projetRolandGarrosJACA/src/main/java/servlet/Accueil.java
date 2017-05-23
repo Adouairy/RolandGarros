@@ -1,13 +1,18 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.BaseDAO;
+import entite.Aidant;
+import metier.ServiceVerifMdp;
 
 public class Accueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,26 +30,44 @@ public class Accueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String table= request.getParameter("select");
+		/**
+         * fonction qui teste le temps de presence d'un aidant sans confirmation dans 
+         * la base de donnée
+         */
+        List<Aidant> listeAidant =new ArrayList<Aidant>();
+        listeAidant = BaseDAO.getInstance().renvoiAidants();
+        Date inscription = new Date();
+        boolean delaiDepasse = true;
+        for (int i = 0; i < listeAidant.size(); i++) {
+            inscription = listeAidant.get(i).getDateInscription();
+            delaiDepasse=ServiceVerifMdp.getInstance().delaiInscription(inscription);
+            if(!delaiDepasse){
+                BaseDAO.getInstance().supprimerAidant(listeAidant.get(i));
+            }
+        }
+        
+        /**
+         * Vérification de la connection
+         */
+        String table= request.getParameter("select");
 		String email= request.getParameter("email");
 		String mdp= request.getParameter("mdpIdentifiant");
+		String message= null;
 		//booleen
 		System.out.println(email);
 		Boolean estDansLaBase=dao.verifConnection(email,mdp,table);
+//		Boolean estRef = dao.;
 		if (estDansLaBase){
 			if (table.equals("Aidant")) {
 				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
 			} else if (table.equals("Aide")) {
-				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
-			} else if (table.equals("Aidant")) {
-			//	Boolean estRef = dao; 
-				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
+				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp").forward(request, response);
+			} else if (table.equals("Aidant") /*&& estRef*/) {
+				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp").forward(request, response);
 			}
-			
-			
-			
 		}
 		else{
+			message = "Connection échouée, veuillez réessayer";
 			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 		}
 		

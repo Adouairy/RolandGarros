@@ -72,3 +72,7 @@ form {
 legend, fieldset>input, fieldset>p {
 	margin-left: 4px;
 }
+
+#echecCo{
+	color: white;
+}
