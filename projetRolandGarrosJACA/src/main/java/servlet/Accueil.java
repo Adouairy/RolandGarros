@@ -57,6 +57,7 @@ public class Accueil extends HttpServlet {
 		String email= request.getParameter("email");
 		String mdp= request.getParameter("mdpIdentifiant");
 		String message= null;
+		String MessageErreur= null;
 		//booleen
 		System.out.println(email);
 		Boolean estDansLaBase=dao.verifConnection(email,mdp,table);
@@ -71,7 +72,9 @@ public class Accueil extends HttpServlet {
 			}
 		}
 		else{
+			MessageErreur="Erreur";
 			message = "Connection échouée, veuillez réessayer";
+			request.setAttribute("MessageErreur", MessageErreur);
 			request.setAttribute("message", message);
 			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 		}

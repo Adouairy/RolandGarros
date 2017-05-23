@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,9 +17,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="script/script.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -76,7 +74,7 @@
 					</div>
 					<button id="buttonConnection" type="submit" class="btn btn-success">Connection</button>
 				</form>
-				
+
 			</ul>
 		</div>
 	</div>
@@ -181,7 +179,10 @@
 			</div>
 		</div>
 		<div name="effects" id="effectTypes" value="blind"></div>
-		<div id="echecCo" class="ui-widget-content ui-corner-all">Echec lors de la connexion</div>
+		<c:if test="${not empty MessageErreur}">
+			<div id="echecCo" class="ui-widget-content ui-corner-all">Echec
+				lors de la connexion</div>
+		</c:if>
 	</footer>
 </body>
 </html>
