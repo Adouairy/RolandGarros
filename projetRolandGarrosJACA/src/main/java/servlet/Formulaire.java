@@ -3,7 +3,9 @@ package servlet;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -57,7 +59,7 @@ public class Formulaire extends HttpServlet {
 			String nomRef = request.getParameter("nomRef");
 			String prenomRef = request.getParameter("prenomRef");
 			Boolean mailCorrect = ServiceVerifMdp.getInstance().verifMailRef(request);
-			if (mailCorrect) {
+			if (!mailCorrect) {
 				Aidant ref = new Aidant(mailRef, adresseRef, ddnRef, true, nomRef, prenomRef, 1);
 				String mdp = ServiceVerifMdp.getInstance().creationMdp();
 				ref.setMdpAidant(mdp);
@@ -116,7 +118,7 @@ public class Formulaire extends HttpServlet {
 				messageVerifMdp = "Les mots de passes doivent être identiques.";
 				formulaireJuste = false;
 			}
-			if (verifMail) {
+			if (!verifMail) {
 				a++;
 			} else {
 				messageMailAide = "Cette adresse mail est déjà utilisée.";
@@ -138,11 +140,14 @@ public class Formulaire extends HttpServlet {
 		if (formulaireJuste) {
 			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 		} else {
+			List<Medecin> listMedecin = new ArrayList<Medecin>();
+			listMedecin = BaseDAO.getInstance().renvoiMedecins();
 			request.setAttribute("messageVerifMailRef", messageVerifMailRef);
 			request.setAttribute("messageAjoutAidant", messageAjoutAidant);
 			request.setAttribute("messageVerifMdp", messageVerifMdp);
 			request.setAttribute("messageMailAide", messageMailAide);
 			request.setAttribute("messageValidAide", messageValidAide);
+			request.setAttribute("listMedecin", listMedecin);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/formulaire.jsp").forward(request, response);
 		}
 
