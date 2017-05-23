@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -93,8 +94,11 @@ public class ServiceVerifMdp {
     
     public void notifEnvoyerMail(String mdp,String mail){ 
         BufferedWriter fichier;
+        Properties p = System.getProperties(); 
+        String nom = p.getProperty( "user.name" ); 
+        System.out.println(nom);
         try {
-            fichier = new BufferedWriter(new FileWriter("C:/Users/boite/boite_mail_"+mail+".txt"));
+            fichier = new BufferedWriter(new FileWriter("C:/Users/"+nom+"/Desktop/boite/boite_mail_"+mail+".txt"));
             fichier.write("Email: "+ mail); 
             fichier.newLine();
             fichier.write("Mot de passe: " + mdp);
