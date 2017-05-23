@@ -26,7 +26,7 @@
 		<div class="row content">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
-				<h1>Coucou ${ref.prenom} et bienvenue dans ton espace connect�</h1>
+				<h1>Coucou ${ref.prenom} et bienvenue dans ton espace connecté</h1>
 			</div>
 		</div>
 		<div class="col-sm-2"></div>
@@ -37,18 +37,19 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
+				<h2>Membres de l'équipe</h2>
+				<p>Adrien OUAIRY</p>
+				<p>Antoine GUILLOIS</p>
+				<p>Clara MIGNEE</p>
+				<p>Jérémie HERVE</p>
 			</div>
 			<div class="col-md-6">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
+				<h2>Sodifrance</h2>
+				<p>
+					Parc d’Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
+					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
+						d'informations</a>.
+				</p>
 			</div>
 		</div>
 	</div>

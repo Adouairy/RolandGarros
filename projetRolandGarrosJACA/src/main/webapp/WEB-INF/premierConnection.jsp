@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Première connexion</title>
+<title>PremiÃ¨re connexion</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="./style/formulaire.css" />
@@ -42,11 +42,11 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
 				<fieldset id="infoCompl">
-					<h1>Informations complémentaires</h1>
+					<h1>Informations complÃ©mentaires</h1>
 					<form method="get" action="premierConnection">
 
-						<p>Prénom :</p>
-						<input type="text" name="iPrenomAidant" placeholder="Votre prénom"
+						<p>PrÃ©nom :</p>
+						<input type="text" name="iPrenomAidant" placeholder="Votre prÃ©nom"
 							required />
 
 						<p>Adresse :</p>
@@ -58,9 +58,9 @@
 							placeholder="Votre date de naissance" id="datepicker" required />
 
 
-						<p>Numéro de téléphone :</p>
+						<p>NumÃ©ro de tÃ©lÃ©phone :</p>
 						<input type="text" name="iTelAidant"
-							placeholder="Votre numéro de téléphone" required />
+							placeholder="Votre numÃ©ro de tÃ©lÃ©phone" required />
 
 						<p>Mot de passe :</p>
 						<input type="password" name="iMdpAidant"
@@ -72,12 +72,12 @@
 
 						<p class="messageErreur">${messageVerifMdp}</p>
 
-						<p>Catégorie d'aidant :</p>
+						<p>CatÃ©gorie d'aidant :</p>
 						<select name="catAidant" required>
 							<option value="proche">Proche</option>
 							<option value="Artisan">Artisan</option>
-							<option value="personnelMedical">Personnel médical</option>
-						</select><br /><br/>
+							<option value="personnelMedical">Personnel mÃ©dical</option>
+						</select><br /> <br />
 
 						<p id="inputSubmit">
 							<input type="submit" value="Envoyer les informations" />
@@ -94,18 +94,19 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
+				<h2>Membres de l'Ã©quipe</h2>
+				<p>Adrien OUAIRY</p>
+				<p>Antoine GUILLOIS</p>
+				<p>Clara MIGNEE</p>
+				<p>JÃ©rÃ©mie HERVE</p>
 			</div>
 			<div class="col-md-6">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
+				<h2>Sodifrance</h2>
+				<p>
+					Parc dâ€™ActivitÃ©s "La BretÃ¨che"<br /> 35768 Saint GrÃ©goire Cedex<br />
+					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
+						d'informations</a>.
+				</p>
 			</div>
 		</div>
 	</div>

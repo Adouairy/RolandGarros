@@ -44,8 +44,8 @@
 						<li><a href="#">Double dames</a></li>
 						<li><a href="#">Double mixte</a></li>
 						<li role="separator" class="divider"></li>
-						<li><a href="#">Simples Juniors Gar�ons et Filles</a></li>
-						<li><a href="#">Doubles Juniors Gar�ons et Filles</a></li>
+						<li><a href="#">Simples Juniors Garçons et Filles</a></li>
+						<li><a href="#">Doubles Juniors Garçons et Filles</a></li>
 					</ul></li>
 				<li><a href="#">Programme</a></li>
 				<li><a href="#">Joueurs</a></li>
@@ -59,9 +59,9 @@
 				<form class="navbar-form navbar-right" action="accueil" method="get">
 					<div class="form-group">
 						<select name="select" id="select">
-							<option value="aide">Personne Aid�e</option>
+							<option value="aide">Personne Aidée</option>
 							<option value="aidant" selected>Personne Aidant</option>
-							<option value="medecin">Personne corp m�dical</option>
+							<option value="medecin">Personne corp médical</option>
 						</select>
 					</div>
 					<div class="form-group">
@@ -153,28 +153,25 @@
 	</div>
 	<footer class="container-fluid text-center">
 	<div class="container">
-		<!-- Example row of columns -->
+
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
+				<h2>Membres de l'équipe</h2>
+				<p>Adrien OUAIRY</p>
+				<p>Antoine GUILLOIS</p>
+				<p>Clara MIGNEE</p>
+				<p>Jérémie HERVE</p>
 			</div>
 			<div class="col-md-6">
-				<h2>Heading</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
+				<h2>Sodifrance</h2>
+				<p>
+					Parc d’Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
+					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
+						d'informations</a>.
+				</p>
 			</div>
 		</div>
-		<div name="effects" id="effectTypes" value="blind"></div>
-		<c:if test="${not empty MessageErreur}">
-			<div id="echecCo" class="ui-widget-content ui-corner-all">Echec
-				lors de la connexion</div>
-		</c:if>
+	</div>
 	</footer>
 </body>
 </html>
