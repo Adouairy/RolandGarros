@@ -14,6 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Espace connecté (Aidé / Référent)</title>
 <script type="text/javascript" src="./script/accordion.js"></script>
+<script type="text/javascript" src="./script/script.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -51,7 +52,7 @@
 					<div class="row">
 						<div class="col-sm-9 col-md-9">
 							<div class="panel-group" id="accordion">
-								<!-- ////////////////////////////////////////////////////////////////// -->
+								<!-- ///////////////////////////////////////////MES INFORMATIONS//////////// -->
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">
@@ -65,12 +66,12 @@
 										<ul>
 											<li>Adresse: ${leConnecte.adresse}</li>
 											<li>Téléphone: ${leConnecte.tel}</li>
-											<li>Référent: ${leConnecte.tel}</li>
+											<li>Référent: ${referent.nomAidant}</li>
 											<li>Médecin: ${medecin.nom}</li>
 										</ul>
 									</div>
 								</div>
-								<!-- ////////////////////////////////////////////////////////////////// -->
+								<!-- //////////////////////////////////////////////MES AIDANTS/////////// -->
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">
@@ -83,7 +84,7 @@
 										<p>Salut les copains</p>
 									</div>
 								</div>
-								<!-- ////////////////////////////////////////////////////////////////// -->
+								<!-- ///////////////////////////////////////////////AGENDA////////// -->
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">
@@ -93,10 +94,10 @@
 										</h4>
 									</div>
 									<div id="collapseTwo" class="panel-collapse collapse">
-										<p>Salut les copains</p>
+										<div id="datepicker3"></div>
 									</div>
 								</div>
-								<!-- ////////////////////////////////////////////////////////////////// -->
+								<!-- ////////////////////////////////////////////////COMPTE RENDU///////// -->
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">

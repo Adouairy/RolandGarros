@@ -9,3 +9,6 @@ $(function() {
 	});
 });
 
+$( function() {
+    $( "#datepicker3" ).datepicker();
+  } );
