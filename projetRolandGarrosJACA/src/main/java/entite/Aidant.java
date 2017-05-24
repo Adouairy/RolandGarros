@@ -122,6 +122,7 @@ public class Aidant implements Cloneable {
 		super();
 		this.mailAidant = mailAidant;
 		this.nomAidant = nomAidant;
+		this.referent= false;
 	}
 
 	// accesseurs
