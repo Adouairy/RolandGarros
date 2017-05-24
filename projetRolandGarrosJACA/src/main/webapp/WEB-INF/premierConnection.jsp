@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Première connexion</title>
+<title>Premi�re connexion</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="./style/formulaire.css" />
@@ -42,25 +42,27 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
 				<fieldset id="infoCompl">
-					<h1>Informations complémentaires</h1>
+					<h1>Informations compl�mentaires</h1>
 					<form method="get" action="premierConnection">
 
-						<p>Prénom :</p>
-						<input type="text" name="iPrenomAidant" placeholder="Votre prénom" value="${aidantCo.prenomAidant}"
-							required />
+						<p>Pr�nom :</p>
+						<input type="text" name="iPrenomAidant" placeholder="Votre pr�nom"
+							value="${aidantCo.prenomAidant}" required />
 
 						<p>Adresse :</p>
 						<input type="text" name="iAdresseAidant"
-							placeholder="Votre adresse postale" value="${aidantCo.adresseAidant}" required />
+							placeholder="Votre adresse postale"
+							value="${aidantCo.adresseAidant}" required />
 
 						<p>Date de naissance :</p>
 						<input type="text" name="iDdnAidant"
-							placeholder="Votre date de naissance"  id="datepicker" required />
+							placeholder="Votre date de naissance" id="datepicker" required />
 
 
-						<p>Numéro de téléphone :</p>
+						<p>Num�ro de t�l�phone :</p>
 						<input type="text" name="iTelAidant"
-							placeholder="Votre numéro de téléphone" value="${aidantCo.telAidant}" required />
+							placeholder="Votre num�ro de t�l�phone"
+							value="${aidantCo.telAidant}" required />
 
 						<p>Mot de passe :</p>
 						<input type="password" name="iMdpAidant"
@@ -72,11 +74,11 @@
 
 						<p class="messageErreur">${messageVerifMdp}</p>
 
-						<p>Catégorie d'aidant :</p>
+						<p>Cat�gorie d'aidant :</p>
 						<select name="catAidant" required>
 							<option value="proche">Proche</option>
 							<option value="Artisan">Artisan</option>
-							<option value="personnelMedical">Personnel médical</option>
+							<option value="personnelMedical">Personnel m�dical</option>
 						</select><br /> <br />
 
 						<p id="inputSubmit">
@@ -94,16 +96,16 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Membres de l'équipe</h2>
+				<h2>Membres de l'�quipe</h2>
 				<p>Adrien OUAIRY</p>
 				<p>Antoine GUILLOIS</p>
 				<p>Clara MIGNEE</p>
-				<p>Jérémie HERVE</p>
+				<p>J�r�mie HERVE</p>
 			</div>
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d’Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
+					Parc d'Activit�s "La Bret�che"<br /> 35768 Saint Gr�goire Cedex<br />
 					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
 						d'informations</a>.
 				</p>
