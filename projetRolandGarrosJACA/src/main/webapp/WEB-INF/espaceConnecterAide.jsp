@@ -12,7 +12,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Espace connect� (Aid� / R�f�rent)</title>
+<title>Espace connecté (Aidé / Référent)</title>
 <script type="text/javascript" src="./script/accordion.js"></script>
 <script type="text/javascript" src="./script/script.js"></script>
 <link rel="stylesheet"
@@ -47,7 +47,7 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
 				<h2>Bonjour ${leConnecte.prenom} ${leConnecte.nom} et bienvenue
-					dans votre espace connect�</h2>
+					dans votre espace connecté</h2>
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-9 col-md-9">
@@ -65,9 +65,9 @@
 										<h3>Vos informations personnelles:</h3>
 										<ul>
 											<li>Adresse: ${leConnecte.adresse}</li>
-											<li>T�l�phone: ${leConnecte.tel}</li>
-											<li>R�f�rent: ${referent.nomAidant}</li>
-											<li>M�decin: ${medecin.nom}</li>
+											<li>Téléphone: ${leConnecte.tel}</li>
+											<li>Référent: ${referent.nomAidant}</li>
+											<li>Médecin: ${medecin.nom}</li>
 										</ul>
 									</div>
 								</div>
@@ -77,7 +77,7 @@
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#accordion"
 												href="#collapseFour"><span
-												class="glyphicon glyphicon-user"> </span>G�rer mes aidants</a>
+												class="glyphicon glyphicon-user"> </span>Gérer mes aidants</a>
 										</h4>
 									</div>
 									<div id="collapseFour" class="panel-collapse collapse">
@@ -138,16 +138,16 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Membres de l'�quipe</h2>
+				<h2>Membres de l'équipe</h2>
 				<p>Adrien OUAIRY</p>
 				<p>Antoine GUILLOIS</p>
 				<p>Clara MIGNEE</p>
-				<p>J�r�mie HERVE</p>
+				<p>Jérémie HERVE</p>
 			</div>
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d'Activit�s "La Bret�che"<br /> 35768 Saint Gr�goire Cedex<br />
+					Parc d'Activités "La Bretéche"<br /> 35768 Saint Grégoire Cedex<br />
 					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
 						d'informations</a>.
 				</p>
