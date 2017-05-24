@@ -47,74 +47,72 @@
 			<div class="col-sm-8 text-left">
 				<h2>Bonjour ${leConnecte.prenom} ${leConnecte.nom} et bienvenue
 					dans votre espace connecté</h2>
-				<h3>Vos informations personnelles:</h3>
-				<ul>
-					<li>Adresse: ${leConnecte.adresse}</li>
-					<li>Téléphone: ${leConnecte.tel}</li>
-					<li>Référent: ${leConnecte.tel}</li>
-					<li>Médecin: ${medecin}</li>
-				</ul>
 				<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
-                            </span>Compte Rendu</a>
-                        </h4>
-                    </div>
-
-                    <div id="collapseOne" class="panel-collapse collapse in">
-                        <p> Salut les copains</p>
-                    </div>
-                </div>
-
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
-                            </span>Modules</a>
-                        </h4>
-                    </div>
-
-                    <div id="collapseTwo" class="panel-collapse collapse">
-                        <p>Salut les copains</p>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
-                            </span>Account</a>
-                        </h4>
-                    </div>
-
-                    <div id="collapseThree" class="panel-collapse collapse">
-                        <p>Salut les copains</p>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
-                            </span>Reports</a>
-                        </h4>
-                    </div>
-
-                    <div id="collapseFour" class="panel-collapse collapse">
-                        <p>Salut les copains</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+					<div class="row">
+						<div class="col-sm-9 col-md-9">
+							<div class="panel-group" id="accordion">
+								<!-- ////////////////////////////////////////////////////////////////// -->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapseOne"><span
+												class="glyphicon glyphicon-cog"> </span>Mes informations</a>
+										</h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in">
+										<h3>Vos informations personnelles:</h3>
+										<ul>
+											<li>Adresse: ${leConnecte.adresse}</li>
+											<li>Téléphone: ${leConnecte.tel}</li>
+											<li>Référent: ${leConnecte.tel}</li>
+											<li>Médecin: ${medecin.nom}</li>
+										</ul>
+									</div>
+								</div>
+								<!-- ////////////////////////////////////////////////////////////////// -->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapseFour"><span
+												class="glyphicon glyphicon-user"> </span>Gérer mes aidants</a>
+										</h4>
+									</div>
+									<div id="collapseFour" class="panel-collapse collapse">
+										<p>Salut les copains</p>
+									</div>
+								</div>
+								<!-- ////////////////////////////////////////////////////////////////// -->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapseTwo"><span
+												class="glyphicon glyphicon-calendar"> </span>Agenda</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse">
+										<p>Salut les copains</p>
+									</div>
+								</div>
+								<!-- ////////////////////////////////////////////////////////////////// -->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapseThree"><span
+												class="glyphicon glyphicon-paste"> </span>Compte Rendu</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse">
+										<p>Salut les copains</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-2"></div>
