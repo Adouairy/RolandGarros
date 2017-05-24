@@ -94,6 +94,7 @@ public class Accueil extends HttpServlet {
 				session.setAttribute("leConnecte", aide);
 				session.setAttribute("medecin", BaseDAO.getInstance().trouverMedecinParAide(aide));
 				session.setAttribute("referent", BaseDAO.getInstance().trouverReferentParAide(aide));
+				session.setAttribute("aidant", BaseDAO.getInstance().trouverAidantsParAide(aide));
 				session.setAttribute("identiteDuConnecte", table);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAide.jsp")
 						.forward(request, response);

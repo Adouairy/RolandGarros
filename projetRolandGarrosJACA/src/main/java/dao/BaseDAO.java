@@ -344,6 +344,12 @@ public class BaseDAO {
 		return a;
 	}
 	
+	
+	/**
+	 * selectionner le médecin référent associé à un aidé
+	 * @param aide
+	 * @return
+	 */
 	public Medecin trouverMedecinParAide(Aide aide) {
 		connection();
 		List<Integer> idmedecin = em.createQuery("SELECT a.medecin.idMedecin FROM Aide a WHERE a.id = "+aide.getId()).getResultList();
@@ -358,6 +364,12 @@ public class BaseDAO {
 		List<Aidant> aidantCoop = em.createQuery("SELECT cooperation.aidant FROM Cooperation cooperation WHERE cooperation.aidant.referent=true AND cooperation.aide.id="+aide.getId()).getResultList();
 		Aidant a = aidantCoop.get(0);
 		return a;
+	}
+	
+	public List<Aidant> trouverAidantsParAide(Aide aide){
+		connection();
+		List<Aidant> aidants = em.createQuery("SELECT cooperation.aidant FROM Cooperation cooperation WHERE cooperation.aide.id="+aide.getId()).getResultList();
+		return aidants;
 	}
 	// ----------------------------FONCTION DE CRYPTAGE EN MD5-------------------------------------
 

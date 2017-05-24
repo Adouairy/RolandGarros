@@ -81,7 +81,21 @@
 										</h4>
 									</div>
 									<div id="collapseFour" class="panel-collapse collapse">
-										<p>Salut les copains</p>
+										<p>
+											Vos aidants sont:
+											<c:forEach items="${aidant}" var="aidant">
+
+												<ul>
+													<li><i>Nom: </i><b><c:out
+																value="${ aidant.nomAidant }" /></b> <i> Prenom :</i> <c:out
+															value="${ aidant.prenomAidant }" /></li>
+												</ul>
+											</c:forEach>
+										<form action="acceuil" method="POST">
+											<input type="submit" name="valider_form"
+												value="Ajouter Aidants" />
+										</form>
+
 									</div>
 								</div>
 								<!-- ///////////////////////////////////////////////AGENDA////////// -->
