@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Espace aidé/référent</title>
-<link rel="stylesheet" type="text/css" href="./style/formulaire.css" />
+<title>Insert title here</title>
 </head>
 <body>
 		<nav class="navbar navbar-inverse">
@@ -27,7 +27,14 @@
 		<div class="row content">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
-				<h1>Coucou ${leConnecte.prenom} et bienvenue dans ton espace connecté</h1>
+				<h1>Bonjour ${leConnecte.prenom} ${leConnecte.nom} et bienvenue dans votre espace connecté</h1>
+				<h3> Vos informations personnelles:</h3>
+				<ul>
+						<li> Adresse: ${leConnecte.adresse} </li>
+						<li> Téléphone: ${leConnecte.tel} </li>
+						<li> Référent: ${leConnecte.tel} </li>
+						<li> Médecin: ${medecin} </li>			
+					</ul>
 			</div>
 		</div>
 		<div class="col-sm-2"></div>
