@@ -25,7 +25,7 @@ public class Exe {
 //		b.ajouterCooperation(b.renvoiAidants().get(5), b.renvoiAides().get(0));
 //		b.ajouterCooperation(b.renvoiAidants().get(4), b.renvoiAides().get(0));
 
-//		
+		System.out.println(b.trouverAidesParMedecin(b.renvoiMedecins().get(0)));
 		//b.supprimerCooperation(b.renvoiAidants().get(1));
 		//System.out.println(b.renvoiCooperations());
 		//System.out.println(b.trouverAidant(21));
@@ -45,7 +45,7 @@ public class Exe {
 		//System.out.println(s.importerAide("pdt@terre.fr"));
 
 		//System.out.println(s.importerAide("pdt@erazerzrzer.fr"));
-		System.out.println(b.trouverAidantsParAide(b.renvoiAides().get(0)));
+		//System.out.println(b.trouverAidantsParAide(b.renvoiAides().get(0)));
 		//System.out.println(b.renvoiAides());
 		//System.out.println(b.trouverMedecin(9));
 		//System.out.println(b.trouverAidant(1));
