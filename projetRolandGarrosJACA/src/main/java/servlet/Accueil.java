@@ -84,7 +84,7 @@ public class Accueil extends HttpServlet {
 					this.getServletContext().getRequestDispatcher("/WEB-INF/premierConnection.jsp").forward(request,
 							response);
 				} else if (aidant.getReferent()) {
-					this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
+					this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterReferent.jsp")
 							.forward(request, response);
 				} else {
 					this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request,response);
@@ -95,7 +95,7 @@ public class Accueil extends HttpServlet {
 				session.setAttribute("medecin", BaseDAO.getInstance().trouverMedecinParAide(aide));
 				session.setAttribute("referent", BaseDAO.getInstance().trouverReferentParAide(aide));
 				session.setAttribute("identiteDuConnecte", table);
-				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
+				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAide.jsp")
 						.forward(request, response);
 			}else{//petite erreur corrigés
 				Medecin medecin = ServiceVerifMdp.getInstance().importerMedecin(email);
