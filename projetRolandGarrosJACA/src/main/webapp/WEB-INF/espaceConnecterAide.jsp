@@ -134,7 +134,7 @@
 	</div>
 
 	<footer class="container-fluid text-center">
-	<div class="container">
+	<div class="container"> 
 
 		<div class="row">
 			<div class="col-md-6">
