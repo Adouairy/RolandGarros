@@ -92,6 +92,7 @@ public class Accueil extends HttpServlet {
 			} else if (table.equals("aide")) {
 				Aide aide = ServiceVerifMdp.getInstance().importerAide(email);
 				session.setAttribute("leConnecte", aide);
+				session.setAttribute("medecin", );
 				session.setAttribute("identiteDuConnecte", table);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
 						.forward(request, response);

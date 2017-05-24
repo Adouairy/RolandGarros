@@ -8,3 +8,4 @@ $(function() {
 		maxDate : new Date()
 	});
 });
+
