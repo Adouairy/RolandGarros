@@ -40,7 +40,6 @@ public class PremierConnection extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		/* Récupération de l'objet depuis la session */
-		Aidant aidant=(Aidant) session.getAttribute("leConnecte");
 		Aidant aidantConnecte = (Aidant) session.getAttribute("leConnecte");
 		Boolean verifMdp = ServiceVerifMdp.getInstance().verifMdpAidant(request);
 
@@ -55,9 +54,11 @@ public class PremierConnection extends HttpServlet {
 		aidantConnecte.setTelAidant(request.getParameter("iTelAidant"));
 		aidantConnecte.setType(request.getParameter("catAidant"));
 		aidantConnecte.setPremiereconnection(0);
+		aidantConnecte.setMdpAidant(request.getParameter("iMdpAidant"));
 		if (verifMdp) {
-			
+			BaseDAO.getInstance().UpdateAidant(aidantConnecte);
 		} else {
+			request.setAttribute("aidantCo",aidantConnecte );
 			this.getServletContext().getRequestDispatcher("/WEB-INF/premierConnection.jsp").forward(request, response);
 		}
 	}

@@ -46,21 +46,21 @@
 					<form method="get" action="premierConnection">
 
 						<p>Prénom :</p>
-						<input type="text" name="iPrenomAidant" placeholder="Votre prénom"
+						<input type="text" name="iPrenomAidant" placeholder="Votre prénom" value="${aidantCo.prenomAidant}"
 							required />
 
 						<p>Adresse :</p>
 						<input type="text" name="iAdresseAidant"
-							placeholder="Votre adresse postale" required />
+							placeholder="Votre adresse postale" value="${aidantCo.adresseAidant}" required />
 
 						<p>Date de naissance :</p>
 						<input type="text" name="iDdnAidant"
-							placeholder="Votre date de naissance" id="datepicker" required />
+							placeholder="Votre date de naissance"  id="datepicker" required />
 
 
 						<p>Numéro de téléphone :</p>
 						<input type="text" name="iTelAidant"
-							placeholder="Votre numéro de téléphone" required />
+							placeholder="Votre numéro de téléphone" value="${aidantCo.telAidant}" required />
 
 						<p>Mot de passe :</p>
 						<input type="password" name="iMdpAidant"
