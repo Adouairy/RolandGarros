@@ -41,15 +41,15 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
 				<fieldset id="inscription">
-					<h1>Inscription de l'aidÃ©</h1>
+					<h1>Inscription de l'aidé</h1>
 					<form method="get" action="formulaire">
 						<div class="row content">
 							<fieldset class="col-sm-4">
-								<legend>AidÃ©</legend>
+								<legend>Aidé</legend>
 								<p>Nom :</p>
 								<input type="text" name="nomAide" placeholder="Votre nom" value="${aide.nom}"
 									required />
-								<p>PrÃ©nom :</p>
+								<p>Prénom :</p>
 								<input type="text" name="prenomAide" placeholder="Votre prenom" value="${aide.prenom}"
 									required />
 								<p>E-mail :</p>
@@ -59,9 +59,9 @@
 								<p>Adresse postale :</p>
 								<input type="text" name="adresseAide"
 									placeholder="Votre adresse postale" value="${aide.adresse}" required />
-								<p>NumÃ©ro de tÃ©lÃ©phone :</p>
+								<p>Numéro de téléphone :</p>
 								<input type="text" name="telAide"
-									placeholder="Votre numÃ©ro de tÃ©lÃ©phone" value="${aide.tel}" required />
+									placeholder="Votre numéro de téléphone" value="${aide.tel}" required />
 								<p>Date de naissance :</p>
 								<input type="text" name="ddnAide"
 									placeholder="Votre date de naissance" id="datepicker"
@@ -73,7 +73,7 @@
 								<input type="password" name="confirmAide"
 									placeholder="Confirmation du mot de passe" required />
 								<p class="messageErreur">${messageVerifMdp}</p>
-								<p>Choix du mÃ©decin traitant :</p>
+								<p>Choix du médecin traitant :</p>
 								<select name="database1" value="${aide.medecin}" required>
 									<c:forEach items="${listMedecin}" var="listMedecinValue"
 										varStatus="status">
@@ -84,23 +84,23 @@
 								<p class="messageErreur">${messageValidAide}</p>
 							</fieldset>
 							<fieldset class="col-sm-4">
-								<legend>RÃ©fÃ©rent</legend>
+								<legend>Référent</legend>
 								<p>Nom :</p>
-								<input type="text" name="nomRef" placeholder="Nom RÃ©fÃ©rent" value="${ref.nomAidant}"
+								<input type="text" name="nomRef" placeholder="Nom Référent" value="${ref.nomAidant}"
 									required />
-								<p>PrÃ©nom :</p>
+								<p>Prénom :</p>
 								<input type="text" name="prenomRef"
-									placeholder="Prenom RÃ©fÃ©rent" value="${ref.prenomAidant}" required />
+									placeholder="Prenom Référent" value="${ref.prenomAidant}" required />
 								<p>E-mail :</p>
-								<input type="email" name="mailRef" placeholder="E-mail RÃ©fÃ©rent" value="${ref.mailAidant}"
+								<input type="email" name="mailRef" placeholder="E-mail Référent" value="${ref.mailAidant}"
 									required />
 								<p class="messageErreur">${messageVerifMailRef}</p>
 								<p>Adresse postale :</p>
 								<input type="text" name="adresseRef"
-									placeholder="Adresse postale RÃ©fÃ©rent" value="${ref.adresseAidant}" required />
+									placeholder="Adresse postale Référent" value="${ref.adresseAidant}" required />
 								<p>Date de naissance :</p>
 								<input type="text" name="ddnRef"
-									placeholder="Date de naissance RÃ©fÃ©rent annee/mois/date"
+									placeholder="Date de naissance Référent annee/mois/date"
 									id="datepicker2" required />
 							</fieldset>
 							<fieldset class="col-sm-4">
@@ -126,16 +126,16 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Membres de l'Ã©quipe</h2>
+				<h2>Membres de l'équipe</h2>
 				<p>Adrien OUAIRY</p>
 				<p>Antoine GUILLOIS</p>
 				<p>Clara MIGNEE</p>
-				<p>JÃ©rÃ©mie HERVE</p>
+				<p>Jérémie HERVE</p>
 			</div>
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d'ActivitÃ©s "La BretÃ¨che"<br /> 35768 Saint GrÃ©goire Cedex<br />
+					Parc d'Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
 					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
 						d'informations</a>.
 				</p>

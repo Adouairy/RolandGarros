@@ -43,9 +43,9 @@
 				method="get">
 				<div class="form-group">
 					<select name="select" id="select">
-						<option value="aide">AidÃ©</option>
+						<option value="aide">Aidé</option>
 						<option value="aidant" selected>Aidant</option>
-						<option value="medecin">MÃ©decin</option>
+						<option value="medecin">Médecin</option>
 					</select>
 				</div>
 				<div class="form-group">
@@ -70,12 +70,12 @@
 				<h1>Autonomia</h1>
 				<hr>
 				<div>
-					<p>Autonomia est une plateforme unifiÃ©e de services destinÃ©e Ã 
-						sÃ©curiser la vie des personnes dÃ©pendantes et faciliter
-						l'intervention des aidants. En effet 20 millions de FranÃ§ais sont
-						concernÃ©s par le handicap et la dÃ©pendance en tant qu'aidÃ© et/ou
-						aidant (11 millions d'aidants). Autonomia propose de s'intÃ©resser
-						Ã  6 types d'handicapes :</p>
+					<p>Autonomia est une plateforme unifiée de services destinée à
+						sécuriser la vie des personnes dépendantes et faciliter
+						l'intervention des aidants. En effet 20 millions de Français sont
+						concernés par le handicap et la dépendance en tant qu'aidé et/ou
+						aidant (11 millions d'aidants). Autonomia propose de s'intéresser
+						à 6 types d'handicapes :</p>
 					<p class="ulCenter">
 					<ul>
 						<li>Moteur</li>
@@ -83,49 +83,49 @@
 						<li>Auditif</li>
 						<li>Cognitif</li>
 						<li>Maladies invalidantes</li>
-						<li>SÃ©nioritÃ©</li>
+						<li>Séniorité</li>
 					</ul>
 					</p>
-					<p>Ces diffÃ©rents handicapes sont parfois associÃ©s Ã  des objets
-						connectÃ©s tels que des bracelets, des cannes blanches ou encore
+					<p>Ces différents handicapes sont parfois associés à des objets
+						connectés tels que des bracelets, des cannes blanches ou encore
 						des lunettes, etc. Selon le type de handicap les aidants seront de
-						diffÃ©rents types, il y a notamment les proches, le personnel
-						mÃ©dical, les service Ã  la personne ainsi que des artisans.</p>
+						différents types, il y a notamment les proches, le personnel
+						médical, les service à la personne ainsi que des artisans.</p>
 					<p>Beaucoup d'initiatives et de services voient le jour mais il
-						est difficile voire impossible d'avoir une vision consolidÃ©e et
-						globalisante. Les services et/ou les objets ne couvrent en gÃ©nÃ©ral
-						qu'une seule problÃ©matique et propose un back-office dÃ©diÃ©
-						faiblement interopÃ©rable.</p>
-					<p>Autonomia a pour objectif de dÃ©velopper l'autonomie pour
-						mieux vivre ensemble. Que les personnes fragilisÃ©es puissent vivre
-						dans un climat de confiance et de sÃ©curitÃ© et que les aidants
+						est difficile voire impossible d'avoir une vision consolidée et
+						globalisante. Les services et/ou les objets ne couvrent en général
+						qu'une seule problématique et propose un back-office dédié
+						faiblement interopérable.</p>
+					<p>Autonomia a pour objectif de développer l'autonomie pour
+						mieux vivre ensemble. Que les personnes fragilisées puissent vivre
+						dans un climat de confiance et de sécurité et que les aidants
 						puisse agir efficacement pour les aider.</p>
-					<p>Elle se positionne en tant qu'HUB d'intÃ©gration de services
-						et d'objets facilitant la vie des aidants et des aidÃ©es, ceci de
-						maniÃ¨re :</p>
+					<p>Elle se positionne en tant qu'HUB d'intégration de services
+						et d'objets facilitant la vie des aidants et des aidées, ceci de
+						manière :</p>
 					<p class="ulCenter">
 					<ul>
 						<li>Simple</li>
 						<li>Fiable</li>
-						<li>InteropÃ©rable</li>
+						<li>Interopérable</li>
 						<li>Usage</li>
 					</ul>
 					</p>
 					<p>AUTONOMIA se base sur les 4 services suivants :</p>
 					<ul>
-						<li><span class="aSouligner">Suzanne & LÃ©a</span> est un
-							service qui propose des solutions innovantes d'entraide destinÃ©e
-							Ã  accompagner et sÃ©curiser le quotidien des personnes fragilisÃ©es
+						<li><span class="aSouligner">Suzanne & Léa</span> est un
+							service qui propose des solutions innovantes d'entraide destinée
+							à accompagner et sécuriser le quotidien des personnes fragilisées
 							et faciliter l'intervention des aidants.</li>
-						<li><span class="aSouligner">EasyCity</span> est un rÃ©seau
-							social d'entraide destinÃ© Ã  faciliter et amÃ©liorer les
-							dÃ©placements des personnes dÃ©pendantes.</li>
+						<li><span class="aSouligner">EasyCity</span> est un réseau
+							social d'entraide destiné à faciliter et améliorer les
+							déplacements des personnes dépendantes.</li>
 						<li><span class="aSouligner">PuisJeVousAider</span> propose
-							des solutions d'accueil personnalisÃ© pour personnes fragilisÃ©es
-							destinÃ©e aux Ã©tablissement commerciaux et publics.</li>
+							des solutions d'accueil personnalisé pour personnes fragilisées
+							destinée aux établissement commerciaux et publics.</li>
 						<li><span class="aSouligner">Les services partenaires</span>
-							permettent l'intÃ©gration d'Ã©vÃ©nements en provenances d'objets
-							connectÃ©s et de services partenaires.</li>
+							permettent l'intégration d'événements en provenances d'objets
+							connectés et de services partenaires.</li>
 					</ul>
 				</div>
 			</div>
@@ -137,16 +137,16 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Membres de l'Ã©quipe</h2>
+				<h2>Membres de l'équipe</h2>
 				<p>Adrien OUAIRY</p>
 				<p>Antoine GUILLOIS</p>
 				<p>Clara MIGNEE</p>
-				<p>JÃ©rÃ©mie HERVE</p>
+				<p>Jérémie HERVE</p>
 			</div>
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d'ActivitÃ©s "La BretÃ¨che"<br /> 35768 Saint GrÃ©goire Cedex<br />
+					Parc d'Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
 					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
 						d'informations</a>.
 				</p>
