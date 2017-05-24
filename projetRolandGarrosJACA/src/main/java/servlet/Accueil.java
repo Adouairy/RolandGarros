@@ -95,13 +95,16 @@ public class Accueil extends HttpServlet {
 				session.setAttribute("identiteDuConnecte", table);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
 						.forward(request, response);
-			}else if(table.equals("medecin")) {
+			}else{
 				Medecin medecin = ServiceVerifMdp.getInstance().importerMedecin(email);
 				session.setAttribute("leConnecte", medecin);
 				session.setAttribute("identiteDuConnecte", table);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request,response);
 
-			}else {
+			}
+		}else {
+				System.out.println("il ne devrait pas entrer........................");
+
 				MessageErreur = "Erreur";
 				message = "Connection échouée, veuillez réessayer";
 				request.setAttribute("MessageErreur", MessageErreur);
@@ -110,5 +113,4 @@ public class Accueil extends HttpServlet {
 			}
 
 		}
-	}
 }

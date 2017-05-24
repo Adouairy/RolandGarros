@@ -142,7 +142,11 @@ public class Formulaire extends HttpServlet {
 
 		if (formulaireJuste) {
 			try {
+				System.out.println("envoyer ref");
 				BaseDAO.getInstance().ajouterAidant(ref);
+				System.out.println(ref);
+				System.out.println("envoyer ref");
+
 				BaseDAO.getInstance().ajouterAide(aide);
 				BaseDAO.getInstance().ajouterCooperation(ref, aide);
 				if(!aidant.getMailAidant().isEmpty()){
