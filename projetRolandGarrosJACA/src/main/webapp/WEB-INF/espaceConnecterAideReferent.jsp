@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Espace aidé/référent</title>
+<link rel="stylesheet" type="text/css" href="./style/formulaire.css" />
 </head>
 <body>
 		<nav class="navbar navbar-inverse">
@@ -26,7 +27,7 @@
 		<div class="row content">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
-				<h1>Coucou ${ref.prenom} et bienvenue dans ton espace connecté</h1>
+				<h1>Coucou ${leConnecte.prenom} et bienvenue dans ton espace connecté</h1>
 			</div>
 		</div>
 		<div class="col-sm-2"></div>

@@ -31,32 +31,11 @@
 				src="img/logo.png"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<!-- 				<li class="active"><a href="#">Tournoi</a></li> -->
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Tournoi <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Simple messieurs</a></li>
-						<li><a href="#">Simple dames</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Double messieurs</a></li>
-						<li><a href="#">Double dames</a></li>
-						<li><a href="#">Double mixte</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Simples Juniors Garçons et Filles</a></li>
-						<li><a href="#">Doubles Juniors Garçons et Filles</a></li>
-					</ul></li>
-				<li><a href="#">Programme</a></li>
-				<li><a href="#">Joueurs</a></li>
-				<li><a href="#">Court</a></li>
-				<li><a href="#">Live</a></li>
-			</ul>
-			<form id="buttonInscription" action="lienFormulaire" method="get">
-				<button type="submit" class="btn btn-info">Inscription</button>
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<form class="navbar-form navbar-right" action="accueil" method="get">
+
+<!-- 			<div class="nav navbar-nav navbar-right row"> -->
+
+				<form class="navbar-form navbar-right col-sm-9" action="accueil"
+					method="get">
 					<div class="form-group">
 						<select name="select" id="select">
 							<option value="aide">Personne Aidée</option>
@@ -74,8 +53,12 @@
 					</div>
 					<button id="buttonConnection" type="submit" class="btn btn-success">Connection</button>
 				</form>
+				<form id="buttonInscription" class="col-sm-3"
+					action="lienFormulaire" method="get">
+					<button type="submit" class="btn btn-info">Inscription</button>
+				</form>
 
-			</ul>
+<!-- 			</div> -->
 		</div>
 	</div>
 	</nav>
