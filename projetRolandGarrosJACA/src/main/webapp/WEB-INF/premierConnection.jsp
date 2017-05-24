@@ -65,7 +65,7 @@
 						<p>Mot de passe :</p>
 						<input type="password" name="iMdpAidant"
 							placeholder="Votre mot de passe" required /><br />
-
+						<p class="messageErreur">${messageVerifMdp}</p>
 						<p>Confirmation du mot de passe :</p>
 						<input type="password" name="iConfirmAidant"
 							placeholder="Confirmation du mot de passe" required />

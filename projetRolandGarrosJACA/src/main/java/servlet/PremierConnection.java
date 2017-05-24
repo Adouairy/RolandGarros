@@ -38,6 +38,7 @@ public class PremierConnection extends HttpServlet {
 		// TODO Auto-generated method stub
 		/* Création ou récupération de la session */
 		HttpSession session = request.getSession();
+		String messageVerifMdp = "Les mots de passes doivent être identiques.";
 
 		/* Récupération de l'objet depuis la session */
 		Aidant aidantConnecte = (Aidant) session.getAttribute("leConnecte");
@@ -63,6 +64,7 @@ public class PremierConnection extends HttpServlet {
 				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
 			}
 		} else {
+			request.setAttribute("messageVerifMdp", messageVerifMdp);
 			request.setAttribute("aidantCo", aidantConnecte);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/premierConnection.jsp").forward(request, response);
 		}
