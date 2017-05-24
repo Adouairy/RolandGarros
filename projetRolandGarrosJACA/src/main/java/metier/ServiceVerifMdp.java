@@ -45,6 +45,18 @@ public class ServiceVerifMdp {
         return verif;
     }
 
+    public boolean verifMdpAidant(HttpServletRequest request) {
+        boolean verif = false;
+        String motDePasse = "";
+        String motDePasseConf = "";
+        motDePasse = request.getParameter("iMdpAidant");
+        motDePasseConf = request.getParameter("iConfirmAidant");
+        if (motDePasse.equals(motDePasseConf)) {
+            verif = true;
+        }
+        return verif;
+    }
+    
     public boolean verifMailAide(HttpServletRequest request) {
         boolean verif = false;
         String mail = "";
