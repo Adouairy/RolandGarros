@@ -8,7 +8,7 @@
 <title>Accueil</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style/style.css" />
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -17,6 +17,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="style/style.css" />
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -33,7 +34,7 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 
 			<!-- 			<div class="nav navbar-nav navbar-right row"> -->
-			<form id="buttonInscription" class="col-sm-3" action="lienFormulaire"
+			<form id="buttonInscription" class="navbar-form navbar-right col-sm-3" action="lienFormulaire"
 				method="get">
 				<button type="submit" class="btn btn-info">Inscription</button>
 			</form>
@@ -74,6 +75,7 @@
 						concernés par le handicap et la dépendance en tant qu'aidé et/ou
 						aidant (11 millions d'aidants). Autonomia propose de s'intéresser
 						à 6 types d'handicapes :</p>
+					<p class="ulCenter">
 					<ul>
 						<li>Moteur</li>
 						<li>Visuel</li>
@@ -82,6 +84,7 @@
 						<li>Maladies invalidantes</li>
 						<li>Séniorité</li>
 					</ul>
+					</p>
 					<p>Ces différents handicapes sont parfois associés à des objets
 						connectés tels que des bracelets, des cannes blanches ou encore
 						des lunettes, etc. Selon le type de handicap les aidants seront de
@@ -99,12 +102,14 @@
 					<p>Elle se positionne en tant qu'HUB d'intégration de services
 						et d'objets facilitant la vie des aidants et des aidées, ceci de
 						manière :</p>
+					<p class="ulCenter">
 					<ul>
 						<li>Simple</li>
 						<li>Fiable</li>
 						<li>Interopérable</li>
 						<li>Usage</li>
 					</ul>
+					</p>
 					<p>AUTONOMIA se base sur les 4 services suivants :</p>
 					<ul>
 						<li><span class="aSouligner">Suzanne & Léa</span> est un
@@ -117,9 +122,9 @@
 						<li><span class="aSouligner">PuisJeVousAider</span> propose
 							des solutions d'accueil personnalisé pour personnes fragilisées
 							destinée aux établissement commerciaux et publics.</li>
-						<li><span class="aSouligner">Les services partenaires</span> permettent l'intégration
-							d'événements en provenances d'objets connectés et de services
-							partenaires.</li>
+						<li><span class="aSouligner">Les services partenaires</span>
+							permettent l'intégration d'événements en provenances d'objets
+							connectés et de services partenaires.</li>
 					</ul>
 				</div>
 			</div>

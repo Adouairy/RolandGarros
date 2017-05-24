@@ -64,39 +64,55 @@ footer {
 form {
 	border: 1px black solid;
 }
-#buttonInscription{
-	border :0px;
-	margin:0 auto;
-	padding:5px;
-}
+
 
 legend, fieldset>input, fieldset>p {
 	margin-left: 4px;
 }
 
-#echecCo{
+#echecCo {
 	color: white;
 }
 
-#buttonConnection { 
+#buttonConnection {
 	padding: .5em 1em;
-	text-decoration: none; 
+	text-decoration: none;
 }
 
-#echecCo { 
-	width: 200px; 
-	height: 40px; 
+#echecCo {
+	width: 200px;
+	height: 40px;
 	background-color: red;
-	color:white;
-	padding: 0.4em;  
+	color: white;
+	padding: 0.4em;
 	position: fixed;
-	top:2%;
+	top: 2%;
 	right: 2%;
 	margin: 0 auto;
 	padding: 0 auto;
 }
 
-.aSouligner{
+.aSouligner {
 	text-decoration: underline;
-	color: blue;	
+	color: blue;
+}
+
+h1 {
+	font-size: 48px;
+	text-shadow: -1px -1px #bf7651, 1px 1px #bf7651, -3px 0 4px #bf7651;
+	font-family: "Segoe print", Arial, Helvetica, sans-serif;
+	color: #EF9466;
+	font-weight: lighter;
+	text-align: center;
+	line-height: 70px;
+}
+.ulCenter{
+	text-align: center;
+}
+#buttonInscription {
+	border: 0px;
+	margin-top:4px;
+	margin-bottom:8px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
