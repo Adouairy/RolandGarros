@@ -32,9 +32,10 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 
-			<div class="nav navbar-nav navbar-right">
-				
-				<form class="navbar-form navbar-right" action="accueil" method="get">
+<!-- 			<div class="nav navbar-nav navbar-right row"> -->
+
+				<form class="navbar-form navbar-right col-sm-9" action="accueil"
+					method="get">
 					<div class="form-group">
 						<select name="select" id="select">
 							<option value="aide">Personne Aidée</option>
@@ -52,11 +53,12 @@
 					</div>
 					<button id="buttonConnection" type="submit" class="btn btn-success">Connection</button>
 				</form>
-				<form id="buttonInscription" action="lienFormulaire" method="get">
+				<form id="buttonInscription" class="col-sm-3"
+					action="lienFormulaire" method="get">
 					<button type="submit" class="btn btn-info">Inscription</button>
 				</form>
 
-			</div>
+<!-- 			</div> -->
 		</div>
 	</div>
 	</nav>
