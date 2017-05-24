@@ -81,12 +81,12 @@ legend, fieldset>input, fieldset>p {
 
 #echecCo {
 	width: 200px;
-	height: 40px;
+	height: 35px;
 	background-color: red;
 	color: white;
 	padding: 0.4em;
 	position: fixed;
-	top: 2%;
+	bottom: 2%;
 	right: 2%;
 	margin: 0 auto;
 	padding: 0 auto;

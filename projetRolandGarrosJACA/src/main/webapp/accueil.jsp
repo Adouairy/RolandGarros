@@ -34,7 +34,8 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 
 			<!-- 			<div class="nav navbar-nav navbar-right row"> -->
-			<form id="buttonInscription" class="navbar-form navbar-right col-sm-3" action="lienFormulaire"
+			<form id="buttonInscription"
+				class="navbar-form navbar-right col-sm-3" action="lienFormulaire"
 				method="get">
 				<button type="submit" class="btn btn-info">Inscription</button>
 			</form>
@@ -152,6 +153,9 @@
 			</div>
 		</div>
 	</div>
-	</footer>
+	<c:if test="${not empty MessageErreur}">
+		<div id="echecCo" class="ui-widget-content ui-corner-all">Echec
+			+ lors de la connexion</div>
+	</c:if> </footer>
 </body>
 </html>
