@@ -14,16 +14,16 @@
 
 		<div class="row"> 
 			<div class="col-md-6">
-				<h2>Membres de l'ï¿½quipe</h2>
+				<h2>Membres de l'équipe</h2>
 				<p>Adrien OUAIRY</p>
 				<p>Antoine GUILLOIS</p>
 				<p>Clara MIGNEE</p>
-				<p>Jï¿½rï¿½mie HERVE</p>
+				<p>Jérémie HERVE</p>
 			</div>
 			<div class="col-md-6"> 
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d'Activitï¿½s "La Bretï¿½che"<br /> 35768 Saint Grï¿½goire Cedex<br />
+					Parc d'Activités "La Bretéche"<br /> 35768 Saint Grégoire Cedex<br />
 					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
 						d'informations</a>.
 				</p>
