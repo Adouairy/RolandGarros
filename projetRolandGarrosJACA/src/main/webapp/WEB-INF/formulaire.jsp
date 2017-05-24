@@ -135,7 +135,7 @@
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d’Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
+					Parc d'Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
 					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
 						d'informations</a>.
 				</p>

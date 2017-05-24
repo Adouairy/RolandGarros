@@ -32,104 +32,57 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 
-<!-- 			<div class="nav navbar-nav navbar-right row"> -->
-
-				<form class="navbar-form navbar-right col-sm-9" action="accueil"
-					method="get">
-					<div class="form-group">
-						<select name="select" id="select">
-							<option value="aide">Personne Aidée</option>
-							<option value="aidant" selected>Personne Aidant</option>
-							<option value="medecin">Personne corp médical</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<input type="email" placeholder="Email" name="email"
-							class="form-control">
-					</div>
-					<div class="form-group">
-						<input type="password" placeholder="Mot de passe"
-							name="mdpIdentifiant" class="form-control">
-					</div>
-					<button id="buttonConnection" type="submit" class="btn btn-success">Connection</button>
-				</form>
-				<form id="buttonInscription" class="col-sm-3"
-					action="lienFormulaire" method="get">
-					<button type="submit" class="btn btn-info">Inscription</button>
-				</form>
-
-<!-- 			</div> -->
+			<!-- 			<div class="nav navbar-nav navbar-right row"> -->
+			<form id="buttonInscription" class="col-sm-3" action="lienFormulaire"
+				method="get">
+				<button type="submit" class="btn btn-info">Inscription</button>
+			</form>
+			<form class="navbar-form navbar-right col-sm-9" action="accueil"
+				method="get">
+				<div class="form-group">
+					<select name="select" id="select">
+						<option value="aide">Aidé</option>
+						<option value="aidant" selected>Aidant</option>
+						<option value="medecin">Médecin</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="email" placeholder="Email" name="email"
+						class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="password" placeholder="Mot de passe"
+						name="mdpIdentifiant" class="form-control">
+				</div>
+				<button id="buttonConnection" type="submit" class="btn btn-success">Connection</button>
+			</form>
+			<!-- 			</div> -->
 		</div>
 	</div>
 	</nav>
+
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
 				<h1>A Star Wars Story</h1>
 				<hr>
-				<table class="table table-hover">
-					<tr>
-						<td>Star Wars 1</td>
-						<td>1999-10-13</td>
-						<td>
-							<p>Keira</p>
-							<p>Natalie Portman</p>
-							<p>Liam Neeson</p>
-						</td>
-						<td>SF</td>
-					</tr>
-					<tr>
-						<td>Star Wars 2</td>
-						<td>2002-05-17</td>
-						<td>
-							<p>Natalie Portman</p>
-							<p>Hayden Christensen</p>
-							<p>Anthony Daniels</p>
-						</td>
-						<td>SF</td>
-					</tr>
-					<tr>
-						<td>Star Wars 3</td>
-						<td>2005-05-18</td>
-						<td>
-							<p>Hayden Christensen</p>
-							<p>Ewan McGregor</p>
-							<p>Natalie Portman</p>
-						</td>
-						<td>SF</td>
-					</tr>
-					<tr>
-						<td>Star Wars 4</td>
-						<td>1977-10-19</td>
-						<td>
-							<p>Carrie Fisher</p>
-							<p>Mark Hamill</p>
-							<p>Harrison Ford</p>
-						</td>
-						<td>SF</td>
-					</tr>
-					<tr>
-						<td>Star Wars 5</td>
-						<td>1980-08-20</td>
-						<td>
-							<p>Carrie Fisher</p>
-							<p>Mark Hamill</p>
-							<p>Harrison Ford</p>
-						</td>
-						<td>SF</td>
-					</tr>
-					<tr>
-						<td>Star Wars 6</td>
-						<td>1983-10-19</td>
-						<td>
-							<p>Carrie Fisher</p>
-							<p>Mark Hamill</p>
-							<p>Harrison Ford</p>
-						</td>
-						<td>SF</td>
-					</tr>
-				</table>
+				<div>
+					<p>Autonomia est une plateforme unifiée de services destinée à
+						sécuriser la vie des personnes dépendantes et faciliter
+						l'intervention des aidants. En effet 20 millions de Français sont
+						concernés par le handicap et la dépendance en tant qu'aidé et/ou
+						aidant (11 millions d'aidants). Autonomia propose de s'intéresser
+						à 6 types d'handicapes :</p>
+					<ul>
+						<li>Moteur</li>
+						<li>Visuel</li>
+						<li>Auditif</li>
+						<li>Cognitif</li>
+						<li>Maladies invalidantes</li>
+						<li>Séniorité</li>
+					</ul>
+				</div>
 			</div>
 			<div class="col-sm-2"></div>
 		</div>
@@ -148,7 +101,7 @@
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d’Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
+					Parc d'Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
 					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
 						d'informations</a>.
 				</p>
