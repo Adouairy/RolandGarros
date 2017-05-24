@@ -91,7 +91,12 @@
 															value="${ aidant.prenomAidant }" /></li>
 												</ul>
 											</c:forEach>
-										<form action="acceuil" method="POST">
+										<form action="espaceConnecterAide" method="POST">
+										<p>Nom :</p>
+											<input type="text" name="nomAidant" placeholder="Nom de l'aidant"/>
+										<p>E-mail :</p>
+											<input type="email" name="mailAidant" placeholder="E-mail de l'aidant"/>
+										<p class="messageErreur">${messageAjoutAidant}</p>
 											<input type="submit" name="valider_form"
 												value="Ajouter Aidants" />
 										</form>
