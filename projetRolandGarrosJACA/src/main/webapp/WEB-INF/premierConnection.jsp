@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Premiï¿½re connexion</title>
+<title>Premiére connexion</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="./style/formulaire.css" />
@@ -42,11 +42,11 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
 				<fieldset id="infoCompl">
-					<h1>Informations complï¿½mentaires</h1>
+					<h1>Informations complémentaires</h1>
 					<form method="get" action="premierConnection">
 
-						<p>Prï¿½nom :</p>
-						<input type="text" name="iPrenomAidant" placeholder="Votre prï¿½nom"
+						<p>Prénom :</p>
+						<input type="text" name="iPrenomAidant" placeholder="Votre prénom"
 							value="${aidantCo.prenomAidant}" required />
 
 						<p>Adresse :</p>
@@ -59,9 +59,9 @@
 							placeholder="Votre date de naissance" id="datepicker" required />
 
 
-						<p>Numï¿½ro de tï¿½lï¿½phone :</p>
+						<p>Numéro de téléphone :</p>
 						<input type="text" name="iTelAidant"
-							placeholder="Votre numï¿½ro de tï¿½lï¿½phone"
+							placeholder="Votre numéro de téléphone"
 							value="${aidantCo.telAidant}" required />
 
 						<p>Mot de passe :</p>
@@ -74,11 +74,11 @@
 
 						<p class="messageErreur">${messageVerifMdp}</p>
 
-						<p>Catï¿½gorie d'aidant :</p>
+						<p>Catégorie d'aidant :</p>
 						<select name="catAidant" required>
 							<option value="proche">Proche</option>
 							<option value="Artisan">Artisan</option>
-							<option value="personnelMedical">Personnel mï¿½dical</option>
+							<option value="personnelMedical">Personnel médical</option>
 						</select><br /> <br />
 
 						<p id="inputSubmit">
@@ -96,16 +96,16 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Membres de l'ï¿½quipe</h2>
+				<h2>Membres de l'équipe</h2>
 				<p>Adrien OUAIRY</p>
 				<p>Antoine GUILLOIS</p>
 				<p>Clara MIGNEE</p>
-				<p>Jï¿½rï¿½mie HERVE</p>
+				<p>Jérémie HERVE</p>
 			</div>
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d'Activitï¿½s "La Bretï¿½che"<br /> 35768 Saint Grï¿½goire Cedex<br />
+					Parc d'Activités "La Bretéche"<br /> 35768 Saint Grégoire Cedex<br />
 					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
 						d'informations</a>.
 				</p>
