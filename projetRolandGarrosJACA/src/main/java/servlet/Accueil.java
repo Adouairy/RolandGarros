@@ -93,6 +93,7 @@ public class Accueil extends HttpServlet {
 				Aide aide = ServiceVerifMdp.getInstance().importerAide(email);
 				session.setAttribute("leConnecte", aide);
 				session.setAttribute("medecin", BaseDAO.getInstance().trouverMedecinParAide(aide));
+				session.setAttribute("referent", BaseDAO.getInstance().trouverReferentParAide(aide));
 				session.setAttribute("identiteDuConnecte", table);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
 						.forward(request, response);

@@ -152,6 +152,17 @@ public class BaseDAO {
 		tx.commit();
 		closeAll();
 	}
+	//--------------------------------UPDATE--------------------------------------------------------------------
+	
+	/**
+     * Mettre à jour un aidant dans la base de donnée
+     */
+    public void UpdateAidant(Aidant aidant){
+        connection();
+        em.merge(aidant);
+        tx.commit();
+        closeAll();
+    }
 
 	// -------------------------------RENVOI DES LISTES DE PERSONNES(objets)-------------------------------------
 
@@ -251,7 +262,7 @@ public class BaseDAO {
 	public List<Cooperation> renvoiCooperations() {
 		connection();
 		List<Cooperation> liste = em.createQuery("select cooperation from Cooperation cooperation").getResultList();
-		closeAll();
+		//CloseAll()
 		return liste;
 	}
 
@@ -341,6 +352,12 @@ public class BaseDAO {
 		return m;
 	}
 
+	public Aidant trouverReferentParAide(Aide aide){
+		connection();
+		List<Aidant> aidantCoop = em.createQuery("SELECT cooperation.aidant FROM Cooperation cooperation WHERE cooperation.aidant.referent=true AND cooperation.aide.id="+aide.getId()).getResultList();
+		Aidant a = aidantCoop.get(0);
+		return a;
+	}
 	// ----------------------------FONCTION DE CRYPTAGE EN MD5-------------------------------------
 
 	/**
