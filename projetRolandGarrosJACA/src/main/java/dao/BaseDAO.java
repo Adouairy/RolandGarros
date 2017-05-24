@@ -159,6 +159,7 @@ public class BaseDAO {
      */
     public void UpdateAidant(Aidant aidant){
         connection();
+		aidant.setMdpAidant(encode(aidant.getMdpAidant()));
         em.merge(aidant);
         tx.commit();
         closeAll();
