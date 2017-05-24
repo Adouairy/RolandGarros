@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Espace connectÃ© (AidÃ© / RÃ©fÃ©rent)</title>
+<title>Espace connecté (Aidé / Référent)</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -46,7 +46,7 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
 				<h2>Bonjour ${leConnecte.prenomAidant} ${leConnecte.nomAidant}
-					et bienvenue dans votre espace connectÃ©</h2>
+					et bienvenue dans votre espace connecté</h2>
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-9 col-md-9">
@@ -64,8 +64,8 @@
 										<h3>Vos informations personnelles:</h3>
 										<ul>
 											<li>Adresse: ${leConnecte.adresseAidant}</li>
-											<li>TÃ©lÃ©phone: ${leConnecte.telAidant}</li>
-											<li>RÃ©fÃ©rent: ${leConnecte.referent}</li>
+											<li>Téléphone: ${leConnecte.telAidant}</li>
+											<li>Référent: ${leConnecte.referent}</li>
 										</ul>
 									</div>
 								</div>
@@ -75,7 +75,7 @@
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#accordion"
 												href="#collapseFour"><span
-												class="glyphicon glyphicon-user"> </span>GÃ©rer mes aidants</a>
+												class="glyphicon glyphicon-user"> </span>Gérer mes aidants</a>
 										</h4>
 									</div>
 									<div id="collapseFour" class="panel-collapse collapse">
@@ -122,18 +122,18 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Membres de l'Ã©quipe</h2>
+				<h2>Membres de l'équipe</h2>
 				<p>Adrien OUAIRY</p>
 				<p>Antoine GUILLOIS</p>
 				<p>Clara MIGNEE</p>
-				<p>JÃ©rÃ©mie HERVE</p>
+				<p>Jérémie HERVE</p>
 			</div>
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc dâ€™ActivitÃ©s "La BretÃ¨che"<br /> 35768 Saint GrÃ©goire
-					Cedex<br /> 02 99 23 46 00<br /> <a
-						href="http://www.sodifrance.fr/">Plus d'informations</a>.
+					Parc d'Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
+					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
+						d'informations</a>.
 				</p>
 			</div>
 		</div>
