@@ -95,3 +95,8 @@ legend, fieldset>input, fieldset>p {
 	margin: 0 auto;
 	padding: 0 auto;
 }
+
+.aSouligner{
+	text-decoration: underline;
+	color: blue;	
+}

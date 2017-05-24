@@ -65,7 +65,7 @@
 		<div class="row content">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
-				<h1>A Star Wars Story</h1>
+				<h1>Autonomia</h1>
 				<hr>
 				<div>
 					<p>Autonomia est une plateforme unifiée de services destinée à
@@ -81,6 +81,45 @@
 						<li>Cognitif</li>
 						<li>Maladies invalidantes</li>
 						<li>Séniorité</li>
+					</ul>
+					<p>Ces différents handicapes sont parfois associés à des objets
+						connectés tels que des bracelets, des cannes blanches ou encore
+						des lunettes, etc. Selon le type de handicap les aidants seront de
+						différents types, il y a notamment les proches, le personnel
+						médical, les service à la personne ainsi que des artisans.</p>
+					<p>Beaucoup d'initiatives et de services voient le jour mais il
+						est difficile voire impossible d'avoir une vision consolidée et
+						globalisante. Les services et/ou les objets ne couvrent en général
+						qu'une seule problématique et propose un back-office dédié
+						faiblement interopérable.</p>
+					<p>Autonomia a pour objectif de développer l'autonomie pour
+						mieux vivre ensemble. Que les personnes fragilisées puissent vivre
+						dans un climat de confiance et de sécurité et que les aidants
+						puisse agir efficacement pour les aider.</p>
+					<p>Elle se positionne en tant qu'HUB d'intégration de services
+						et d'objets facilitant la vie des aidants et des aidées, ceci de
+						manière :</p>
+					<ul>
+						<li>Simple</li>
+						<li>Fiable</li>
+						<li>Interopérable</li>
+						<li>Usage</li>
+					</ul>
+					<p>AUTONOMIA se base sur les 4 services suivants :</p>
+					<ul>
+						<li><span class="aSouligner">Suzanne & Léa</span> est un
+							service qui propose des solutions innovantes d'entraide destinée
+							à accompagner et sécuriser le quotidien des personnes fragilisées
+							et faciliter l'intervention des aidants.</li>
+						<li><span class="aSouligner">EasyCity</span> est un réseau
+							social d'entraide destiné à faciliter et améliorer les
+							déplacements des personnes dépendantes.</li>
+						<li><span class="aSouligner">PuisJeVousAider</span> propose
+							des solutions d'accueil personnalisé pour personnes fragilisées
+							destinée aux établissement commerciaux et publics.</li>
+						<li><span class="aSouligner">Les services partenaires</span> permettent l'intégration
+							d'événements en provenances d'objets connectés et de services
+							partenaires.</li>
 					</ul>
 				</div>
 			</div>
