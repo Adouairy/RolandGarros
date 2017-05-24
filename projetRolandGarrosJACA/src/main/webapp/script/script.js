@@ -3,11 +3,11 @@ $(function() {
 		maxDate : new Date()
 	});
 });
-//$(function() {
-//	$("#datepicker2").datepicker({
-//		maxDate : new Date()
-//	});
-//});
-//$( function() {
-//    $( "#datepicker3" ).datepicker();
-//  } );
+$(function() {
+	$("#datepicker2").datepicker({
+		maxDate : new Date()
+	});
+});
+$( function() {
+    $( "#datepicker3" ).datepicker();
+  } );

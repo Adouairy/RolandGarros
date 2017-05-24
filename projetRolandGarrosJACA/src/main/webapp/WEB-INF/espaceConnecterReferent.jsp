@@ -7,21 +7,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Espace connecté (Aidé / Référent)</title>
-<script type="text/javascript" src="./script/accordion.js"></script>
-<script type="text/javascript" src="./script/script.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="./script/accordion.js"></script>
+<script type="text/javascript" src="./script/script.js"></script>
 <link rel="stylesheet" type="text/css" href="./style/style.css" />
 <link rel="stylesheet" type="text/css" href="./style/formulaire.css" />
 </head>
@@ -46,8 +45,8 @@
 		<div class="row content">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
-				<h2>Bonjour ${leConnecte.prenomAidant} ${leConnecte.nomAidant} et bienvenue
-					dans votre espace connecté</h2>
+				<h2>Bonjour ${leConnecte.prenomAidant} ${leConnecte.nomAidant}
+					et bienvenue dans votre espace connecté</h2>
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-9 col-md-9">
@@ -132,9 +131,9 @@
 			<div class="col-md-6">
 				<h2>Sodifrance</h2>
 				<p>
-					Parc d’Activités "La Bretèche"<br /> 35768 Saint Grégoire Cedex<br />
-					02 99 23 46 00<br /> <a href="http://www.sodifrance.fr/">Plus
-						d'informations</a>.
+					Parc d’Activités "La Bretèche"<br /> 35768 Saint Grégoire
+					Cedex<br /> 02 99 23 46 00<br /> <a
+						href="http://www.sodifrance.fr/">Plus d'informations</a>.
 				</p>
 			</div>
 		</div>
