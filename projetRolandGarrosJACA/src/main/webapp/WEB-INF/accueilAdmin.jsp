@@ -12,7 +12,7 @@
 	<footer class="container-fluid text-center">
 	<div class="container">
 
-		<div class="row">
+		<div class="row"> 
 			<div class="col-md-6">
 				<h2>Membres de l'�quipe</h2>
 				<p>Adrien OUAIRY</p>
