@@ -44,7 +44,7 @@
     <url-pattern>/lienFormulaire</url-pattern>
   </servlet-mapping>
   <servlet>
-      <servlet-name>PremierConnection</servlet-name>
+    <servlet-name>PremierConnection</servlet-name>
     <servlet-class>servlet.PremierConnection</servlet-class>
     <init-param>
       <param-name>auteur</param-name>
@@ -55,5 +55,31 @@
   <servlet-mapping>
     <servlet-name>PremierConnection</servlet-name>
     <url-pattern>/premierConnection</url-pattern>
+  </servlet-mapping>
+    <servlet>
+      <servlet-name>EspaceConnecterAide</servlet-name>
+    <servlet-class>servlet.EspaceConnecterAide</servlet-class>
+    <init-param>
+      <param-name>auteur</param-name>
+      <param-value>Adrien</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EspaceConnecterAide</servlet-name>
+    <url-pattern>/espaceConnecterAide</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <servlet-name>EspaceConnecterReferent</servlet-name>
+    <servlet-class>servlet.EspaceConnecterReferent</servlet-class>
+    <init-param>
+      <param-name>auteur</param-name>
+      <param-value>Adrien</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EspaceConnecterReferent</servlet-name>
+    <url-pattern>/espaceConnecterReferent</url-pattern>
   </servlet-mapping>
 </web-app>
