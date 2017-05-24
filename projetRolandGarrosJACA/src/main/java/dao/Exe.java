@@ -37,13 +37,14 @@ public class Exe {
 		
 		//b.supprimerAidant(b.renvoiAidants().get(1));
 
+		System.out.println(b.trouverMedecinParAide(b.renvoiAides().get(1)).getNom());
 		
 		//System.out.println(s.importerAide("pdt@terre.fr"));
 
 		//System.out.println(s.importerAide("pdt@erazerzrzer.fr"));
 		
 		//System.out.println(b.renvoiAides());
-		//System.out.println(b.trouverMedecin(1));
+		//System.out.println(b.trouverMedecin(9));
 		//System.out.println(b.trouverAidant(1));
 		//System.out.println(b.trouverAide(24));
 		//b.commit();

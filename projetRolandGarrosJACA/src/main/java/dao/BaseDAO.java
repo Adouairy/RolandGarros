@@ -302,7 +302,8 @@ public class BaseDAO {
 	 */
 	public Medecin trouverMedecin(int id) {
 		connection();
-		return em.find(Medecin.class, id);
+		Medecin m = em.find(Medecin.class, id);
+		return m;
 	}
 
 	/**
@@ -314,7 +315,8 @@ public class BaseDAO {
 	 */
 	public Aidant trouverAidant(int id) {
 		connection();
-		return em.find(Aidant.class, id);
+		Aidant a = em.find(Aidant.class, id);
+		return a;
 	}
 
 	/**
@@ -326,7 +328,17 @@ public class BaseDAO {
 	 */
 	public Aide trouverAide(int id) {
 		connection();
-		return em.find(Aide.class, id);
+		Aide a = em.find(Aide.class, id);
+		return a;
+	}
+	
+	public Medecin trouverMedecinParAide(Aide aide) {
+		connection();
+		List<Integer> idmedecin = em.createQuery("SELECT a.medecin.idMedecin FROM Aide a WHERE a.id = "+aide.getId()).getResultList();
+		System.out.println(idmedecin.get(0));
+		Medecin m = trouverMedecin(idmedecin.get(0));
+		closeAll();
+		return m;
 	}
 
 	// ----------------------------FONCTION DE CRYPTAGE EN MD5-------------------------------------
