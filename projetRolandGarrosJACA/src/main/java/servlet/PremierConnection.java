@@ -57,8 +57,14 @@ public class PremierConnection extends HttpServlet {
 		aidantConnecte.setMdpAidant(request.getParameter("iMdpAidant"));
 		if (verifMdp) {
 			BaseDAO.getInstance().UpdateAidant(aidantConnecte);
+			if (aidantConnecte.getReferent()) {
+				this.getServletContext().getRequestDispatcher("/WEB-INF/espaceConnecterAideReferent.jsp")
+						.forward(request, response);
+			} else {
+				this.getServletContext().getRequestDispatcher("/WEB-INF/accueilAdmin.jsp").forward(request, response);
+			}
 		} else {
-			request.setAttribute("aidantCo",aidantConnecte );
+			request.setAttribute("aidantCo", aidantConnecte);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/premierConnection.jsp").forward(request, response);
 		}
 	}
