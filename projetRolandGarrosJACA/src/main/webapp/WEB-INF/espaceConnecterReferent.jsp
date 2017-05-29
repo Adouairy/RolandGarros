@@ -66,7 +66,7 @@
 											<li>Adresse: ${leConnecte.adresseAidant}</li>
 											<li>Téléphone: ${leConnecte.telAidant}</li>
 											<li>Référent: ${leConnecte.referent}</li>
-											<li>Référent: ${ListeAidesDuConnecte.get(0).nom}
+											<li>Référent de: ${ListeAidesDuConnecte.get(0).nom}
 												${ListeAidesDuConnecte.get(0).prenom}</li>
 										</ul>
 									</div>
