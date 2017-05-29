@@ -54,6 +54,7 @@ public class Accueil extends HttpServlet {
 			}
 			if (!delaiDepasse) {
 				System.out.println(listeAidant.get(i));
+				BaseDAO.getInstance().supprimerCooperation(listeAidant.get(i));
 				BaseDAO.getInstance().supprimerAidant(listeAidant.get(i));
 			}
 		}
