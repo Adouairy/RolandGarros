@@ -152,6 +152,17 @@ public class BaseDAO {
 		tx.commit();
 		closeAll();
 	}
+	
+	/**
+	 * Ajoute un objet compteRendu dans la base de donnees
+	 * 
+	 */
+	public void ajouterCompteRendu(CompteRendu cr) throws ParseException {
+		connection();
+		em.persist(cr);
+		tx.commit();
+		closeAll();
+	}
 	//--------------------------------UPDATE--------------------------------------------------------------------
 	
 	/**

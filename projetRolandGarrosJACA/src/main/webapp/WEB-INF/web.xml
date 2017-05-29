@@ -84,8 +84,8 @@
   </servlet-mapping>
   
   <servlet>
-    <servlet-name>CompteRendu</servlet-name>
-    <servlet-class>servlet.CompteRendu</servlet-class>
+    <servlet-name>CompteRenduEnvoyer</servlet-name>
+    <servlet-class>servlet.CompteRenduEnvoyer</servlet-class>
     <init-param>
       <param-name>auteur</param-name>
       <param-value>Adrien</param-value>
@@ -93,7 +93,7 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CompteRendu</servlet-name>
-    <url-pattern>/compteRendu</url-pattern>
+    <servlet-name>CompteRenduEnvoyer</servlet-name>
+    <url-pattern>/compteRenduEnvoyer</url-pattern>
   </servlet-mapping>
 </web-app>

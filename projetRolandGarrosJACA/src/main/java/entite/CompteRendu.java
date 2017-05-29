@@ -58,7 +58,15 @@ public class CompteRendu implements Cloneable {
 
 
 	
-	public CompteRendu(String texte, String dateCr, Aidant aidant, Aide aide, Medecin medecin) throws ParseException {
+//	public CompteRendu(String texte, String dateCr, Aidant aidant, Aide aide, Medecin medecin) throws ParseException {
+//		setTexte(texte);
+//		setDateCr(dateCr);
+//		setAidant(aidant);
+//		setAide(aide);		
+//		setMedecin(medecin);
+//	}
+	
+	public CompteRendu(String texte, Date dateCr, Aidant aidant, Aide aide, Medecin medecin) throws ParseException {
 		setTexte(texte);
 		setDateCr(dateCr);
 		setAidant(aidant);
@@ -99,11 +107,12 @@ public class CompteRendu implements Cloneable {
 
 
 
-	public void setDateCr(String dateCr) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		this.dateCr = sdf.parse(dateCr);
-	}
 
+
+
+	public void setDateCr(Date dateCr) {
+		this.dateCr = dateCr;
+	}
 
 
 
