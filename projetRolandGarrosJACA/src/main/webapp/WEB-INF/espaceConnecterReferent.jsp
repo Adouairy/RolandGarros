@@ -3,25 +3,24 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
- 
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Espace connecté Référent</title>
 <script type="text/javascript" src="./script/accordion.js"></script>
-<script type="text/javascript" src="./script/script.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="./script/script.js"></script>
 <link rel="stylesheet" type="text/css" href="./style/style.css" />
 <link rel="stylesheet" type="text/css" href="./style/formulaire.css" />
 </head>
@@ -46,8 +45,8 @@
 		<div class="row content">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8 text-left">
-				<h2>Bonjour ${leConnecte.prenomAidant} ${leConnecte.nomAidant} et bienvenue
-					dans votre espace connecté</h2>
+				<h2>Bonjour ${leConnecte.prenomAidant} ${leConnecte.nomAidant}
+					et bienvenue dans votre espace connecté</h2>
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-9 col-md-9">
@@ -67,7 +66,8 @@
 											<li>Adresse: ${leConnecte.adresseAidant}</li>
 											<li>Téléphone: ${leConnecte.telAidant}</li>
 											<li>Référent: ${leConnecte.referent}</li>
-											<li>Référent: ${ListeAidesDuConnecte.get(0).nom} ${ListeAidesDuConnecte.get(0).prenom}</li>
+											<li>Référent: ${ListeAidesDuConnecte.get(0).nom}
+												${ListeAidesDuConnecte.get(0).prenom}</li>
 										</ul>
 									</div>
 								</div>
@@ -77,7 +77,8 @@
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#accordion"
 												href="#collapseFour"><span
-												class="glyphicon glyphicon-user"> </span>Gérer les aidants de votre aidé</a>
+												class="glyphicon glyphicon-user"> </span>Gérer les aidants
+												de votre aidé</a>
 										</h4>
 									</div>
 									<div id="collapseFour" class="panel-collapse collapse">
@@ -92,11 +93,13 @@
 												</ul>
 											</c:forEach>
 										<form action="espaceConnecterReferent" method="POST">
-										<p>Nom :</p>
-											<input type="text" name="nomAidant" placeholder="Nom de l'aidant"/>
-										<p>E-mail :</p>
-											<input type="email" name="mailAidant" placeholder="E-mail de l'aidant"/>
-										<p class="messageErreur">${messageAjoutAidant}</p>
+											<p>Nom :</p>
+											<input type="text" name="nomAidant"
+												placeholder="Nom de l'aidant" />
+											<p>E-mail :</p>
+											<input type="email" name="mailAidant"
+												placeholder="E-mail de l'aidant" />
+											<p class="messageErreur">${messageAjoutAidant}</p>
 											<input type="submit" name="valider_form"
 												value="Ajouter Aidants" />
 										</form>
@@ -139,7 +142,7 @@
 	</div>
 
 	<footer class="container-fluid text-center">
-	<div class="container"> 
+	<div class="container">
 
 		<div class="row">
 			<div class="col-md-6">

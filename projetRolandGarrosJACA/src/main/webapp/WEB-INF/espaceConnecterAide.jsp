@@ -3,25 +3,24 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
- 
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Espace connecté (Aidé / Référent)</title>
 <script type="text/javascript" src="./script/accordion.js"></script>
-<script type="text/javascript" src="./script/script.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="./script/script.js"></script>
 <link rel="stylesheet" type="text/css" href="./style/style.css" />
 <link rel="stylesheet" type="text/css" href="./style/formulaire.css" />
 </head>
@@ -92,11 +91,13 @@
 												</ul>
 											</c:forEach>
 										<form action="espaceConnecterAide" method="POST">
-										<p>Nom :</p>
-											<input type="text" name="nomAidant" placeholder="Nom de l'aidant"/>
-										<p>E-mail :</p>
-											<input type="email" name="mailAidant" placeholder="E-mail de l'aidant"/>
-										<p class="messageErreur">${messageAjoutAidant}</p>
+											<p>Nom :</p>
+											<input type="text" name="nomAidant"
+												placeholder="Nom de l'aidant" />
+											<p>E-mail :</p>
+											<input type="email" name="mailAidant"
+												placeholder="E-mail de l'aidant" />
+											<p class="messageErreur">${messageAjoutAidant}</p>
 											<input type="submit" name="valider_form"
 												value="Ajouter Aidants" />
 										</form>
@@ -139,7 +140,7 @@
 	</div>
 
 	<footer class="container-fluid text-center">
-	<div class="container"> 
+	<div class="container">
 
 		<div class="row">
 			<div class="col-md-6">
