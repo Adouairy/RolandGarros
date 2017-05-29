@@ -50,8 +50,10 @@
 						</select><br />
 
 						<p>Votre compte rendu</p>
-						<input type="text" name="compteRendu" placeholder="Ecrire ici"
-							required />
+						<div>
+							<textarea name="comments" id="comments" placeholder="Ecrire ici" required></textarea>
+						</div>
+						<br/>
 
 						<p id="inputSubmit">
 							<input type="submit" value="Envoyer le compte rendu" />
