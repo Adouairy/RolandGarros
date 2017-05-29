@@ -51,7 +51,8 @@ public class EspaceConnecterReferent extends HttpServlet {
 		String nomAidant = request.getParameter("nomAidant");
 		aidantAjout = new Aidant(mailAidant, nomAidant);
 		if (nomAidant.isEmpty() && mailAidant.isEmpty()) {
-	
+			formulaireJuste = false;
+			messageAjoutAidant = "Veuillez ajouter un nom et un mail à votre aidant.";
 		} else if (nomAidant.isEmpty() && !mailAidant.isEmpty()) {
 			messageAjoutAidant = "Veuillez ajouter un nom à votre aidant.";
 			formulaireJuste = false;
