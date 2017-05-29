@@ -67,6 +67,7 @@
 											<li>Adresse: ${leConnecte.adresseAidant}</li>
 											<li>Téléphone: ${leConnecte.telAidant}</li>
 											<li>Référent: ${leConnecte.referent}</li>
+											<li>Référent: ${ListeAidesDuConnecte.get(0).nom} ${ListeAidesDuConnecte.get(0).prenom}</li>
 										</ul>
 									</div>
 								</div>
@@ -76,7 +77,7 @@
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#accordion"
 												href="#collapseFour"><span
-												class="glyphicon glyphicon-user"> </span>Gérer mes aidants</a>
+												class="glyphicon glyphicon-user"> </span>Gérer les aidants de votre aidé</a>
 										</h4>
 									</div>
 									<div id="collapseFour" class="panel-collapse collapse">
@@ -90,7 +91,12 @@
 															value="${ aidant.prenomAidant }" /></li>
 												</ul>
 											</c:forEach>
-										<form action="acceuil" method="POST">
+										<form action="espaceConnecterReferent" method="POST">
+										<p>Nom :</p>
+											<input type="text" name="nomAidant" placeholder="Nom de l'aidant"/>
+										<p>E-mail :</p>
+											<input type="email" name="mailAidant" placeholder="E-mail de l'aidant"/>
+										<p class="messageErreur">${messageAjoutAidant}</p>
 											<input type="submit" name="valider_form"
 												value="Ajouter Aidants" />
 										</form>

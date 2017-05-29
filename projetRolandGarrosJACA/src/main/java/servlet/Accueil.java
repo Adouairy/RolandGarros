@@ -81,6 +81,8 @@ public class Accueil extends HttpServlet {
 				session.setAttribute("leConnecte", aidant);
 				session.setAttribute("identiteDuConnecte", table);
 				session.setAttribute("ListeAidesDuConnecte", BaseDAO.getInstance().trouverAidesParAidant(aidant));
+				Aide aide =BaseDAO.getInstance().trouverAidesParAidant(aidant).get(0);
+				session.setAttribute("aidant", BaseDAO.getInstance().trouverAidantsParAide(aide));
 				if (aidant.getPremiereconnection() == 1) {
 					this.getServletContext().getRequestDispatcher("/WEB-INF/premierConnection.jsp").forward(request,
 							response);
