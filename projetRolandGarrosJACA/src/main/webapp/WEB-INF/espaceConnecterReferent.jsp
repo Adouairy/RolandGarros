@@ -129,7 +129,11 @@
 										</h4>
 									</div>
 									<div id="collapseThree" class="panel-collapse collapse">
-										<p>Salut les copains</p>
+											<form action="compteRenduEnvoyer" method="POST">
+											<p class="messageErreur">${messageAjoutAidant}</p>
+											<input type="submit" name="valider_form"
+												value="Ajouter un compte rendu" />
+										</form>
 									</div>
 								</div>
 							</div>
