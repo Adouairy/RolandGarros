@@ -80,6 +80,7 @@ public class Accueil extends HttpServlet {
 				Aidant aidant = ServiceVerifMdp.getInstance().importerAidant(email);
 				session.setAttribute("leConnecte", aidant);
 				session.setAttribute("identiteDuConnecte", table);
+				session.setAttribute("aideDuConnecte", BaseDAO.getInstance().trouverAidesParAidant(aidant).get(0));
 				if (aidant.getPremiereconnection() == 1) {
 					this.getServletContext().getRequestDispatcher("/WEB-INF/premierConnection.jsp").forward(request,
 							response);
