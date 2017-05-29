@@ -394,6 +394,12 @@ public class BaseDAO {
 		List<Aide> aide = em.createQuery("SELECT cooperation.aide FROM Cooperation cooperation WHERE cooperation.aidant.idAidant="+aidant.getIdAidant()).getResultList();
 		return aide;
 	}
+	
+	public List<CompteRendu> trouverCompteRenduParAide(Aide aide){
+		connection();
+		List<CompteRendu> liste = em.createQuery("SELECT compterendu FROM CompteRendu compterendu WHERE compterendu.aide.id="+aide.getId()).getResultList();
+		return liste;
+	}
 	// ----------------------------FONCTION DE CRYPTAGE EN MD5-------------------------------------
 
 	/**

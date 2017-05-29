@@ -127,7 +127,17 @@
 										</h4>
 									</div>
 									<div id="collapseThree" class="panel-collapse collapse">
-										<p>Salut les copains</p>
+										<p>
+										Voici les comptes rendus:
+											<c:forEach items="${listeCR}" var="cr">
+
+												<ul>
+													<li>		<b><i>Date: </i></b><c:out value="${ cr.dateCr }" />
+																<b><i>Auteur: </i></b><c:out value="${ cr.aidant.nomAidant }" /></br>
+																<i> Texte :</i> <c:out	value="${ cr.texte }" /></li>
+												</ul>
+											</c:forEach>
+										</p>
 									</div>
 								</div>
 							</div>

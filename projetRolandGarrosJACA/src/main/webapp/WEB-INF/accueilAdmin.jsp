@@ -34,7 +34,7 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></scri
 	<div class="row content">
 		<div class="col-sm-2"></div>
 		<div class="col-sm-8 text-left">
-			<h2>Bienvenue Aidant (médecin, aidant non référent)</h2>
+			<h2>Bienvenue Aidant </h2>
 			<br />
 			<fieldset id="infoCompl">
 				<h1>Compte Rendu à envoyer</h1>
