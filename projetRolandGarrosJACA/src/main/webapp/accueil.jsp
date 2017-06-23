@@ -32,7 +32,8 @@
 				src="img/logo.png"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
-
+			<!-- test confilt git tortoise 1 -->
+			<p>test confilt git tortoise 1</p>
 			<!-- 			<div class="nav navbar-nav navbar-right row"> -->
 			<form id="buttonInscription"
 				class="navbar-form navbar-right col-sm-3" action="lienFormulaire"
@@ -62,7 +63,8 @@
 		</div>
 	</div>
 	</nav>
-
+	<!-- test confilt git tortoise 2 -->
+	<p>test confilt git tortoise 2</p>
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2"></div>
