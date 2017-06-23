@@ -42,6 +42,7 @@
 			<form class="navbar-form navbar-right col-sm-9" action="accueil"
 				method="get">
 				<div class="form-group">
+				<p>syso+ctrl+entree("Hello World")</p>
 					<select name="select" id="select">
 						<option value="aide">Aidé</option>
 						<option value="aidant" selected>Aidant</option>
