@@ -33,7 +33,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<!-- test confilt git tortoise 1 -->
-			<p>test confilt git tortoise 1</p>
+			<p>test confilt git tortoise 1 modifier par adrien</p>
 			<!-- 			<div class="nav navbar-nav navbar-right row"> -->
 			<form id="buttonInscription"
 				class="navbar-form navbar-right col-sm-3" action="lienFormulaire"
